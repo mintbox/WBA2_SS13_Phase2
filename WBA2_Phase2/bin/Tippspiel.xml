@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Tippspiel>
+	<Tipper>
+		<Name></Name>
+		<Spiel>
+			<Tipp></Tipp>
+			<Ergebnis></Ergebnis>
+		</Spiel>
+	</Tipper>
+	<Rangliste>
+		<Name></Name>
+		<Spiel></Spiel>	
+	</Rangliste>
+</Tippspiel>

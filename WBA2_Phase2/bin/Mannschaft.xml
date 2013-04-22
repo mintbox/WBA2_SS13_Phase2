@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Mannschaft>
+	<Name></Name>
+	<Kader>
+		<Feldspieler>
+			<Spieler>
+				<Name></Name>
+				<Position></Position>
+			</Spieler>
+		</Feldspieler>
+		<Auswechselspieler>
+			<Spieler>
+				<Name></Name>
+				<Position></Position>
+			</Spieler>
+		</Auswechselspieler>
+	</Kader>
+</Mannschaft>

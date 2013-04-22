@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Liveticker>
+	<Heimmannschaft>
+		<name></name>
+	</Heimmannschaft>
+	<Gastmannschaft
+		<name></name>
+	></Gastmannschaft>
+	<Ergebnis>
+		<Tore>
+			<Tor>
+				<Torschuetze></Torschuetze>
+				<Mannschaft_Schuetze></Mannschaft_Schuetze>
+				<Minute></Minute>
+			</Tor>
+		</Tore>		
+	</Ergebnis>	
+	<Kommentare>
+		<Kommentar>
+			<Minute></Minute>
+			<Text></Text>
+		</Kommentar>	
+	</Kommentare>
+</Liveticker>
