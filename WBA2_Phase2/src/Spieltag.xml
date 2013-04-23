@@ -7,7 +7,8 @@
 	<Spiel>
 		<Heimmannschaft></Heimmannschaft>
 		<Gastmannschaft></Gastmannschaft>
-		<Ergebnis>
+		<Endergebnis>
+            <Ergebis></Ergebis>
 			<Tore> 
 				<Tor>
 					<Torschuetze></Torschuetze>
@@ -15,7 +16,7 @@
 					<Minute></Minute>
 				</Tor>
 			</Tore>		
-		</Ergebnis>		
+		</Endergebnis>
 	</Spiel>
 
 </Spieltag>
