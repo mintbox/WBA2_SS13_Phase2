@@ -3,7 +3,7 @@
     <xs:element name="Spieltag">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Spieltagsnummer" type="xs:int"/>
+                <xs:element name="Spieltagsnummer" type="xs:int" minOccurs="1" maxOccurs="34"/>
                 <xs:element name="Spiel" minOccurs="9" maxOccurs="9">
                     <xs:complexType>
                         <xs:sequence>
