@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="Mannschaft">
-     <xs:complexType>
-         <xs:sequence>
-             <xs:element name="Name" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-             <xs:element name="Abonnent" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-         </xs:sequence>
-     </xs:complexType>
-  </xs:element>
+    <xs:element name="Mannschaften">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Abonnent" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="Mannschaft" minOccurs="18" maxOccurs="18">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Mannschaftsname" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>
