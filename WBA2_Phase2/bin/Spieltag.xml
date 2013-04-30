@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Spieltag>
+
 	<Spieltagsnummer></Spieltagsnummer>
+
 	<Spiel>
 		<Heimmannschaft></Heimmannschaft>
 		<Gastmannschaft></Gastmannschaft>
-		<Ergebnis>
+		<Endergebnis>
+            <Ergebis></Ergebis>
 			<Tore> 
 				<Tor>
 					<Torschuetze></Torschuetze>
@@ -13,6 +16,7 @@
 					<Minute></Minute>
 				</Tor>
 			</Tore>		
-		</Ergebnis>		
+		</Endergebnis>
 	</Spiel>
+
 </Spieltag>

@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Liveticker>
+
     <Heimmannschaft>
         <name></name>
     </Heimmannschaft>
+
     <Gastmannschaft>
     	<name></name>
 	</Gastmannschaft>
+
 	<Ergebnis>
 		<Tore>
 		    <Tor>
@@ -16,10 +19,12 @@
 		    </Tor>
 		</Tore>
 	</Ergebnis>
+
 	<Kommentare>
 		<Kommentar>
 		    <Minute></Minute>
 		    <Text></Text>
 		</Kommentar>
 	</Kommentare>
+
 </Liveticker>
