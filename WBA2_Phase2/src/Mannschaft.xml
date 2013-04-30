@@ -1,8 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Mannschaft>
-
-	<Name></Name>
+<Mannschaften>
     <Abonnent></Abonnent>
-
-</Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>1899 Hoffenheim</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>1.FC Nuernberg</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>1.FSV Mainz 05</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>Bayer 04 Leverkusen</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>Borussia Dortmund</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>Borussia Mönchengladbach</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>Eintracht Frankfurt</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>FC Augsburg</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>FC Bayern Muenchen</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>FC Schalke 04</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>Fortuna Duesseldorf</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>Hamburger SV</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>Hannover 96</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>Sport-Club Freiburg</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>SpVgg Greuther Fürth</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>SV Werder Bremen</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>VFB Stuttgart</Mannschaftsname>
+    </Mannschaft>
+    <Mannschaft>
+        <Mannschaftsname>VFL Wolfsburg</Mannschaftsname>
+    </Mannschaft>
+</Mannschaften>
