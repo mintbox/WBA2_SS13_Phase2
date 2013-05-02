@@ -6,25 +6,27 @@
                 <xs:element name="Heimmannschaft" type="xs:string"/>
                 <xs:element name="Gastmannschaft" type="xs:string"/>
                 <xs:element name="Endergebnis">
-                    <!-- XML vergleichen. Ergebnis fehlt hier noch als String! -->
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="Tore">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="Tor" minOccurs="0" maxOccurs="unbounded">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:element name="Torschuetze" type="xs:string"/>
-                                                    <xs:element name="Mannschaft_Schuetze" type="xs:string"/>
-                                                    <xs:element name="Minute" type="xs:int"/>
-                                                    <!-- The 'Minute' element has an invalid value according to its data type. -->
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:sequence>
-                                </xs:complexType>
-                            </xs:element>
+                            <xs:element name="Ergebnis" type="xs:string"/>
+                            <xs:sequence>
+                                <xs:element name="Tore">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="Tor" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element name="Torschuetze" type="xs:string"/>
+                                                        <xs:element name="Mannschaft_Schuetze" type="xs:string"/>
+                                                        <xs:element name="Minute" type="xs:int"/>
+                                                        <!-- The 'Minute' element has an invalid value according to its data type. -->
+                                                    </xs:sequence>
+                                                </xs:complexType>
+                                            </xs:element>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
