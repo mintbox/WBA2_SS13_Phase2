@@ -7,24 +7,25 @@
     </Heimmannschaft>
 
     <Gastmannschaft>
-    	<name></name>
-	</Gastmannschaft>
+        <name></name>
+    </Gastmannschaft>
 
-	<Ergebnis>
-		<Tore>
-		    <Tor>
-		        <Torschuetze></Torschuetze>
-		        <Mannschaft_Schuetze></Mannschaft_Schuetze>
-		        <Minute></Minute>
-		    </Tor>
-		</Tore>
-	</Ergebnis>
+    <Endergebnis>
+        <Ergebnis></Ergebnis>
+        <Tore>
+            <Tor>
+                <Torschuetze></Torschuetze>
+                <Mannschaft_Schuetze></Mannschaft_Schuetze>
+                <Minute></Minute>
+            </Tor>
+        </Tore>
+    </Endergebnis>
 
-	<Kommentare>
-		<Kommentar>
-		    <Minute></Minute>
-		    <Text></Text>
-		</Kommentar>
-	</Kommentare>
+    <Kommentare>
+        <Kommentar>
+            <Minute></Minute>
+            <Text></Text>
+        </Kommentar>
+    </Kommentare>
 
 </Liveticker>

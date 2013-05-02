@@ -5,7 +5,8 @@
             <xs:sequence>
                 <xs:element name="Heimmannschaft" type="xs:string"/>
                 <xs:element name="Gastmannschaft" type="xs:string"/>
-                <xs:element name="Ergebnis">
+                <xs:element name="Endergebnis">
+                    <!-- XML vergleichen. Ergebnis fehlt hier noch als String! -->
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Tore">
@@ -14,9 +15,9 @@
                                         <xs:element name="Tor" minOccurs="0" maxOccurs="unbounded">
                                             <xs:complexType>
                                                 <xs:sequence>
-                                                    <xs:element name="Torschuetze" type="xs:string" />
-                                                    <xs:element name="Mannschaft_Schuetze" type="xs:string" />
-                                                    <xs:element name="Minute" type="xs:int" />
+                                                    <xs:element name="Torschuetze" type="xs:string"/>
+                                                    <xs:element name="Mannschaft_Schuetze" type="xs:string"/>
+                                                    <xs:element name="Minute" type="xs:int"/>
                                                     <!-- The 'Minute' element has an invalid value according to its data type. -->
                                                 </xs:sequence>
                                             </xs:complexType>
@@ -30,14 +31,14 @@
                 <xs:element name="Kommentare">
                     <xs:complexType>
                         <xs:sequence>
-                           <xs:element name="Kommentar"  minOccurs="0" maxOccurs="unbounded">
-                               <xs:complexType>
-                                   <xs:sequence>
-                                       <xs:element name="Minute" type="xs:int" />
-                                       <xs:element name="Text" type="xs:string" />
-                                   </xs:sequence>
-                               </xs:complexType>
-                           </xs:element>
+                            <xs:element name="Kommentar" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Minute" type="xs:int"/>
+                                        <xs:element name="Text" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
