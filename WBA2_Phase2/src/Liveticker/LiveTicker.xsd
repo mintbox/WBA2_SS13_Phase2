@@ -3,6 +3,7 @@
     <xs:element name="Liveticker">
         <xs:complexType>
             <xs:sequence>
+                <!--ID HINZUFUEGEN-->
                 <xs:element name="Heimmannschaft" type="xs:string"/>
                 <xs:element name="Gastmannschaft" type="xs:string"/>
                 <xs:element name="Endergebnis">

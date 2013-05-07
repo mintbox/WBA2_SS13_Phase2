@@ -3,10 +3,12 @@
 <Liveticker>
 
     <Heimmannschaft>
+        <mann_id></mann_id>
         <name></name>
     </Heimmannschaft>
 
     <Gastmannschaft>
+        <mann_id></mann_id>
         <name></name>
     </Gastmannschaft>
 
