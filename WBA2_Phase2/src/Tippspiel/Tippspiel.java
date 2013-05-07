@@ -1,18 +1,14 @@
 
-package JAXB;
+package Tippspiel;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p/>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p/>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -39,13 +35,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "name",
-    "spiel"
+        "name",
+        "spiel"
 })
 @XmlRootElement(name = "Tippspiel")
 public class Tippspiel {
@@ -57,11 +51,9 @@ public class Tippspiel {
 
     /**
      * Gets the value of the name property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     *         {@link String }
      */
     public String getName() {
         return name;
@@ -69,11 +61,9 @@ public class Tippspiel {
 
     /**
      * Sets the value of the name property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setName(String value) {
         this.name = value;
@@ -81,11 +71,9 @@ public class Tippspiel {
 
     /**
      * Gets the value of the spiel property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Tippspiel.Spiel }
-     *     
+     *
+     * @return possible object is
+     *         {@link Tippspiel.Spiel }
      */
     public Tippspiel.Spiel getSpiel() {
         return spiel;
@@ -93,11 +81,9 @@ public class Tippspiel {
 
     /**
      * Sets the value of the spiel property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Tippspiel.Spiel }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Tippspiel.Spiel }
      */
     public void setSpiel(Tippspiel.Spiel value) {
         this.spiel = value;
@@ -106,9 +92,9 @@ public class Tippspiel {
 
     /**
      * <p>Java class for anonymous complex type.
-     * 
+     * <p/>
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
+     * <p/>
      * <pre>
      * &lt;complexType>
      *   &lt;complexContent>
@@ -122,14 +108,12 @@ public class Tippspiel {
      *   &lt;/complexContent>
      * &lt;/complexType>
      * </pre>
-     * 
-     * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "heimmannschaft",
-        "gastmannschaft",
-        "tipp"
+            "heimmannschaft",
+            "gastmannschaft",
+            "tipp"
     })
     public static class Spiel {
 
@@ -142,11 +126,9 @@ public class Tippspiel {
 
         /**
          * Gets the value of the heimmannschaft property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
+         *
+         * @return possible object is
+         *         {@link String }
          */
         public String getHeimmannschaft() {
             return heimmannschaft;
@@ -154,11 +136,9 @@ public class Tippspiel {
 
         /**
          * Sets the value of the heimmannschaft property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
+         *
+         * @param value allowed object is
+         *              {@link String }
          */
         public void setHeimmannschaft(String value) {
             this.heimmannschaft = value;
@@ -166,11 +146,9 @@ public class Tippspiel {
 
         /**
          * Gets the value of the gastmannschaft property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
+         *
+         * @return possible object is
+         *         {@link String }
          */
         public String getGastmannschaft() {
             return gastmannschaft;
@@ -178,11 +156,9 @@ public class Tippspiel {
 
         /**
          * Sets the value of the gastmannschaft property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
+         *
+         * @param value allowed object is
+         *              {@link String }
          */
         public void setGastmannschaft(String value) {
             this.gastmannschaft = value;
@@ -190,11 +166,9 @@ public class Tippspiel {
 
         /**
          * Gets the value of the tipp property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
+         *
+         * @return possible object is
+         *         {@link String }
          */
         public String getTipp() {
             return tipp;
@@ -202,11 +176,9 @@ public class Tippspiel {
 
         /**
          * Sets the value of the tipp property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
+         *
+         * @param value allowed object is
+         *              {@link String }
          */
         public void setTipp(String value) {
             this.tipp = value;

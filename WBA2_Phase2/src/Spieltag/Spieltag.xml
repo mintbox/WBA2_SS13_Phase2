@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Spieltag>
+
+    <Spieltagsnummer></Spieltagsnummer>
+
+    <Spiel>
+        <Heimmannschaft></Heimmannschaft>
+        <Gastmannschaft></Gastmannschaft>
+        <Endergebnis>
+            <Ergebis></Ergebis>
+            <Tore>
+                <Tor>
+                    <Torschuetze></Torschuetze>
+                    <Mannschaft_Schuetze></Mannschaft_Schuetze>
+                    <Minute></Minute>
+                </Tor>
+            </Tore>
+        </Endergebnis>
+    </Spiel>
+
+</Spieltag>

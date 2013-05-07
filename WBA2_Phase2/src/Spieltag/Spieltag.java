@@ -1,20 +1,16 @@
 
-package JAXB;
+package Spieltag;
 
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p/>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p/>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -72,13 +68,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "spieltagsnummer",
-    "spiel"
+        "spieltagsnummer",
+        "spiel"
 })
 @XmlRootElement(name = "Spieltag")
 public class Spieltag {
@@ -90,7 +84,6 @@ public class Spieltag {
 
     /**
      * Gets the value of the spieltagsnummer property.
-     * 
      */
     public int getSpieltagsnummer() {
         return spieltagsnummer;
@@ -98,7 +91,6 @@ public class Spieltag {
 
     /**
      * Sets the value of the spieltagsnummer property.
-     * 
      */
     public void setSpieltagsnummer(int value) {
         this.spieltagsnummer = value;
@@ -106,25 +98,23 @@ public class Spieltag {
 
     /**
      * Gets the value of the spiel property.
-     * 
-     * <p>
+     * <p/>
+     * <p/>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the spiel property.
-     * 
-     * <p>
+     * <p/>
+     * <p/>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getSpiel().add(newItem);
      * </pre>
-     * 
-     * 
-     * <p>
+     * <p/>
+     * <p/>
+     * <p/>
      * Objects of the following type(s) are allowed in the list
      * {@link Spieltag.Spiel }
-     * 
-     * 
      */
     public List<Spieltag.Spiel> getSpiel() {
         if (spiel == null) {
@@ -136,9 +126,9 @@ public class Spieltag {
 
     /**
      * <p>Java class for anonymous complex type.
-     * 
+     * <p/>
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
+     * <p/>
      * <pre>
      * &lt;complexType>
      *   &lt;complexContent>
@@ -185,14 +175,12 @@ public class Spieltag {
      *   &lt;/complexContent>
      * &lt;/complexType>
      * </pre>
-     * 
-     * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "heimmannschaft",
-        "gastmannschaft",
-        "endergebnis"
+            "heimmannschaft",
+            "gastmannschaft",
+            "endergebnis"
     })
     public static class Spiel {
 
@@ -205,11 +193,9 @@ public class Spieltag {
 
         /**
          * Gets the value of the heimmannschaft property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
+         *
+         * @return possible object is
+         *         {@link String }
          */
         public String getHeimmannschaft() {
             return heimmannschaft;
@@ -217,11 +203,9 @@ public class Spieltag {
 
         /**
          * Sets the value of the heimmannschaft property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
+         *
+         * @param value allowed object is
+         *              {@link String }
          */
         public void setHeimmannschaft(String value) {
             this.heimmannschaft = value;
@@ -229,11 +213,9 @@ public class Spieltag {
 
         /**
          * Gets the value of the gastmannschaft property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
+         *
+         * @return possible object is
+         *         {@link String }
          */
         public String getGastmannschaft() {
             return gastmannschaft;
@@ -241,11 +223,9 @@ public class Spieltag {
 
         /**
          * Sets the value of the gastmannschaft property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
+         *
+         * @param value allowed object is
+         *              {@link String }
          */
         public void setGastmannschaft(String value) {
             this.gastmannschaft = value;
@@ -253,11 +233,9 @@ public class Spieltag {
 
         /**
          * Gets the value of the endergebnis property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link Spieltag.Spiel.Endergebnis }
-         *     
+         *
+         * @return possible object is
+         *         {@link Spieltag.Spiel.Endergebnis }
          */
         public Spieltag.Spiel.Endergebnis getEndergebnis() {
             return endergebnis;
@@ -265,11 +243,9 @@ public class Spieltag {
 
         /**
          * Sets the value of the endergebnis property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link Spieltag.Spiel.Endergebnis }
-         *     
+         *
+         * @param value allowed object is
+         *              {@link Spieltag.Spiel.Endergebnis }
          */
         public void setEndergebnis(Spieltag.Spiel.Endergebnis value) {
             this.endergebnis = value;
@@ -278,9 +254,9 @@ public class Spieltag {
 
         /**
          * <p>Java class for anonymous complex type.
-         * 
+         * <p/>
          * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
+         * <p/>
          * <pre>
          * &lt;complexType>
          *   &lt;complexContent>
@@ -315,13 +291,11 @@ public class Spieltag {
          *   &lt;/complexContent>
          * &lt;/complexType>
          * </pre>
-         * 
-         * 
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
-            "ergebnis",
-            "tore"
+                "ergebnis",
+                "tore"
         })
         public static class Endergebnis {
 
@@ -332,11 +306,9 @@ public class Spieltag {
 
             /**
              * Gets the value of the ergebnis property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link String }
-             *     
+             *
+             * @return possible object is
+             *         {@link String }
              */
             public String getErgebnis() {
                 return ergebnis;
@@ -344,11 +316,9 @@ public class Spieltag {
 
             /**
              * Sets the value of the ergebnis property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link String }
-             *     
+             *
+             * @param value allowed object is
+             *              {@link String }
              */
             public void setErgebnis(String value) {
                 this.ergebnis = value;
@@ -356,11 +326,9 @@ public class Spieltag {
 
             /**
              * Gets the value of the tore property.
-             * 
-             * @return
-             *     possible object is
-             *     {@link Spieltag.Spiel.Endergebnis.Tore }
-             *     
+             *
+             * @return possible object is
+             *         {@link Spieltag.Spiel.Endergebnis.Tore }
              */
             public Spieltag.Spiel.Endergebnis.Tore getTore() {
                 return tore;
@@ -368,11 +336,9 @@ public class Spieltag {
 
             /**
              * Sets the value of the tore property.
-             * 
-             * @param value
-             *     allowed object is
-             *     {@link Spieltag.Spiel.Endergebnis.Tore }
-             *     
+             *
+             * @param value allowed object is
+             *              {@link Spieltag.Spiel.Endergebnis.Tore }
              */
             public void setTore(Spieltag.Spiel.Endergebnis.Tore value) {
                 this.tore = value;
@@ -381,9 +347,9 @@ public class Spieltag {
 
             /**
              * <p>Java class for anonymous complex type.
-             * 
+             * <p/>
              * <p>The following schema fragment specifies the expected content contained within this class.
-             * 
+             * <p/>
              * <pre>
              * &lt;complexType>
              *   &lt;complexContent>
@@ -407,12 +373,10 @@ public class Spieltag {
              *   &lt;/complexContent>
              * &lt;/complexType>
              * </pre>
-             * 
-             * 
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "", propOrder = {
-                "tor"
+                    "tor"
             })
             public static class Tore {
 
@@ -421,25 +385,23 @@ public class Spieltag {
 
                 /**
                  * Gets the value of the tor property.
-                 * 
-                 * <p>
+                 * <p/>
+                 * <p/>
                  * This accessor method returns a reference to the live list,
                  * not a snapshot. Therefore any modification you make to the
                  * returned list will be present inside the JAXB object.
                  * This is why there is not a <CODE>set</CODE> method for the tor property.
-                 * 
-                 * <p>
+                 * <p/>
+                 * <p/>
                  * For example, to add a new item, do as follows:
                  * <pre>
                  *    getTor().add(newItem);
                  * </pre>
-                 * 
-                 * 
-                 * <p>
+                 * <p/>
+                 * <p/>
+                 * <p/>
                  * Objects of the following type(s) are allowed in the list
                  * {@link Spieltag.Spiel.Endergebnis.Tore.Tor }
-                 * 
-                 * 
                  */
                 public List<Spieltag.Spiel.Endergebnis.Tore.Tor> getTor() {
                     if (tor == null) {
@@ -451,9 +413,9 @@ public class Spieltag {
 
                 /**
                  * <p>Java class for anonymous complex type.
-                 * 
+                 * <p/>
                  * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
+                 * <p/>
                  * <pre>
                  * &lt;complexType>
                  *   &lt;complexContent>
@@ -467,14 +429,12 @@ public class Spieltag {
                  *   &lt;/complexContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
-                    "torschuetze",
-                    "mannschaftSchuetze",
-                    "minute"
+                        "torschuetze",
+                        "mannschaftSchuetze",
+                        "minute"
                 })
                 public static class Tor {
 
@@ -487,11 +447,9 @@ public class Spieltag {
 
                     /**
                      * Gets the value of the torschuetze property.
-                     * 
-                     * @return
-                     *     possible object is
-                     *     {@link String }
-                     *     
+                     *
+                     * @return possible object is
+                     *         {@link String }
                      */
                     public String getTorschuetze() {
                         return torschuetze;
@@ -499,11 +457,9 @@ public class Spieltag {
 
                     /**
                      * Sets the value of the torschuetze property.
-                     * 
-                     * @param value
-                     *     allowed object is
-                     *     {@link String }
-                     *     
+                     *
+                     * @param value allowed object is
+                     *              {@link String }
                      */
                     public void setTorschuetze(String value) {
                         this.torschuetze = value;
@@ -511,11 +467,9 @@ public class Spieltag {
 
                     /**
                      * Gets the value of the mannschaftSchuetze property.
-                     * 
-                     * @return
-                     *     possible object is
-                     *     {@link String }
-                     *     
+                     *
+                     * @return possible object is
+                     *         {@link String }
                      */
                     public String getMannschaftSchuetze() {
                         return mannschaftSchuetze;
@@ -523,11 +477,9 @@ public class Spieltag {
 
                     /**
                      * Sets the value of the mannschaftSchuetze property.
-                     * 
-                     * @param value
-                     *     allowed object is
-                     *     {@link String }
-                     *     
+                     *
+                     * @param value allowed object is
+                     *              {@link String }
                      */
                     public void setMannschaftSchuetze(String value) {
                         this.mannschaftSchuetze = value;
@@ -535,7 +487,6 @@ public class Spieltag {
 
                     /**
                      * Gets the value of the minute property.
-                     * 
                      */
                     public int getMinute() {
                         return minute;
@@ -543,7 +494,6 @@ public class Spieltag {
 
                     /**
                      * Sets the value of the minute property.
-                     * 
                      */
                     public void setMinute(int value) {
                         this.minute = value;

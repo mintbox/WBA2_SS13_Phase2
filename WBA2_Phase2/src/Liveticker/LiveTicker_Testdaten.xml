@@ -7,11 +7,11 @@
     </Heimmannschaft>
 
     <Gastmannschaft>
-    	<name>Borussia Dortmund</name>
-	</Gastmannschaft>
+        <name>Borussia Dortmund</name>
+    </Gastmannschaft>
 
-	<Ergebnis>
-		<Tore>
+    <Ergebnis>
+        <Tore>
             <Tor>
                 <Torschuetze>Mario Gomez</Torschuetze>
                 <Mannschaft_Schuetze>FC Bayern Muenchen</Mannschaft_Schuetze>
@@ -32,10 +32,10 @@
                 <Mannschaft_Schuetze>Borussia Dortmund</Mannschaft_Schuetze>
                 <Minute>87</Minute>
             </Tor>
-		</Tore>
-	</Ergebnis>
+        </Tore>
+    </Ergebnis>
 
-	<Kommentare>
+    <Kommentare>
         <Kommentar>
             <Minute>1</Minute>
             <Text>Anpfiff. Das Spiel beginnt!</Text>
@@ -54,12 +54,14 @@
         </Kommentar>
         <Kommentar>
             <Minute>87</Minute>
-            <Text>Tor fuer Dortmund! Das ist die Entscheidung in diesem Spiel. Der BVB wird hier nichts mehr anbrennen lassen.</Text>
+            <Text>Tor fuer Dortmund! Das ist die Entscheidung in diesem Spiel. Der BVB wird hier nichts mehr anbrennen
+                lassen.
+            </Text>
         </Kommentar>
         <Kommentar>
             <Minute>90</Minute>
             <Text>Abpfiff. Der BVB gewinnt hier 3:1 nach einem spannenden Spiel.</Text>
         </Kommentar>
-	</Kommentare>
+    </Kommentare>
 
 </Liveticker>

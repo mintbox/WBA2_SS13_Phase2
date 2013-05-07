@@ -1,21 +1,16 @@
 
-package JAXB;
+package Mannschaft;
 
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyElement;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ * <p/>
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ * <p/>
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -39,13 +34,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "abonnent",
-    "mannschaft"
+        "abonnent",
+        "mannschaft"
 })
 @XmlRootElement(name = "Mannschaften")
 public class Mannschaften {
@@ -57,25 +50,23 @@ public class Mannschaften {
 
     /**
      * Gets the value of the abonnent property.
-     * 
-     * <p>
+     * <p/>
+     * <p/>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the abonnent property.
-     * 
-     * <p>
+     * <p/>
+     * <p/>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getAbonnent().add(newItem);
      * </pre>
-     * 
-     * 
-     * <p>
+     * <p/>
+     * <p/>
+     * <p/>
      * Objects of the following type(s) are allowed in the list
      * {@link String }
-     * 
-     * 
      */
     public List<String> getAbonnent() {
         if (abonnent == null) {
@@ -86,25 +77,23 @@ public class Mannschaften {
 
     /**
      * Gets the value of the mannschaft property.
-     * 
-     * <p>
+     * <p/>
+     * <p/>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the mannschaft property.
-     * 
-     * <p>
+     * <p/>
+     * <p/>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getMannschaft().add(newItem);
      * </pre>
-     * 
-     * 
-     * <p>
+     * <p/>
+     * <p/>
+     * <p/>
      * Objects of the following type(s) are allowed in the list
      * {@link Mannschaften.Mannschaft }
-     * 
-     * 
      */
     public List<Mannschaften.Mannschaft> getMannschaft() {
         if (mannschaft == null) {
@@ -116,9 +105,9 @@ public class Mannschaften {
 
     /**
      * <p>Java class for anonymous complex type.
-     * 
+     * <p/>
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
+     * <p/>
      * <pre>
      * &lt;complexType>
      *   &lt;complexContent>
@@ -131,13 +120,11 @@ public class Mannschaften {
      *   &lt;/complexContent>
      * &lt;/complexType>
      * </pre>
-     * 
-     * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "mannschaftsname",
-        "any"
+            "mannschaftsname",
+            "any"
     })
     public static class Mannschaft {
 
@@ -148,11 +135,9 @@ public class Mannschaften {
 
         /**
          * Gets the value of the mannschaftsname property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
+         *
+         * @return possible object is
+         *         {@link String }
          */
         public String getMannschaftsname() {
             return mannschaftsname;
@@ -160,11 +145,9 @@ public class Mannschaften {
 
         /**
          * Sets the value of the mannschaftsname property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
+         *
+         * @param value allowed object is
+         *              {@link String }
          */
         public void setMannschaftsname(String value) {
             this.mannschaftsname = value;
@@ -172,11 +155,9 @@ public class Mannschaften {
 
         /**
          * Gets the value of the any property.
-         * 
-         * @return
-         *     possible object is
-         *     {@link Object }
-         *     
+         *
+         * @return possible object is
+         *         {@link Object }
          */
         public Object getAny() {
             return any;
@@ -184,11 +165,9 @@ public class Mannschaften {
 
         /**
          * Sets the value of the any property.
-         * 
-         * @param value
-         *     allowed object is
-         *     {@link Object }
-         *     
+         *
+         * @param value allowed object is
+         *              {@link Object }
          */
         public void setAny(Object value) {
             this.any = value;
