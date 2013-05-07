@@ -8,6 +8,13 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Mannschaftsname" type="xs:string"/>
+                            <xs:any>
+                                <xs:annotation>
+                                    <xs:documentation>
+                                        <xs:attribute name="ID" type="xs:ID"/>
+                                    </xs:documentation>
+                                </xs:annotation>
+                            </xs:any>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>

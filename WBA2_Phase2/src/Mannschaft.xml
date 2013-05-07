@@ -3,57 +3,57 @@
 <Mannschaften>
     <Abonnent></Abonnent>
     <Mannschaft>
-        <Mannschaftsname>1899 Hoffenheim</Mannschaftsname>
+        <Mannschaftsname id="1">1899 Hoffenheim</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>1.FC Nuernberg</Mannschaftsname>
+        <Mannschaftsname id="2">1.FC Nuernberg</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>1.FSV Mainz 05</Mannschaftsname>
+        <Mannschaftsname id="3">1.FSV Mainz 05</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>Bayer 04 Leverkusen</Mannschaftsname>
+        <Mannschaftsname id="4">Bayer 04 Leverkusen</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>Borussia Dortmund</Mannschaftsname>
+        <Mannschaftsname id="5">Borussia Dortmund</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>Borussia Mönchengladbach</Mannschaftsname>
+        <Mannschaftsname id="6">Borussia Moenchengladbach</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>Eintracht Frankfurt</Mannschaftsname>
+        <Mannschaftsname id="7">Eintracht Frankfurt</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>FC Augsburg</Mannschaftsname>
+        <Mannschaftsname id="8">FC Augsburg</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>FC Bayern Muenchen</Mannschaftsname>
+        <Mannschaftsname id="9">FC Bayern Muenchen</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>FC Schalke 04</Mannschaftsname>
+        <Mannschaftsname id="10">FC Schalke 04</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>Fortuna Duesseldorf</Mannschaftsname>
+        <Mannschaftsname id="11">Fortuna Duesseldorf</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>Hamburger SV</Mannschaftsname>
+        <Mannschaftsname id="12">Hamburger SV</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>Hannover 96</Mannschaftsname>
+        <Mannschaftsname id="13">Hannover 96</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>Sport-Club Freiburg</Mannschaftsname>
+        <Mannschaftsname id="14">Sport-Club Freiburg</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>SpVgg Greuther Fürth</Mannschaftsname>
+        <Mannschaftsname id="15">SpVgg Greuther Fürth</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>SV Werder Bremen</Mannschaftsname>
+        <Mannschaftsname id="16">SV Werder Bremen</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>VFB Stuttgart</Mannschaftsname>
+        <Mannschaftsname id="17">VFB Stuttgart</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname>VFL Wolfsburg</Mannschaftsname>
+        <Mannschaftsname id="18">VFL Wolfsburg</Mannschaftsname>
     </Mannschaft>
 </Mannschaften>

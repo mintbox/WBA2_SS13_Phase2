@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAnyElement;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -27,6 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                 &lt;sequence>
  *                   &lt;element name="Mannschaftsname" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                   &lt;any/>
  *                 &lt;/sequence>
  *               &lt;/restriction>
  *             &lt;/complexContent>
@@ -123,6 +125,7 @@ public class Mannschaften {
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *       &lt;sequence>
      *         &lt;element name="Mannschaftsname" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *         &lt;any/>
      *       &lt;/sequence>
      *     &lt;/restriction>
      *   &lt;/complexContent>
@@ -133,12 +136,15 @@ public class Mannschaften {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "mannschaftsname"
+        "mannschaftsname",
+        "any"
     })
     public static class Mannschaft {
 
         @XmlElement(name = "Mannschaftsname", required = true)
         protected String mannschaftsname;
+        @XmlAnyElement(lax = true)
+        protected Object any;
 
         /**
          * Gets the value of the mannschaftsname property.
@@ -162,6 +168,30 @@ public class Mannschaften {
          */
         public void setMannschaftsname(String value) {
             this.mannschaftsname = value;
+        }
+
+        /**
+         * Gets the value of the any property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link Object }
+         *     
+         */
+        public Object getAny() {
+            return any;
+        }
+
+        /**
+         * Sets the value of the any property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link Object }
+         *     
+         */
+        public void setAny(Object value) {
+            this.any = value;
         }
 
     }

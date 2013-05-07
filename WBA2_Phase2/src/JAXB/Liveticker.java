@@ -22,34 +22,37 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="Heimmannschaft" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="Gastmannschaft" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="Ergebnis">
+ *         &lt;element name="Endergebnis">
  *           &lt;complexType>
  *             &lt;complexContent>
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                 &lt;sequence>
- *                   &lt;element name="Tore">
- *                     &lt;complexType>
- *                       &lt;complexContent>
- *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                           &lt;sequence>
- *                             &lt;element name="Tor" maxOccurs="unbounded" minOccurs="0">
- *                               &lt;complexType>
- *                                 &lt;complexContent>
- *                                   &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                                     &lt;sequence>
- *                                       &lt;element name="Torschuetze" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="Mannschaft_Schuetze" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                                       &lt;element name="Minute" type="{http://www.w3.org/2001/XMLSchema}int"/>
- *                                     &lt;/sequence>
- *                                   &lt;/restriction>
- *                                 &lt;/complexContent>
- *                               &lt;/complexType>
- *                             &lt;/element>
- *                           &lt;/sequence>
- *                         &lt;/restriction>
- *                       &lt;/complexContent>
- *                     &lt;/complexType>
- *                   &lt;/element>
+ *                   &lt;element name="Ergebnis" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                   &lt;sequence>
+ *                     &lt;element name="Tore">
+ *                       &lt;complexType>
+ *                         &lt;complexContent>
+ *                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                             &lt;sequence>
+ *                               &lt;element name="Tor" maxOccurs="unbounded" minOccurs="0">
+ *                                 &lt;complexType>
+ *                                   &lt;complexContent>
+ *                                     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                                       &lt;sequence>
+ *                                         &lt;element name="Torschuetze" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                                         &lt;element name="Mannschaft_Schuetze" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                                         &lt;element name="Minute" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *                                       &lt;/sequence>
+ *                                     &lt;/restriction>
+ *                                   &lt;/complexContent>
+ *                                 &lt;/complexType>
+ *                               &lt;/element>
+ *                             &lt;/sequence>
+ *                           &lt;/restriction>
+ *                         &lt;/complexContent>
+ *                       &lt;/complexType>
+ *                     &lt;/element>
+ *                   &lt;/sequence>
  *                 &lt;/sequence>
  *               &lt;/restriction>
  *             &lt;/complexContent>
@@ -89,7 +92,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "heimmannschaft",
     "gastmannschaft",
-    "ergebnis",
+    "endergebnis",
     "kommentare"
 })
 @XmlRootElement(name = "Liveticker")
@@ -99,8 +102,8 @@ public class Liveticker {
     protected String heimmannschaft;
     @XmlElement(name = "Gastmannschaft", required = true)
     protected String gastmannschaft;
-    @XmlElement(name = "Ergebnis", required = true)
-    protected Liveticker.Ergebnis ergebnis;
+    @XmlElement(name = "Endergebnis", required = true)
+    protected Liveticker.Endergebnis endergebnis;
     @XmlElement(name = "Kommentare", required = true)
     protected Liveticker.Kommentare kommentare;
 
@@ -153,27 +156,27 @@ public class Liveticker {
     }
 
     /**
-     * Gets the value of the ergebnis property.
+     * Gets the value of the endergebnis property.
      * 
      * @return
      *     possible object is
-     *     {@link Liveticker.Ergebnis }
+     *     {@link Liveticker.Endergebnis }
      *     
      */
-    public Liveticker.Ergebnis getErgebnis() {
-        return ergebnis;
+    public Liveticker.Endergebnis getEndergebnis() {
+        return endergebnis;
     }
 
     /**
-     * Sets the value of the ergebnis property.
+     * Sets the value of the endergebnis property.
      * 
      * @param value
      *     allowed object is
-     *     {@link Liveticker.Ergebnis }
+     *     {@link Liveticker.Endergebnis }
      *     
      */
-    public void setErgebnis(Liveticker.Ergebnis value) {
-        this.ergebnis = value;
+    public void setEndergebnis(Liveticker.Endergebnis value) {
+        this.endergebnis = value;
     }
 
     /**
@@ -211,29 +214,32 @@ public class Liveticker {
      *   &lt;complexContent>
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *       &lt;sequence>
-     *         &lt;element name="Tore">
-     *           &lt;complexType>
-     *             &lt;complexContent>
-     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                 &lt;sequence>
-     *                   &lt;element name="Tor" maxOccurs="unbounded" minOccurs="0">
-     *                     &lt;complexType>
-     *                       &lt;complexContent>
-     *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                           &lt;sequence>
-     *                             &lt;element name="Torschuetze" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="Mannschaft_Schuetze" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                             &lt;element name="Minute" type="{http://www.w3.org/2001/XMLSchema}int"/>
-     *                           &lt;/sequence>
-     *                         &lt;/restriction>
-     *                       &lt;/complexContent>
-     *                     &lt;/complexType>
-     *                   &lt;/element>
-     *                 &lt;/sequence>
-     *               &lt;/restriction>
-     *             &lt;/complexContent>
-     *           &lt;/complexType>
-     *         &lt;/element>
+     *         &lt;element name="Ergebnis" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *         &lt;sequence>
+     *           &lt;element name="Tore">
+     *             &lt;complexType>
+     *               &lt;complexContent>
+     *                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *                   &lt;sequence>
+     *                     &lt;element name="Tor" maxOccurs="unbounded" minOccurs="0">
+     *                       &lt;complexType>
+     *                         &lt;complexContent>
+     *                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *                             &lt;sequence>
+     *                               &lt;element name="Torschuetze" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *                               &lt;element name="Mannschaft_Schuetze" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *                               &lt;element name="Minute" type="{http://www.w3.org/2001/XMLSchema}int"/>
+     *                             &lt;/sequence>
+     *                           &lt;/restriction>
+     *                         &lt;/complexContent>
+     *                       &lt;/complexType>
+     *                     &lt;/element>
+     *                   &lt;/sequence>
+     *                 &lt;/restriction>
+     *               &lt;/complexContent>
+     *             &lt;/complexType>
+     *           &lt;/element>
+     *         &lt;/sequence>
      *       &lt;/sequence>
      *     &lt;/restriction>
      *   &lt;/complexContent>
@@ -244,22 +250,49 @@ public class Liveticker {
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
+        "ergebnis",
         "tore"
     })
-    public static class Ergebnis {
+    public static class Endergebnis {
 
+        @XmlElement(name = "Ergebnis", required = true)
+        protected String ergebnis;
         @XmlElement(name = "Tore", required = true)
-        protected Liveticker.Ergebnis.Tore tore;
+        protected Liveticker.Endergebnis.Tore tore;
+
+        /**
+         * Gets the value of the ergebnis property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getErgebnis() {
+            return ergebnis;
+        }
+
+        /**
+         * Sets the value of the ergebnis property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setErgebnis(String value) {
+            this.ergebnis = value;
+        }
 
         /**
          * Gets the value of the tore property.
          * 
          * @return
          *     possible object is
-         *     {@link Liveticker.Ergebnis.Tore }
+         *     {@link Liveticker.Endergebnis.Tore }
          *     
          */
-        public Liveticker.Ergebnis.Tore getTore() {
+        public Liveticker.Endergebnis.Tore getTore() {
             return tore;
         }
 
@@ -268,10 +301,10 @@ public class Liveticker {
          * 
          * @param value
          *     allowed object is
-         *     {@link Liveticker.Ergebnis.Tore }
+         *     {@link Liveticker.Endergebnis.Tore }
          *     
          */
-        public void setTore(Liveticker.Ergebnis.Tore value) {
+        public void setTore(Liveticker.Endergebnis.Tore value) {
             this.tore = value;
         }
 
@@ -314,7 +347,7 @@ public class Liveticker {
         public static class Tore {
 
             @XmlElement(name = "Tor")
-            protected List<Liveticker.Ergebnis.Tore.Tor> tor;
+            protected List<Liveticker.Endergebnis.Tore.Tor> tor;
 
             /**
              * Gets the value of the tor property.
@@ -334,13 +367,13 @@ public class Liveticker {
              * 
              * <p>
              * Objects of the following type(s) are allowed in the list
-             * {@link Liveticker.Ergebnis.Tore.Tor }
+             * {@link Liveticker.Endergebnis.Tore.Tor }
              * 
              * 
              */
-            public List<Liveticker.Ergebnis.Tore.Tor> getTor() {
+            public List<Liveticker.Endergebnis.Tore.Tor> getTor() {
                 if (tor == null) {
-                    tor = new ArrayList<Liveticker.Ergebnis.Tore.Tor>();
+                    tor = new ArrayList<Liveticker.Endergebnis.Tore.Tor>();
                 }
                 return this.tor;
             }

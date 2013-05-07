@@ -19,7 +19,6 @@
                                                         <xs:element name="Torschuetze" type="xs:string"/>
                                                         <xs:element name="Mannschaft_Schuetze" type="xs:string"/>
                                                         <xs:element name="Minute" type="xs:int"/>
-                                                        <!-- The 'Minute' element has an invalid value according to its data type. -->
                                                     </xs:sequence>
                                                 </xs:complexType>
                                             </xs:element>
