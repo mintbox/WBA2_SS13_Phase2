@@ -4,8 +4,22 @@
         <xs:complexType>
             <xs:sequence>
                 <!--ID HINZUFUEGEN-->
-                <xs:element name="Heimmannschaft" type="xs:string"/>
-                <xs:element name="Gastmannschaft" type="xs:string"/>
+                <xs:element name="Heimmannschaft">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="mann_id" type="xs:ID"/>
+                            <xs:element name="name" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Gastmannschaft">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="mann_id" type="xs:ID"/>
+                            <xs:element name="name" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
                 <xs:element name="Endergebnis">
                     <xs:complexType>
                         <xs:sequence>
@@ -44,6 +58,8 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+
+
             </xs:sequence>
         </xs:complexType>
     </xs:element>

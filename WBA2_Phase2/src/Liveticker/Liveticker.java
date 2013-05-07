@@ -1,23 +1,53 @@
 
 package Liveticker;
 
-import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlID;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
  * <p>Java class for anonymous complex type.
- * <p/>
+ * 
  * <p>The following schema fragment specifies the expected content contained within this class.
- * <p/>
+ * 
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Heimmannschaft" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="Gastmannschaft" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="Heimmannschaft">
+ *           &lt;complexType>
+ *             &lt;complexContent>
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 &lt;sequence>
+ *                   &lt;element name="mann_id" type="{http://www.w3.org/2001/XMLSchema}ID"/>
+ *                   &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                 &lt;/sequence>
+ *               &lt;/restriction>
+ *             &lt;/complexContent>
+ *           &lt;/complexType>
+ *         &lt;/element>
+ *         &lt;element name="Gastmannschaft">
+ *           &lt;complexType>
+ *             &lt;complexContent>
+ *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                 &lt;sequence>
+ *                   &lt;element name="mann_id" type="{http://www.w3.org/2001/XMLSchema}ID"/>
+ *                   &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                 &lt;/sequence>
+ *               &lt;/restriction>
+ *             &lt;/complexContent>
+ *           &lt;/complexType>
+ *         &lt;/element>
  *         &lt;element name="Endergebnis">
  *           &lt;complexType>
  *             &lt;complexContent>
@@ -81,21 +111,23 @@ import java.util.List;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-        "heimmannschaft",
-        "gastmannschaft",
-        "endergebnis",
-        "kommentare"
+    "heimmannschaft",
+    "gastmannschaft",
+    "endergebnis",
+    "kommentare"
 })
 @XmlRootElement(name = "Liveticker")
 public class Liveticker {
 
     @XmlElement(name = "Heimmannschaft", required = true)
-    protected String heimmannschaft;
+    protected Liveticker.Heimmannschaft heimmannschaft;
     @XmlElement(name = "Gastmannschaft", required = true)
-    protected String gastmannschaft;
+    protected Liveticker.Gastmannschaft gastmannschaft;
     @XmlElement(name = "Endergebnis", required = true)
     protected Liveticker.Endergebnis endergebnis;
     @XmlElement(name = "Kommentare", required = true)
@@ -103,49 +135,59 @@ public class Liveticker {
 
     /**
      * Gets the value of the heimmannschaft property.
-     *
-     * @return possible object is
-     *         {@link String }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Liveticker.Heimmannschaft }
+     *     
      */
-    public String getHeimmannschaft() {
+    public Liveticker.Heimmannschaft getHeimmannschaft() {
         return heimmannschaft;
     }
 
     /**
      * Sets the value of the heimmannschaft property.
-     *
-     * @param value allowed object is
-     *              {@link String }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Liveticker.Heimmannschaft }
+     *     
      */
-    public void setHeimmannschaft(String value) {
+    public void setHeimmannschaft(Liveticker.Heimmannschaft value) {
         this.heimmannschaft = value;
     }
 
     /**
      * Gets the value of the gastmannschaft property.
-     *
-     * @return possible object is
-     *         {@link String }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Liveticker.Gastmannschaft }
+     *     
      */
-    public String getGastmannschaft() {
+    public Liveticker.Gastmannschaft getGastmannschaft() {
         return gastmannschaft;
     }
 
     /**
      * Sets the value of the gastmannschaft property.
-     *
-     * @param value allowed object is
-     *              {@link String }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Liveticker.Gastmannschaft }
+     *     
      */
-    public void setGastmannschaft(String value) {
+    public void setGastmannschaft(Liveticker.Gastmannschaft value) {
         this.gastmannschaft = value;
     }
 
     /**
      * Gets the value of the endergebnis property.
-     *
-     * @return possible object is
-     *         {@link Liveticker.Endergebnis }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Liveticker.Endergebnis }
+     *     
      */
     public Liveticker.Endergebnis getEndergebnis() {
         return endergebnis;
@@ -153,9 +195,11 @@ public class Liveticker {
 
     /**
      * Sets the value of the endergebnis property.
-     *
-     * @param value allowed object is
-     *              {@link Liveticker.Endergebnis }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Liveticker.Endergebnis }
+     *     
      */
     public void setEndergebnis(Liveticker.Endergebnis value) {
         this.endergebnis = value;
@@ -163,9 +207,11 @@ public class Liveticker {
 
     /**
      * Gets the value of the kommentare property.
-     *
-     * @return possible object is
-     *         {@link Liveticker.Kommentare }
+     * 
+     * @return
+     *     possible object is
+     *     {@link Liveticker.Kommentare }
+     *     
      */
     public Liveticker.Kommentare getKommentare() {
         return kommentare;
@@ -173,9 +219,11 @@ public class Liveticker {
 
     /**
      * Sets the value of the kommentare property.
-     *
-     * @param value allowed object is
-     *              {@link Liveticker.Kommentare }
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Liveticker.Kommentare }
+     *     
      */
     public void setKommentare(Liveticker.Kommentare value) {
         this.kommentare = value;
@@ -184,9 +232,9 @@ public class Liveticker {
 
     /**
      * <p>Java class for anonymous complex type.
-     * <p/>
+     * 
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p/>
+     * 
      * <pre>
      * &lt;complexType>
      *   &lt;complexContent>
@@ -223,11 +271,13 @@ public class Liveticker {
      *   &lt;/complexContent>
      * &lt;/complexType>
      * </pre>
+     * 
+     * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-            "ergebnis",
-            "tore"
+        "ergebnis",
+        "tore"
     })
     public static class Endergebnis {
 
@@ -238,9 +288,11 @@ public class Liveticker {
 
         /**
          * Gets the value of the ergebnis property.
-         *
-         * @return possible object is
-         *         {@link String }
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
          */
         public String getErgebnis() {
             return ergebnis;
@@ -248,9 +300,11 @@ public class Liveticker {
 
         /**
          * Sets the value of the ergebnis property.
-         *
-         * @param value allowed object is
-         *              {@link String }
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
          */
         public void setErgebnis(String value) {
             this.ergebnis = value;
@@ -258,9 +312,11 @@ public class Liveticker {
 
         /**
          * Gets the value of the tore property.
-         *
-         * @return possible object is
-         *         {@link Liveticker.Endergebnis.Tore }
+         * 
+         * @return
+         *     possible object is
+         *     {@link Liveticker.Endergebnis.Tore }
+         *     
          */
         public Liveticker.Endergebnis.Tore getTore() {
             return tore;
@@ -268,9 +324,11 @@ public class Liveticker {
 
         /**
          * Sets the value of the tore property.
-         *
-         * @param value allowed object is
-         *              {@link Liveticker.Endergebnis.Tore }
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link Liveticker.Endergebnis.Tore }
+         *     
          */
         public void setTore(Liveticker.Endergebnis.Tore value) {
             this.tore = value;
@@ -279,9 +337,9 @@ public class Liveticker {
 
         /**
          * <p>Java class for anonymous complex type.
-         * <p/>
+         * 
          * <p>The following schema fragment specifies the expected content contained within this class.
-         * <p/>
+         * 
          * <pre>
          * &lt;complexType>
          *   &lt;complexContent>
@@ -305,10 +363,12 @@ public class Liveticker {
          *   &lt;/complexContent>
          * &lt;/complexType>
          * </pre>
+         * 
+         * 
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
-                "tor"
+            "tor"
         })
         public static class Tore {
 
@@ -317,23 +377,25 @@ public class Liveticker {
 
             /**
              * Gets the value of the tor property.
-             * <p/>
-             * <p/>
+             * 
+             * <p>
              * This accessor method returns a reference to the live list,
              * not a snapshot. Therefore any modification you make to the
              * returned list will be present inside the JAXB object.
              * This is why there is not a <CODE>set</CODE> method for the tor property.
-             * <p/>
-             * <p/>
+             * 
+             * <p>
              * For example, to add a new item, do as follows:
              * <pre>
              *    getTor().add(newItem);
              * </pre>
-             * <p/>
-             * <p/>
-             * <p/>
+             * 
+             * 
+             * <p>
              * Objects of the following type(s) are allowed in the list
              * {@link Liveticker.Endergebnis.Tore.Tor }
+             * 
+             * 
              */
             public List<Liveticker.Endergebnis.Tore.Tor> getTor() {
                 if (tor == null) {
@@ -345,9 +407,9 @@ public class Liveticker {
 
             /**
              * <p>Java class for anonymous complex type.
-             * <p/>
+             * 
              * <p>The following schema fragment specifies the expected content contained within this class.
-             * <p/>
+             * 
              * <pre>
              * &lt;complexType>
              *   &lt;complexContent>
@@ -361,12 +423,14 @@ public class Liveticker {
              *   &lt;/complexContent>
              * &lt;/complexType>
              * </pre>
+             * 
+             * 
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "", propOrder = {
-                    "torschuetze",
-                    "mannschaftSchuetze",
-                    "minute"
+                "torschuetze",
+                "mannschaftSchuetze",
+                "minute"
             })
             public static class Tor {
 
@@ -379,9 +443,11 @@ public class Liveticker {
 
                 /**
                  * Gets the value of the torschuetze property.
-                 *
-                 * @return possible object is
-                 *         {@link String }
+                 * 
+                 * @return
+                 *     possible object is
+                 *     {@link String }
+                 *     
                  */
                 public String getTorschuetze() {
                     return torschuetze;
@@ -389,9 +455,11 @@ public class Liveticker {
 
                 /**
                  * Sets the value of the torschuetze property.
-                 *
-                 * @param value allowed object is
-                 *              {@link String }
+                 * 
+                 * @param value
+                 *     allowed object is
+                 *     {@link String }
+                 *     
                  */
                 public void setTorschuetze(String value) {
                     this.torschuetze = value;
@@ -399,9 +467,11 @@ public class Liveticker {
 
                 /**
                  * Gets the value of the mannschaftSchuetze property.
-                 *
-                 * @return possible object is
-                 *         {@link String }
+                 * 
+                 * @return
+                 *     possible object is
+                 *     {@link String }
+                 *     
                  */
                 public String getMannschaftSchuetze() {
                     return mannschaftSchuetze;
@@ -409,9 +479,11 @@ public class Liveticker {
 
                 /**
                  * Sets the value of the mannschaftSchuetze property.
-                 *
-                 * @param value allowed object is
-                 *              {@link String }
+                 * 
+                 * @param value
+                 *     allowed object is
+                 *     {@link String }
+                 *     
                  */
                 public void setMannschaftSchuetze(String value) {
                     this.mannschaftSchuetze = value;
@@ -419,6 +491,7 @@ public class Liveticker {
 
                 /**
                  * Gets the value of the minute property.
+                 * 
                  */
                 public int getMinute() {
                     return minute;
@@ -426,6 +499,7 @@ public class Liveticker {
 
                 /**
                  * Sets the value of the minute property.
+                 * 
                  */
                 public void setMinute(int value) {
                     this.minute = value;
@@ -440,9 +514,181 @@ public class Liveticker {
 
     /**
      * <p>Java class for anonymous complex type.
-     * <p/>
+     * 
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * <p/>
+     * 
+     * <pre>
+     * &lt;complexType>
+     *   &lt;complexContent>
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       &lt;sequence>
+     *         &lt;element name="mann_id" type="{http://www.w3.org/2001/XMLSchema}ID"/>
+     *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *       &lt;/sequence>
+     *     &lt;/restriction>
+     *   &lt;/complexContent>
+     * &lt;/complexType>
+     * </pre>
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "mannId",
+        "name"
+    })
+    public static class Gastmannschaft {
+
+        @XmlElement(name = "mann_id", required = true)
+        @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+        @XmlID
+        @XmlSchemaType(name = "ID")
+        protected String mannId;
+        @XmlElement(required = true)
+        protected String name;
+
+        /**
+         * Gets the value of the mannId property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getMannId() {
+            return mannId;
+        }
+
+        /**
+         * Sets the value of the mannId property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setMannId(String value) {
+            this.mannId = value;
+        }
+
+        /**
+         * Gets the value of the name property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getName() {
+            return name;
+        }
+
+        /**
+         * Sets the value of the name property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setName(String value) {
+            this.name = value;
+        }
+
+    }
+
+
+    /**
+     * <p>Java class for anonymous complex type.
+     * 
+     * <p>The following schema fragment specifies the expected content contained within this class.
+     * 
+     * <pre>
+     * &lt;complexType>
+     *   &lt;complexContent>
+     *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *       &lt;sequence>
+     *         &lt;element name="mann_id" type="{http://www.w3.org/2001/XMLSchema}ID"/>
+     *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *       &lt;/sequence>
+     *     &lt;/restriction>
+     *   &lt;/complexContent>
+     * &lt;/complexType>
+     * </pre>
+     * 
+     * 
+     */
+    @XmlAccessorType(XmlAccessType.FIELD)
+    @XmlType(name = "", propOrder = {
+        "mannId",
+        "name"
+    })
+    public static class Heimmannschaft {
+
+        @XmlElement(name = "mann_id", required = true)
+        @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+        @XmlID
+        @XmlSchemaType(name = "ID")
+        protected String mannId;
+        @XmlElement(required = true)
+        protected String name;
+
+        /**
+         * Gets the value of the mannId property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getMannId() {
+            return mannId;
+        }
+
+        /**
+         * Sets the value of the mannId property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setMannId(String value) {
+            this.mannId = value;
+        }
+
+        /**
+         * Gets the value of the name property.
+         * 
+         * @return
+         *     possible object is
+         *     {@link String }
+         *     
+         */
+        public String getName() {
+            return name;
+        }
+
+        /**
+         * Sets the value of the name property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link String }
+         *     
+         */
+        public void setName(String value) {
+            this.name = value;
+        }
+
+    }
+
+
+    /**
+     * <p>Java class for anonymous complex type.
+     * 
+     * <p>The following schema fragment specifies the expected content contained within this class.
+     * 
      * <pre>
      * &lt;complexType>
      *   &lt;complexContent>
@@ -465,10 +711,12 @@ public class Liveticker {
      *   &lt;/complexContent>
      * &lt;/complexType>
      * </pre>
+     * 
+     * 
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-            "kommentar"
+        "kommentar"
     })
     public static class Kommentare {
 
@@ -477,23 +725,25 @@ public class Liveticker {
 
         /**
          * Gets the value of the kommentar property.
-         * <p/>
-         * <p/>
+         * 
+         * <p>
          * This accessor method returns a reference to the live list,
          * not a snapshot. Therefore any modification you make to the
          * returned list will be present inside the JAXB object.
          * This is why there is not a <CODE>set</CODE> method for the kommentar property.
-         * <p/>
-         * <p/>
+         * 
+         * <p>
          * For example, to add a new item, do as follows:
          * <pre>
          *    getKommentar().add(newItem);
          * </pre>
-         * <p/>
-         * <p/>
-         * <p/>
+         * 
+         * 
+         * <p>
          * Objects of the following type(s) are allowed in the list
          * {@link Liveticker.Kommentare.Kommentar }
+         * 
+         * 
          */
         public List<Liveticker.Kommentare.Kommentar> getKommentar() {
             if (kommentar == null) {
@@ -505,9 +755,9 @@ public class Liveticker {
 
         /**
          * <p>Java class for anonymous complex type.
-         * <p/>
+         * 
          * <p>The following schema fragment specifies the expected content contained within this class.
-         * <p/>
+         * 
          * <pre>
          * &lt;complexType>
          *   &lt;complexContent>
@@ -520,11 +770,13 @@ public class Liveticker {
          *   &lt;/complexContent>
          * &lt;/complexType>
          * </pre>
+         * 
+         * 
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
-                "minute",
-                "text"
+            "minute",
+            "text"
         })
         public static class Kommentar {
 
@@ -535,6 +787,7 @@ public class Liveticker {
 
             /**
              * Gets the value of the minute property.
+             * 
              */
             public int getMinute() {
                 return minute;
@@ -542,6 +795,7 @@ public class Liveticker {
 
             /**
              * Sets the value of the minute property.
+             * 
              */
             public void setMinute(int value) {
                 this.minute = value;
@@ -549,9 +803,11 @@ public class Liveticker {
 
             /**
              * Gets the value of the text property.
-             *
-             * @return possible object is
-             *         {@link String }
+             * 
+             * @return
+             *     possible object is
+             *     {@link String }
+             *     
              */
             public String getText() {
                 return text;
@@ -559,9 +815,11 @@ public class Liveticker {
 
             /**
              * Sets the value of the text property.
-             *
-             * @param value allowed object is
-             *              {@link String }
+             * 
+             * @param value
+             *     allowed object is
+             *     {@link String }
+             *     
              */
             public void setText(String value) {
                 this.text = value;
