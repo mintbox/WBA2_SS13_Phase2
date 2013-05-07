@@ -3,7 +3,7 @@
     <xs:element name="Liveticker">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Ticker" minOccurs="9" maxOccurs="9">
+                <xs:element name="Spiel" minOccurs="9" maxOccurs="9">
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Heimmannschaft">
