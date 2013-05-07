@@ -2,32 +2,36 @@
 
 <Liveticker>
 
-    <Heimmannschaft>
-        <mann_id></mann_id>
-        <name></name>
-    </Heimmannschaft>
+    <Spiel>
 
-    <Gastmannschaft>
-        <mann_id></mann_id>
-        <name></name>
-    </Gastmannschaft>
+        <Heimmannschaft>
+            <mann_id></mann_id>
+            <name></name>
+        </Heimmannschaft>
 
-    <Endergebnis>
-        <Ergebnis></Ergebnis>
-        <Tore>
-            <Tor>
-                <Torschuetze></Torschuetze>
-                <Mannschaft_Schuetze></Mannschaft_Schuetze>
+        <Gastmannschaft>
+            <mann_id></mann_id>
+            <name></name>
+        </Gastmannschaft>
+
+        <Endergebnis>
+            <Ergebnis></Ergebnis>
+            <Tore>
+                <Tor>
+                    <Torschuetze></Torschuetze>
+                    <Mannschaft_Schuetze></Mannschaft_Schuetze>
+                    <Minute></Minute>
+                </Tor>
+            </Tore>
+        </Endergebnis>
+
+        <Kommentare>
+            <Kommentar>
                 <Minute></Minute>
-            </Tor>
-        </Tore>
-    </Endergebnis>
+                <Text></Text>
+            </Kommentar>
+        </Kommentare>
 
-    <Kommentare>
-        <Kommentar>
-            <Minute></Minute>
-            <Text></Text>
-        </Kommentar>
-    </Kommentare>
+    </Spiel>
 
 </Liveticker>

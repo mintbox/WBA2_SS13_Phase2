@@ -3,63 +3,67 @@
     <xs:element name="Liveticker">
         <xs:complexType>
             <xs:sequence>
-                <!--ID HINZUFUEGEN-->
-                <xs:element name="Heimmannschaft">
+                <xs:element name="Ticker" minOccurs="9" maxOccurs="9">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="mann_id" type="xs:ID"/>
-                            <xs:element name="name" type="xs:string"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="Gastmannschaft">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="mann_id" type="xs:ID"/>
-                            <xs:element name="name" type="xs:string"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="Endergebnis">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Ergebnis" type="xs:string"/>
-                            <xs:sequence>
-                                <xs:element name="Tore">
-                                    <xs:complexType>
+                            <xs:element name="Heimmannschaft">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="mann_id" type="xs:ID"/>
+                                        <xs:element name="name" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Gastmannschaft">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="mann_id" type="xs:ID"/>
+                                        <xs:element name="name" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Endergebnis">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Ergebnis" type="xs:string"/>
                                         <xs:sequence>
-                                            <xs:element name="Tor" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:element name="Tore">
                                                 <xs:complexType>
                                                     <xs:sequence>
-                                                        <xs:element name="Torschuetze" type="xs:string"/>
-                                                        <xs:element name="Mannschaft_Schuetze" type="xs:string"/>
-                                                        <xs:element name="Minute" type="xs:int"/>
+                                                        <xs:element name="Tor" minOccurs="0" maxOccurs="unbounded">
+                                                            <xs:complexType>
+                                                                <xs:sequence>
+                                                                    <xs:element name="Torschuetze" type="xs:string"/>
+                                                                    <xs:element name="Mannschaft_Schuetze"
+                                                                                type="xs:string"/>
+                                                                    <xs:element name="Minute" type="xs:int"/>
+                                                                </xs:sequence>
+                                                            </xs:complexType>
+                                                        </xs:element>
                                                     </xs:sequence>
                                                 </xs:complexType>
                                             </xs:element>
                                         </xs:sequence>
-                                    </xs:complexType>
-                                </xs:element>
-                            </xs:sequence>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="Kommentare">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="Kommentar" minOccurs="0" maxOccurs="unbounded">
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Kommentare">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="Minute" type="xs:int"/>
-                                        <xs:element name="Text" type="xs:string"/>
+                                        <xs:element name="Kommentar" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Minute" type="xs:int"/>
+                                                    <xs:element name="Text" type="xs:string"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-
-
             </xs:sequence>
         </xs:complexType>
     </xs:element>
