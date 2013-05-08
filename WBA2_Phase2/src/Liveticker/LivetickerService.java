@@ -33,7 +33,15 @@ public class LivetickerService {
             int heimId = Integer.parseInt(liveticker.getSpiel().get(i).getHeimmannschaft().getMannId());
             int gastId = Integer.parseInt(liveticker.getSpiel().get(i).getGastmannschaft().getMannId());
             if (heimId == (team) || gastId == team) {
-                System.out.println("hurra");
+                System.out.println("Heimmannschaft: " + liveticker.getSpiel().get(i).getHeimmannschaft());
+                System.out.println("Gastmannschaft: " + liveticker.getSpiel().get(i).getGastmannschaft());
+
+                for (int j = 0; j < liveticker.getSpiel().size(); j++) {
+                    System.out.println(liveticker.getSpiel().get(i).Endergebnis.Tore);
+
+                }
+
+
                 test = 1;
             } else
                 i++;
