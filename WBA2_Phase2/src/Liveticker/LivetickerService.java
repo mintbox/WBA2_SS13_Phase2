@@ -17,31 +17,38 @@ import java.io.IOException;
  * To change this template use File | Settings | File Templates.
  */
 public class LivetickerService {
+
     @Path("/{id}")
     @GET
-
     public void getMannschaft(@PathParam("id") int team) throws JAXBException, IOException {
         int test = 0;
 
         JAXBContext jc = JAXBContext.newInstance(Liveticker.class);
         Unmarshaller unmarshaller = jc.createUnmarshaller();
                 /*FRAGE: Wie funktioniert das bei verteilten Systemen?*/
-        Liveticker liveticker = (Liveticker) unmarshaller.unmarshal(new File("/Users/djga/Dropbox/coding/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker.xml"));
+        Liveticker liveticker = (Liveticker) unmarshaller.unmarshal(new File("/Users/djga/Dropbox/coding/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
         //Evtl ID's der Mannschaften ausgeben
         int i = 0;
         while (test != 1) {
             int heimId = Integer.parseInt(liveticker.getSpiel().get(i).getHeimmannschaft().getMannId());
             int gastId = Integer.parseInt(liveticker.getSpiel().get(i).getGastmannschaft().getMannId());
             if (heimId == (team) || gastId == team) {
-                System.out.println("Heimmannschaft: " + liveticker.getSpiel().get(i).getHeimmannschaft());
-                System.out.println("Gastmannschaft: " + liveticker.getSpiel().get(i).getGastmannschaft());
+                System.out.println("Heimmannschaft: " + liveticker.getSpiel().get(i).getHeimmannschaft().getName());
+                System.out.println("Gastmannschaft: " + liveticker.getSpiel().get(i).getGastmannschaft().getName());
+                for (int j = 0; liveticker.getSpiel().get(i).getEndergebnis().getTore().getTor().size() > j; j++) {
+                    System.out.println("TOR:");
+                    System.out.println("Torschuetze: " + liveticker.spiel.get(i).endergebnis.tore.tor.get(j).getTorschuetze());
+                    System.out.println("Mannschaft: " + liveticker.spiel.get(i).endergebnis.tore.tor.get(j).getMannschaftSchuetze());
+                    System.out.println("Spielminute " + liveticker.spiel.get(i).endergebnis.tore.tor.get(j).getMinute());
+                    System.out.println("-----------------------------------");
 
-                for (int j = 0; j < liveticker.getSpiel().size(); j++) {
-                    System.out.println(liveticker.getSpiel().get(i).Endergebnis.Tore);
 
                 }
-
-
+                for (int k = 0; k < liveticker.getSpiel().get(i).getKommentare().getKommentar().size(); k++) {
+                    System.out.println(liveticker.spiel.get(i).getKommentare().getKommentar().get(k).getMinute() + " Minute:");
+                    System.out.println(liveticker.spiel.get(i).getKommentare().getKommentar().get(k).getText());
+                    System.out.println("-----------------------------------");
+                }
                 test = 1;
             } else
                 i++;
