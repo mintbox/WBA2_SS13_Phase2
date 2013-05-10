@@ -57,7 +57,7 @@ public class LivetickerService {
     }
 
     @DELETE
-    @Path("benutzer/{id}")
+    @Path("liveticker/{id}")
     @Produces("application/xml")
     public Liveticker deleteComment(@PathParam("id") int i) throws JAXBException, IOException {
 
