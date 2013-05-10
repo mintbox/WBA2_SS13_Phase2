@@ -2,66 +2,298 @@
 
 <Liveticker>
 
-    <Heimmannschaft>
-        <name>FC Bayern Muenchen</name>
-    </Heimmannschaft>
+    <Spiel>
 
-    <Gastmannschaft>
-        <name>Borussia Dortmund</name>
-    </Gastmannschaft>
+        <Heimmannschaft>
+            <mann_id>5</mann_id>
+            <name>Borussia Dortmund</name>
+        </Heimmannschaft>
 
-    <Ergebnis>
-        <Tore>
-            <Tor>
-                <Torschuetze>Mario Gomez</Torschuetze>
-                <Mannschaft_Schuetze>FC Bayern Muenchen</Mannschaft_Schuetze>
-                <Minute>13</Minute>
-            </Tor>
-            <Tor>
-                <Torschuetze>Marco Reus</Torschuetze>
-                <Mannschaft_Schuetze>Borussia Dortmund</Mannschaft_Schuetze>
-                <Minute>27</Minute>
-            </Tor>
-            <Tor>
-                <Torschuetze>Robert Lewandowski</Torschuetze>
-                <Mannschaft_Schuetze>Borussia Dortmund</Mannschaft_Schuetze>
-                <Minute>45</Minute>
-            </Tor>
-            <Tor>
-                <Torschuetze>Mario Goetze</Torschuetze>
-                <Mannschaft_Schuetze>Borussia Dortmund</Mannschaft_Schuetze>
-                <Minute>87</Minute>
-            </Tor>
-        </Tore>
-    </Ergebnis>
+        <Gastmannschaft>
+            <mann_id>16</mann_id>
+            <name>Werder Bremen</name>
+        </Gastmannschaft>
 
-    <Kommentare>
-        <Kommentar>
-            <Minute>1</Minute>
-            <Text>Anpfiff. Das Spiel beginnt!</Text>
-        </Kommentar>
-        <Kommentar>
-            <Minute>13</Minute>
-            <Text>Tooooor FC Bayern Muenchen! Ein schoen vorgetragener Konter fuehrt hier zum 1:0!</Text>
-        </Kommentar>
-        <Kommentar>
-            <Minute>27</Minute>
-            <Text>Tor BVB! Marcu Reus sorgt fuer den Ausgleich!</Text>
-        </Kommentar>
-        <Kommentar>
-            <Minute>45</Minute>
-            <Text>Tooooor BVB die Zweite! Erstmals ist der BVB in dieser Party in fuehrung gegangen.</Text>
-        </Kommentar>
-        <Kommentar>
-            <Minute>87</Minute>
-            <Text>Tor fuer Dortmund! Das ist die Entscheidung in diesem Spiel. Der BVB wird hier nichts mehr anbrennen
-                lassen.
-            </Text>
-        </Kommentar>
-        <Kommentar>
-            <Minute>90</Minute>
-            <Text>Abpfiff. Der BVB gewinnt hier 3:1 nach einem spannenden Spiel.</Text>
-        </Kommentar>
-    </Kommentare>
+        <Endergebnis>
+            <Ergebnis></Ergebnis>
+            <Tore>
+                <Tor>
+                    <Torschuetze></Torschuetze>
+                    <Mannschaft_Schuetze></Mannschaft_Schuetze>
+                    <Minute></Minute>
+                </Tor>
+            </Tore>
+        </Endergebnis>
+
+        <Kommentare>
+            <Kommentar>
+                <Minute></Minute>
+                <Text></Text>
+            </Kommentar>
+        </Kommentare>
+
+    </Spiel>
+    <Spiel>
+
+        <Heimmannschaft>
+            <mann_id>6</mann_id>
+            <name>Borussia Moenchengladbach</name>
+        </Heimmannschaft>
+
+        <Gastmannschaft>
+            <mann_id>1</mann_id>
+            <name>1899 Hoffenheim</name>
+        </Gastmannschaft>
+
+        <Endergebnis>
+            <Ergebnis></Ergebnis>
+            <Tore>
+                <Tor>
+                    <Torschuetze>Oli</Torschuetze>
+                    <Mannschaft_Schuetze>BMG</Mannschaft_Schuetze>
+                    <Minute>11</Minute>
+                </Tor>
+                <Tor>
+                    <Torschuetze>Oli</Torschuetze>
+                    <Mannschaft_Schuetze>BMG</Mannschaft_Schuetze>
+                    <Minute>21</Minute>
+                </Tor>
+                <Tor>
+                    <Torschuetze>Oli</Torschuetze>
+                    <Mannschaft_Schuetze>BMG</Mannschaft_Schuetze>
+                    <Minute>31</Minute>
+                </Tor>
+            </Tore>
+        </Endergebnis>
+
+        <Kommentare>
+            <Kommentar>
+                <Minute>2</Minute>
+                <Text>Funktionieren die Kommentare</Text>
+            </Kommentar>
+            <Kommentar>
+                <Minute>3</Minute>
+                <Text>Funktionieren sie immer noch</Text>
+            </Kommentar>
+        </Kommentare>
+
+    </Spiel>
+    <Spiel>
+
+        <Heimmannschaft>
+            <mann_id>3</mann_id>
+            <name>FSV Mainz</name>
+        </Heimmannschaft>
+
+        <Gastmannschaft>
+            <mann_id>14</mann_id>
+            <name>SC Freiburg</name>
+        </Gastmannschaft>
+
+        <Endergebnis>
+            <Ergebnis></Ergebnis>
+            <Tore>
+                <Tor>
+                    <Torschuetze></Torschuetze>
+                    <Mannschaft_Schuetze></Mannschaft_Schuetze>
+                    <Minute></Minute>
+                </Tor>
+            </Tore>
+        </Endergebnis>
+
+        <Kommentare>
+            <Kommentar>
+                <Minute></Minute>
+                <Text></Text>
+            </Kommentar>
+        </Kommentare>
+
+    </Spiel>
+    <Spiel>
+
+        <Heimmannschaft>
+            <mann_id>8</mann_id>
+            <name>FC Augsburg</name>
+        </Heimmannschaft>
+
+        <Gastmannschaft>
+            <mann_id>11</mann_id>
+            <name>Fortuna Duesseldorf</name>
+        </Gastmannschaft>
+
+        <Endergebnis>
+            <Ergebnis></Ergebnis>
+            <Tore>
+                <Tor>
+                    <Torschuetze></Torschuetze>
+                    <Mannschaft_Schuetze></Mannschaft_Schuetze>
+                    <Minute></Minute>
+                </Tor>
+            </Tore>
+        </Endergebnis>
+
+        <Kommentare>
+            <Kommentar>
+                <Minute></Minute>
+                <Text></Text>
+            </Kommentar>
+        </Kommentare>
+
+    </Spiel>
+    <Spiel>
+
+        <Heimmannschaft>
+            <mann_id>12</mann_id>
+            <name>Hamburger SV</name>
+        </Heimmannschaft>
+
+        <Gastmannschaft>
+            <mann_id>2</mann_id>
+            <name>FC Nuernberg</name>
+        </Gastmannschaft>
+
+        <Endergebnis>
+            <Ergebnis></Ergebnis>
+            <Tore>
+                <Tor>
+                    <Torschuetze></Torschuetze>
+                    <Mannschaft_Schuetze></Mannschaft_Schuetze>
+                    <Minute></Minute>
+                </Tor>
+            </Tore>
+        </Endergebnis>
+
+        <Kommentare>
+            <Kommentar>
+                <Minute></Minute>
+                <Text></Text>
+            </Kommentar>
+        </Kommentare>
+
+    </Spiel>
+    <Spiel>
+
+        <Heimmannschaft>
+            <mann_id>15</mann_id>
+            <name>Greuter Fuerth</name>
+        </Heimmannschaft>
+
+        <Gastmannschaft>
+            <mann_id>9</mann_id>
+            <name>FC Bayern Muenchen</name>
+        </Gastmannschaft>
+
+        <Endergebnis>
+            <Ergebnis></Ergebnis>
+            <Tore>
+                <Tor>
+                    <Torschuetze></Torschuetze>
+                    <Mannschaft_Schuetze></Mannschaft_Schuetze>
+                    <Minute></Minute>
+                </Tor>
+            </Tore>
+        </Endergebnis>
+
+        <Kommentare>
+            <Kommentar>
+                <Minute></Minute>
+                <Text></Text>
+            </Kommentar>
+        </Kommentare>
+
+    </Spiel>
+    <Spiel>
+
+        <Heimmannschaft>
+            <mann_id>7</mann_id>
+            <name>Eintracht Frankfurt</name>
+        </Heimmannschaft>
+
+        <Gastmannschaft>
+            <mann_id>4</mann_id>
+            <name>Bayer Leverkusen</name>
+        </Gastmannschaft>
+
+        <Endergebnis>
+            <Ergebnis></Ergebnis>
+            <Tore>
+                <Tor>
+                    <Torschuetze></Torschuetze>
+                    <Mannschaft_Schuetze></Mannschaft_Schuetze>
+                    <Minute></Minute>
+                </Tor>
+            </Tore>
+        </Endergebnis>
+
+        <Kommentare>
+            <Kommentar>
+                <Minute></Minute>
+                <Text></Text>
+            </Kommentar>
+        </Kommentare>
+
+    </Spiel>
+    <Spiel>
+
+        <Heimmannschaft>
+            <mann_id>17</mann_id>
+            <name>Vfb Stuttgart</name>
+        </Heimmannschaft>
+
+        <Gastmannschaft>
+            <mann_id>18</mann_id>
+            <name>Vfl Wolfsburg</name>
+        </Gastmannschaft>
+
+        <Endergebnis>
+            <Ergebnis></Ergebnis>
+            <Tore>
+                <Tor>
+                    <Torschuetze></Torschuetze>
+                    <Mannschaft_Schuetze></Mannschaft_Schuetze>
+                    <Minute></Minute>
+                </Tor>
+            </Tore>
+        </Endergebnis>
+
+        <Kommentare>
+            <Kommentar>
+                <Minute></Minute>
+                <Text></Text>
+            </Kommentar>
+        </Kommentare>
+
+    </Spiel>
+    <Spiel>
+
+        <Heimmannschaft>
+            <mann_id>13</mann_id>
+            <name>Hannover 96</name>
+        </Heimmannschaft>
+
+        <Gastmannschaft>
+            <mann_id>10</mann_id>
+            <name>FC Schalke 04</name>
+        </Gastmannschaft>
+
+        <Endergebnis>
+            <Ergebnis></Ergebnis>
+            <Tore>
+                <Tor>
+                    <Torschuetze></Torschuetze>
+                    <Mannschaft_Schuetze></Mannschaft_Schuetze>
+                    <Minute></Minute>
+                </Tor>
+            </Tore>
+        </Endergebnis>
+
+        <Kommentare>
+            <Kommentar>
+                <Minute></Minute>
+                <Text></Text>
+            </Kommentar>
+        </Kommentare>
+
+    </Spiel>
 
 </Liveticker>
