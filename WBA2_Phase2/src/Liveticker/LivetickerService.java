@@ -65,7 +65,7 @@ public class LivetickerService {
         Liveticker liveticker = ob.createLiveticker();
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
         Unmarshaller um = context.createUnmarshaller();
-        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/FlorianWolf/git/WBA2_SS13_Phase2/WBA2_Phase2/src/benutzer/Benutzer.xml"));
+        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/Dropbox/coding/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
         Liveticker lt = ob.createLiveticker();
 
         if (i <= liveticker.getSpiel().size()) {
@@ -80,7 +80,7 @@ public class LivetickerService {
             m.marshal(lt, System.out);
 
             Writer w = null;
-            w = new FileWriter("/Users/FlorianWolf/git/WBA2_SS13_Phase2/WBA2_Phase2/src/benutzer/Benutzer.xml");
+            w = new FileWriter("/Users/djga/Dropbox/coding/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
             m.marshal(lt, w);
             w.close();
             return lt;

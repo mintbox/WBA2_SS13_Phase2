@@ -26,7 +26,7 @@ public class MannschaftService {
 
         JAXBContext jc = JAXBContext.newInstance(Mannschaften.class);
         Unmarshaller unmarshaller = jc.createUnmarshaller();
-        Mannschaften mannschaft = (Mannschaften) unmarshaller.unmarshal(new File("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft.xml"));
+        Mannschaften mannschaft = (Mannschaften) unmarshaller.unmarshal(new File("/Users/djga/Dropbox/coding/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft.xml"));
 
         int i = 0;
         int laufen = 0;
@@ -50,7 +50,7 @@ public class MannschaftService {
 
         JAXBContext jc = JAXBContext.newInstance(Mannschaften.class);
         Unmarshaller unmarshaller = jc.createUnmarshaller();
-        Mannschaften mannschaft = (Mannschaften) unmarshaller.unmarshal(new File("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft.xml"));
+        Mannschaften mannschaft = (Mannschaften) unmarshaller.unmarshal(new File("/Users/djga/Dropbox/coding/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft.xml"));
 
         int i = 0;
         int laufen = 0;
@@ -60,7 +60,7 @@ public class MannschaftService {
             //VERSUCH1
             ein = String.valueOf(mannschaft.getMannschaft().get(i).getAbonnent());
             //VERSUCH2
-            ein = mannschaft.getMannschaft().get(i).getAbonnent().toString();
+            //         ein = mannschaft.getMannschaft().get(i).getAbonnent().toString();
             if (ein == abo) {
                 System.out.println(" " + mannschaft.getMannschaft().get(i).getAbonnent());
                 System.out.println(" " + mannschaft.getMannschaft().get(i).getMannschaftsname());
@@ -73,12 +73,6 @@ public class MannschaftService {
         }
 
     }
-
-
-
-
-
-
 
 
 }
