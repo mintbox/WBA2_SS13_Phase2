@@ -3,18 +3,24 @@
     <xs:element name="Tippspiel">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Name" type="xs:string"/>
-                <xs:sequence>
-                    <xs:element name="Spiel">
-                        <xs:complexType>
+                <xs:element name="Tipp">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Name" type="xs:string"/>
                             <xs:sequence>
-                                <xs:element name="Heimmannschaft" type="xs:string"/>
-                                <xs:element name="Gastmannschaft" type="xs:string"/>
-                                <xs:element name="Tipp" type="xs:string"/>
+                                <xs:element name="Spiel">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="Heimmannschaft" type="xs:string"/>
+                                            <xs:element name="Gastmannschaft" type="xs:string"/>
+                                            <xs:element name="Ergebnis" type="xs:string"/>
+                                        </xs:sequence>
+                                    </xs:complexType>
+                                </xs:element>
                             </xs:sequence>
-                        </xs:complexType>
-                    </xs:element>
-                </xs:sequence>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

@@ -32,11 +32,11 @@ public class TippspielService {
         int laufen = 0;
         String ein;
         while (laufen != 1) {
-            ein = tippspiel.getName();
-            if (ein == tipp) {
+            ein = tippspiel.getTipp().getName();
+            if (tippspiel.getTipp().getName().equalsIgnoreCase(tipp)) {
                 // Schleife benötigt
-                System.out.println("Heimmannschaft: " + tippspiel.getSpiel().getHeimmannschaft());
-                System.out.println("Gastmannschaft: " + tippspiel.getSpiel().getGastmannschaft());
+                System.out.println("Heimmannschaft: " + tippspiel.getTipp().getSpiel().getHeimmannschaft());
+                System.out.println("Gastmannschaft: " + tippspiel.getTipp().getSpiel().getGastmannschaft());
                 laufen = 1;
             } else {
                 i++;
