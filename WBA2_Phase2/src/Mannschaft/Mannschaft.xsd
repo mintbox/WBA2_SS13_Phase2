@@ -3,18 +3,12 @@
     <xs:element name="Mannschaften">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="Abonnent" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
                 <xs:element name="Mannschaft" minOccurs="18" maxOccurs="18">
                     <xs:complexType>
                         <xs:sequence>
+                            <xs:element name="Abonnent" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="Mann_ID" type="xs:ID"/>
                             <xs:element name="Mannschaftsname" type="xs:string"/>
-                            <xs:any>
-                                <xs:annotation>
-                                    <xs:documentation>
-                                        <xs:attribute name="ID" type="xs:ID"/>
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:any>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
