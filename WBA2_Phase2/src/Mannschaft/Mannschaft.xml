@@ -1,59 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Mannschaften>
-    <Abonnent></Abonnent>
     <Mannschaft>
-        <Mannschaftsname id="1">1899 Hoffenheim</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>1</Mann_ID>
+        <Mannschaftsname>1899 Hoffenheim</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="2">1.FC Nuernberg</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>2</Mann_ID>
+        <Mannschaftsname>1.FC Nuernberg</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="3">1.FSV Mainz 05</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>3</Mann_ID>
+        <Mannschaftsname>1.FSV Mainz 05</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="4">Bayer 04 Leverkusen</Mannschaftsname>
+        <Abonnent>Oli</Abonnent>
+        <Mann_ID>4</Mann_ID>
+        <Mannschaftsname>Bayer 04 Leverkusen</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="5">Borussia Dortmund</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>5</Mann_ID>
+        <Mannschaftsname>Borussia Dortmund</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="6">Borussia Moenchengladbach</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>6</Mann_ID>
+        <Mannschaftsname>Borussia Moenchengladbach</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="7">Eintracht Frankfurt</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>7</Mann_ID>
+        <Mannschaftsname>Eintracht Frankfurt</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="8">FC Augsburg</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>8</Mann_ID>
+        <Mannschaftsname>FC Augsburg</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="9">FC Bayern Muenchen</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>9</Mann_ID>
+        <Mannschaftsname>FC Bayern Muenchen</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="10">FC Schalke 04</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>10</Mann_ID>
+        <Mannschaftsname>FC Schalke 04</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="11">Fortuna Duesseldorf</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>11</Mann_ID>
+        <Mannschaftsname>Fortuna Duesseldorf</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="12">Hamburger SV</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>12</Mann_ID>
+        <Mannschaftsname>Hamburger SV</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="13">Hannover 96</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>13</Mann_ID>
+        <Mannschaftsname>Hannover 96</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="14">Sport-Club Freiburg</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>14</Mann_ID>
+        <Mannschaftsname>Sport-Club Freiburg</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="15">SpVgg Greuther Fürth</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>15</Mann_ID>
+        <Mannschaftsname>SpVgg Greuther Fürth</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="16">SV Werder Bremen</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>16</Mann_ID>
+        <Mannschaftsname>SV Werder Bremen</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="17">VFB Stuttgart</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>17</Mann_ID>
+        <Mannschaftsname>VFB Stuttgart</Mannschaftsname>
     </Mannschaft>
     <Mannschaft>
-        <Mannschaftsname id="18">VFL Wolfsburg</Mannschaftsname>
+        <Abonnent></Abonnent>
+        <Mann_ID>18</Mann_ID>
+        <Mannschaftsname>VFL Wolfsburg</Mannschaftsname>
     </Mannschaft>
 </Mannschaften>
