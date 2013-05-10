@@ -26,7 +26,7 @@ public class TippspielService {
 
         JAXBContext jc = JAXBContext.newInstance(Tippspiel.class);
         Unmarshaller unmarshaller = jc.createUnmarshaller();
-        Tippspiel tippspiel = (Tippspiel) unmarshaller.unmarshal(new File("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Tippspiel.xml/Mannschaft.xml"));
+        Tippspiel tippspiel = (Tippspiel) unmarshaller.unmarshal(new File("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Tippspiel/Tippspiel.xml"));
 
         int i = 0;
         int laufen = 0;
