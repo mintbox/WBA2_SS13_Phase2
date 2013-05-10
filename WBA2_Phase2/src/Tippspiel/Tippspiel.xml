@@ -3,11 +3,11 @@
 <Tippspiel>
 
     <Tipp>
-        <Name></Name>
+        <Name>Oli</Name>
         <Spiel>
-            <Heimmannschaft></Heimmannschaft>
-            <Gastmannschaft></Gastmannschaft>
-            <Tipp></Tipp>
+            <Heimmannschaft>1899 Hoffenheim</Heimmannschaft>
+            <Gastmannschaft>Borussia Dortmund</Gastmannschaft>
+            <Tipp>0:4</Tipp>
         </Spiel>
     </Tipp>
 
