@@ -1,13 +1,11 @@
 package Liveticker;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.ws.rs.*;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -56,5 +54,37 @@ public class LivetickerService {
 
         }
 
+    }
+
+    @DELETE
+    @Path("benutzer/{id}")
+    @Produces("application/xml")
+    public Liveticker deleteComment(@PathParam("id") int i) throws JAXBException, IOException {
+
+        ObjectFactory ob = new ObjectFactory();
+        Liveticker liveticker = ob.createLiveticker();
+        JAXBContext context = JAXBContext.newInstance(Liveticker.class);
+        Unmarshaller um = context.createUnmarshaller();
+        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/FlorianWolf/git/WBA2_SS13_Phase2/WBA2_Phase2/src/benutzer/Benutzer.xml"));
+        Liveticker lt = ob.createLiveticker();
+
+        if (i <= liveticker.getSpiel().size()) {
+
+            lt.getSpiel().addAll(liveticker.getSpiel());
+            lt.getSpiel().remove(liveticker.getSpiel().get(i));
+
+            // Marshall content to XML-File.
+            Marshaller m = context.createMarshaller();
+            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
+            m.marshal(lt, System.out);
+
+            Writer w = null;
+            w = new FileWriter("/Users/FlorianWolf/git/WBA2_SS13_Phase2/WBA2_Phase2/src/benutzer/Benutzer.xml");
+            m.marshal(lt, w);
+            w.close();
+            return lt;
+        }
+        return lt;
     }
 }
