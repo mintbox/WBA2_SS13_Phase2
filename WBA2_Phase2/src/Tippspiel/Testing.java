@@ -14,6 +14,7 @@ import java.io.IOException;
 public class Testing {
     public static void main(String[] args) throws JAXBException, IOException {
         TippspielService test = new TippspielService();
-        test.getTippspiel("Oli");
+        //test.getTippspiel("Oli");
+        test.getErgebnis("4:0");
     }
 }

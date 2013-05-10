@@ -58,10 +58,10 @@ public class MannschaftService {
         while (laufen != 1) {
             // IOOB Exception weil Abonnent vom Typ <List>String durch minOccurs/maxOccurs
             //VERSUCH1
-            ein = String.valueOf(mannschaft.getMannschaft().get(i).getAbonnent());
+            //ein = String.valueOf(mannschaft.getMannschaft().get(i).getAbonnent());
             //VERSUCH2
-            ein = mannschaft.getMannschaft().get(i).getAbonnent().toString();
-            if (ein == abo) {
+            //ein = mannschaft.getMannschaft().get(i).getAbonnent().toString();
+            if (mannschaft.getMannschaft().get(i).getAbonnent().equals(abo)) {
                 System.out.println(" " + mannschaft.getMannschaft().get(i).getAbonnent());
                 System.out.println(" " + mannschaft.getMannschaft().get(i).getMannschaftsname());
                 laufen = 1;

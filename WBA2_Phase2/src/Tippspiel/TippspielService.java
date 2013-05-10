@@ -37,12 +37,40 @@ public class TippspielService {
                 // Schleife benötigt
                 System.out.println("Heimmannschaft: " + tippspiel.getTipp().getSpiel().getHeimmannschaft());
                 System.out.println("Gastmannschaft: " + tippspiel.getTipp().getSpiel().getGastmannschaft());
+                System.out.println("Ergebnis: " + tippspiel.getTipp().getSpiel().getErgebnis());
                 laufen = 1;
             } else {
                 i++;
 
             }
 
+        }
+
+    }
+
+    @Path("/test/")
+    @GET
+
+    public void getErgebnis(@PathParam("tipp/ergebnis") String erg) throws JAXBException, IOException {
+
+        JAXBContext jc = JAXBContext.newInstance(Tippspiel.class);
+        Unmarshaller unmarshaller = jc.createUnmarshaller();
+        Tippspiel tippspiel = (Tippspiel) unmarshaller.unmarshal(new File("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Tippspiel/Tippspiel.xml"));
+
+        int i = 0;
+        int laufen = 0;
+        String ein;
+        while (laufen != 1) {
+            ein = tippspiel.getTipp().getName();
+            for (int j = 0; j < 10; j++) {
+                if (tippspiel.getTipp().getSpiel().getErgebnis().compareTo(erg) == 0) {
+                    System.out.println("Tipper: " + tippspiel.getTipp().getName());
+                    laufen = 1;
+                } else {
+                    j++;
+
+                }
+            }
         }
 
     }
