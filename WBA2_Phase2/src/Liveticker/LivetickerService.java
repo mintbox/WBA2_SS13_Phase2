@@ -14,6 +14,7 @@ import java.io.*;
  * Time: 13:54
  * To change this template use File | Settings | File Templates.
  */
+@Path("/liveticker")
 public class LivetickerService {
 
     @Path("/{id}")
@@ -24,7 +25,7 @@ public class LivetickerService {
         JAXBContext jc = JAXBContext.newInstance(Liveticker.class);
         Unmarshaller unmarshaller = jc.createUnmarshaller();
                 /*FRAGE: Wie funktioniert das bei verteilten Systemen?*/
-        Liveticker liveticker = (Liveticker) unmarshaller.unmarshal(new File("/Users/djga/Dropbox/coding/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
+        Liveticker liveticker = (Liveticker) unmarshaller.unmarshal(new File("/Users/djga/Dropbox/coding/WBA2_SS13/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
         //Evtl ID's der Mannschaften ausgeben
         int i = 0;
         while (test != 1) {
@@ -57,7 +58,7 @@ public class LivetickerService {
     }
 
     @DELETE
-    @Path("liveticker/{id}")
+    @Path("{id}")
     @Produces("application/xml")
     public Liveticker deleteComment(@PathParam("id") int i) throws JAXBException, IOException {
 
