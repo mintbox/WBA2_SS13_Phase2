@@ -18,6 +18,6 @@ public class Testing {
         //test.getTippspiel("Oli");
         //test.getErgebnis("0:4");
         //test.deleteTipp("Oli");
-        test.newTipp("Troll", "5:5");
+        test.newTipp("Troll", "Bayern", "HSV", "7:6");
     }
 }

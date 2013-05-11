@@ -80,20 +80,19 @@ public class TippspielService {
     @POST
     @Path("tippspiel/user")
     @Produces("application/xml")
-    public Tippspiel newTipp(@PathParam("user") String z, @FormParam("text") String erg) throws JAXBException, IOException {
+    public Tippspiel newTipp(@FormParam("Name") String name, @FormParam("Heimmannschaft") String heim, @FormParam("Gastmannschaft") String gast, @FormParam("Ergebnis") String erg) throws JAXBException, IOException {
 
         Tippspiel tippspiel = new Tippspiel();
         Tippspiel.Tipp tipp = new Tippspiel.Tipp();
 
 
 
-        tipp.getSpiel().set(0,"Hello World!");
+        Tippspiel.Tipp.Spiel spiel = new Tippspiel.Tipp.Spiel();
 
-
-        tipp.setName(z);
-        tipp.getSpiel().get(0).setHeimmannschaft("Bayern Muenchen");
-        tipp.getSpiel().get(0).setGastmannschaft("Hamburger SV");
-        tipp.getSpiel().get(0).setErgebnis(erg);
+        tipp.setName(name);
+        spiel.setHeimmannschaft(heim);
+        spiel.setGastmannschaft(gast);
+        spiel.setErgebnis(erg);
 
 
         ObjectFactory ob = new ObjectFactory();
