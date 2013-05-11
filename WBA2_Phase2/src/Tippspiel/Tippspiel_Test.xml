@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Tippspiel>
+
+    <Tipp>
+        <Name>Oli</Name>
+        <Spiel>
+            <Heimmannschaft>1899 Hoffenheim</Heimmannschaft>
+            <Gastmannschaft>Borussia Dortmund</Gastmannschaft>
+            <Ergebnis>0:4</Ergebnis>
+        </Spiel>
+    </Tipp>
+
+</Tippspiel> 

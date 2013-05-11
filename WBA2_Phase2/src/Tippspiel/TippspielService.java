@@ -1,14 +1,14 @@
 package Tippspiel;
 
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import Liveticker.Liveticker;
+
+import javax.ws.rs.*;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -62,16 +62,45 @@ public class TippspielService {
         String ein;
         while (laufen != 1) {
             ein = tippspiel.getTipp().getName();
-            for (int j = 0; j < 10; j++) {
+           // for (int j = 0; j < 10; j++) {
                 if (tippspiel.getTipp().getSpiel().getErgebnis().compareTo(erg) == 0) {
                     System.out.println("Tipper: " + tippspiel.getTipp().getName());
                     laufen = 1;
                 } else {
-                    j++;
+                  //  j++;
 
                 }
-            }
+           // }
         }
 
     }
+    @DELETE
+    @Path("tippspiel/user")
+    @Produces("application/xml")
+    public Tippspiel deleteTipp(@PathParam("user") String x) throws JAXBException, IOException {
+        ObjectFactory ob = new ObjectFactory();
+        Tippspiel ts = ob.createTippspiel();
+        JAXBContext context = JAXBContext.newInstance(Tippspiel.class);
+        Unmarshaller um = context.createUnmarshaller();
+        Tippspiel tippspiel = (Tippspiel) um.unmarshal(new FileReader("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Tippspiel/Tippspiel_Test.xml"));
+
+        if (tippspiel.getTipp().getName().equals(x)){
+            ts.getTipp().setSpiel(null);
+        }
+
+
+        Marshaller m = context.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+        m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
+        m.marshal(ts, System.out);
+
+        Writer w = null;
+        w = new FileWriter("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Tippspiel/Tippspiel_Test.xml");
+        m.marshal(ts, w);
+        w.close();
+
+
+        return ts;
+        }
+
 }
