@@ -85,7 +85,11 @@ public class TippspielService {
         Tippspiel tippspiel = new Tippspiel();
         Tippspiel.Tipp tipp = new Tippspiel.Tipp();
 
+
+
         tipp.setName(z);
+        tipp.getSpiel().get(0).setHeimmannschaft("Bayern Muenchen");
+        tipp.getSpiel().get(0).setGastmannschaft("Hamburger SV");
         tipp.getSpiel().get(0).setErgebnis(erg);
 
 
