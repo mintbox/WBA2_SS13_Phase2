@@ -84,11 +84,17 @@ public class TippspielService {
         Unmarshaller um = context.createUnmarshaller();
         Tippspiel tippspiel = (Tippspiel) um.unmarshal(new FileReader("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Tippspiel/Tippspiel_Test.xml"));
 
-        if (tippspiel.getTipp().getName().equals(x)){
-            ts.getTipp().setSpiel(null);
+        for (int i = 0; i < tippspiel.getTipp().SIZE; i++) {
+
+
+        if (tippspiel.getTipp().getName() == x){
+            ts.getTipp().setName("");
+            ts.getTipp().getSpiel().setErgebnis("");
+
+        }else{
+            i++;
         }
-
-
+        }
         Marshaller m = context.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
         m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
