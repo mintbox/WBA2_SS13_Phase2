@@ -77,9 +77,38 @@ public class TippspielService {
 
     }
 
+    @POST
+    @Path("tippspiel/user")
+    @Produces("application/xml")
+    public Tippspiel newTipp(@PathParam("user") String z, @FormParam("text") String erg) throws JAXBException, IOException {
+
+        Tippspiel tippspiel = new Tippspiel();
+        Tippspiel.Tipp tipp = new Tippspiel.Tipp();
+
+        tipp.setName(z);
+        tipp.getSpiel().get(0).setErgebnis(erg);
 
 
+        ObjectFactory ob = new ObjectFactory();
+        tippspiel = ob.createTippspiel();
+        JAXBContext context = JAXBContext.newInstance(Tippspiel.class);
+        Unmarshaller um = context.createUnmarshaller();
+        tippspiel = (Tippspiel) um.unmarshal(new FileReader("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Tippspiel/Tippspiel_Test.xml"));
 
+        tippspiel.getTipp().add(tippspiel.getTipp().size(), tipp);
+
+        Marshaller m = context.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+        m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
+        m.marshal(tippspiel, System.out);
+
+        Writer w = new FileWriter("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Tippspiel/Tippspiel_Test.xml");
+        m.marshal(tippspiel, w);
+        w.close();
+
+        return tippspiel;
+
+    }
 
 
 
@@ -94,7 +123,7 @@ public class TippspielService {
         Unmarshaller um = context.createUnmarshaller();
         Tippspiel tippspiel = (Tippspiel) um.unmarshal(new FileReader("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Tippspiel/Tippspiel_Test.xml"));
         int i = 0;
-        if (ts.getTipp().get(i).getName() == x) {
+        if (tippspiel.getTipp().get(i).getName().equalsIgnoreCase(x)) {
 
             ts.getTipp().addAll(tippspiel.getTipp());
             ts.getTipp().remove(tippspiel.getTipp().get(i));

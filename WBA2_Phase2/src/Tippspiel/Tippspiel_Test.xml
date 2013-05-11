@@ -1,15 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
 <Tippspiel>
-
-    <Tipp>
-        <Name>Oli</Name>
-        <Spiel>
-            <Heimmannschaft>1899 Hoffenheim</Heimmannschaft>
-            <Gastmannschaft>Borussia Dortmund</Gastmannschaft>
-            <Ergebnis>0:4</Ergebnis>
-        </Spiel>
-    </Tipp>
     <Tipp>
         <Name>Hans</Name>
         <Spiel>
@@ -26,5 +16,4 @@
             <Ergebnis>0:2</Ergebnis>
         </Spiel>
     </Tipp>
-
 </Tippspiel>
