@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Tippspiel>
+
+    <Tipp>
+        <Name>Oli</Name>
+        <Spiel>
+            <Heimmannschaft>1899 Hoffenheim</Heimmannschaft>
+            <Gastmannschaft>Borussia Dortmund</Gastmannschaft>
+            <Ergebnis>0:4</Ergebnis>
+        </Spiel>
+    </Tipp>
+    <Tipp>
+        <Name>Hans</Name>
+        <Spiel>
+            <Heimmannschaft>1899 Hoffenheim</Heimmannschaft>
+            <Gastmannschaft>Borussia Dortmund</Gastmannschaft>
+            <Ergebnis>1:1</Ergebnis>
+        </Spiel>
+    </Tipp>
+    <Tipp>
+        <Name>Markus</Name>
+        <Spiel>
+            <Heimmannschaft>1899 Hoffenheim</Heimmannschaft>
+            <Gastmannschaft>Borussia Dortmund</Gastmannschaft>
+            <Ergebnis>0:2</Ergebnis>
+        </Spiel>
+    </Tipp>
+
+</Tippspiel> 
