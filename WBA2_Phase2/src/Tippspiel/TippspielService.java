@@ -87,6 +87,9 @@ public class TippspielService {
 
 
 
+        tipp.getSpiel().set(0,"Hello World!");
+
+
         tipp.setName(z);
         tipp.getSpiel().get(0).setHeimmannschaft("Bayern Muenchen");
         tipp.getSpiel().get(0).setGastmannschaft("Hamburger SV");
