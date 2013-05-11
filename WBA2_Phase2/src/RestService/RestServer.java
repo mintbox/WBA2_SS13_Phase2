@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class RestServer {
 
+
     public static void main(String[] args) throws IllegalArgumentException,IOException {
         String url = "http://localhost:4434";
 
