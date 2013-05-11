@@ -4,6 +4,7 @@ package Tippspiel;
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
 
+
 /**
  * Created with IntelliJ IDEA.
  * User: Oli
@@ -15,7 +16,8 @@ public class Testing {
     public static void main(String[] args) throws JAXBException, IOException {
         TippspielService test = new TippspielService();
         //test.getTippspiel("Oli");
-        //test.getErgebnis("4:0");
-        test.deleteTipp("Oli");
+        //test.getErgebnis("0:4");
+        //test.deleteTipp("Oli");
+        test.newTipp("Troll", "5:5");
     }
 }

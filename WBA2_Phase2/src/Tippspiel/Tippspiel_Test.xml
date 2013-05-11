@@ -1,13 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
 <Tippspiel>
-
     <Tipp>
-        <Name>Oli</Name>
+        <Name></Name>
+        <Spiel>
+            <Heimmannschaft></Heimmannschaft>
+            <Gastmannschaft></Gastmannschaft>
+            <Ergebnis></Ergebnis>
+        </Spiel>
+    </Tipp>
+    <Tipp>
+        <Name>Peter</Name>
         <Spiel>
             <Heimmannschaft>1899 Hoffenheim</Heimmannschaft>
             <Gastmannschaft>Borussia Dortmund</Gastmannschaft>
-            <Ergebnis>0:4</Ergebnis>
+            <Ergebnis>4:9</Ergebnis>
         </Spiel>
     </Tipp>
     <Tipp>
@@ -26,5 +32,4 @@
             <Ergebnis>0:2</Ergebnis>
         </Spiel>
     </Tipp>
-
 </Tippspiel>
