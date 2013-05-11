@@ -1,7 +1,6 @@
 package Tippspiel;
 
 
-import Liveticker.Liveticker;
 
 import javax.ws.rs.*;
 import javax.xml.bind.JAXBContext;
@@ -33,7 +32,7 @@ public class TippspielService {
         String ein;
         while (laufen != 1) {
             ein = tippspiel.getTipp().getName();
-            if (tippspiel.getTipp().getName().equalsIgnoreCase(tipp)) {
+            if (ein.equalsIgnoreCase(tipp)) {
                 // Schleife benötigt
                 System.out.println("Heimmannschaft: " + tippspiel.getTipp().getSpiel().getHeimmannschaft());
                 System.out.println("Gastmannschaft: " + tippspiel.getTipp().getSpiel().getGastmannschaft());
@@ -64,7 +63,7 @@ public class TippspielService {
             ein = tippspiel.getTipp().getName();
            // for (int j = 0; j < 10; j++) {
                 if (tippspiel.getTipp().getSpiel().getErgebnis().compareTo(erg) == 0) {
-                    System.out.println("Tipper: " + tippspiel.getTipp().getName());
+                    System.out.println("Tipper: " + ein);
                     laufen = 1;
                 } else {
                   //  j++;
@@ -74,6 +73,22 @@ public class TippspielService {
         }
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     @DELETE
     @Path("tippspiel/user")
     @Produces("application/xml")
@@ -87,12 +102,12 @@ public class TippspielService {
        // for (int i = 0; i < ts.getTipp().SIZE; i++) {
         int laufen2 = 0;
         int y=0;
-        while(laufen2 != 1){
+        //while(laufen2 != 1){
         if (tippspiel.getTipp().getName() == x){
             ts.getTipp().setName("TestName");
             ts.getTipp().getSpiel().setErgebnis("TestErgebnis");
             laufen2 = 1;
-        }
+        //}
         }
         Marshaller m = context.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
