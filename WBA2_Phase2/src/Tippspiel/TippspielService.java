@@ -85,7 +85,7 @@ public class TippspielService {
         Tippspiel tippspiel = new Tippspiel();
         Tippspiel.Tipp tipp = new Tippspiel.Tipp();
 
-
+        tippspiel.se
 
         Tippspiel.Tipp.Spiel spiel = new Tippspiel.Tipp.Spiel();
 

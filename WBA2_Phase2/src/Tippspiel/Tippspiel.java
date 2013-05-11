@@ -26,21 +26,19 @@ import javax.xml.bind.annotation.XmlType;
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                 &lt;sequence>
  *                   &lt;element name="Name" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;sequence>
- *                     &lt;element name="Spiel" maxOccurs="9" minOccurs="0">
- *                       &lt;complexType>
- *                         &lt;complexContent>
- *                           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *                             &lt;sequence>
- *                               &lt;element name="Heimmannschaft" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                               &lt;element name="Gastmannschaft" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                               &lt;element name="Ergebnis" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                             &lt;/sequence>
- *                           &lt;/restriction>
- *                         &lt;/complexContent>
- *                       &lt;/complexType>
- *                     &lt;/element>
- *                   &lt;/sequence>
+ *                   &lt;element name="Spiel" maxOccurs="9" minOccurs="0">
+ *                     &lt;complexType>
+ *                       &lt;complexContent>
+ *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *                           &lt;sequence>
+ *                             &lt;element name="Heimmannschaft" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                             &lt;element name="Gastmannschaft" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                             &lt;element name="Ergebnis" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                           &lt;/sequence>
+ *                         &lt;/restriction>
+ *                       &lt;/complexContent>
+ *                     &lt;/complexType>
+ *                   &lt;/element>
  *                 &lt;/sequence>
  *               &lt;/restriction>
  *             &lt;/complexContent>
@@ -105,21 +103,19 @@ public class Tippspiel {
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *       &lt;sequence>
      *         &lt;element name="Name" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;sequence>
-     *           &lt;element name="Spiel" maxOccurs="9" minOccurs="0">
-     *             &lt;complexType>
-     *               &lt;complexContent>
-     *                 &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
-     *                   &lt;sequence>
-     *                     &lt;element name="Heimmannschaft" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                     &lt;element name="Gastmannschaft" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                     &lt;element name="Ergebnis" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *                   &lt;/sequence>
-     *                 &lt;/restriction>
-     *               &lt;/complexContent>
-     *             &lt;/complexType>
-     *           &lt;/element>
-     *         &lt;/sequence>
+     *         &lt;element name="Spiel" maxOccurs="9" minOccurs="0">
+     *           &lt;complexType>
+     *             &lt;complexContent>
+     *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+     *                 &lt;sequence>
+     *                   &lt;element name="Heimmannschaft" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *                   &lt;element name="Gastmannschaft" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *                   &lt;element name="Ergebnis" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *                 &lt;/sequence>
+     *               &lt;/restriction>
+     *             &lt;/complexContent>
+     *           &lt;/complexType>
+     *         &lt;/element>
      *       &lt;/sequence>
      *     &lt;/restriction>
      *   &lt;/complexContent>
