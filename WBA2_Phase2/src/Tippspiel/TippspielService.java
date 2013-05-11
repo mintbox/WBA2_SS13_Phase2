@@ -35,9 +35,9 @@ public class TippspielService {
             if (ein.equalsIgnoreCase(tipp)) {
                 // Schleife benötigt
                 for (int j = 0; j < tippspiel.getTipp().size(); j++) {
-                    System.out.println("Heimmannschaft: " + tippspiel.getTipp().get(i).getSpiel().get(j).getHeimmannschaft());
-                    System.out.println("Gastmannschaft: " + tippspiel.getTipp().get(i).getSpiel().get(j).getGastmannschaft());
-                    System.out.println("Ergebnis: " + tippspiel.getTipp().get(i).getSpiel().get(j).getErgebnis());
+                    System.out.println("Heimmannschaft: " + tippspiel.getTipp().get(i).getSpiel().getHeimmannschaft());
+                    System.out.println("Gastmannschaft: " + tippspiel.getTipp().get(i).getSpiel().getGastmannschaft());
+                    System.out.println("Ergebnis: " + tippspiel.getTipp().get(i).getSpiel().getErgebnis());
                     laufen = 1;
                 }
 
@@ -65,7 +65,7 @@ public class TippspielService {
         while (laufen != 1) {
             ein = tippspiel.getTipp().get(i).getName();
             for (int j = 0; j < tippspiel.getTipp().size(); j++) {
-                if (tippspiel.getTipp().get(i).getSpiel().get(j).getErgebnis().compareTo(erg) == 0) {
+                if (tippspiel.getTipp().get(i).getSpiel().getErgebnis().compareTo(erg) == 0) {
                     System.out.println("Tipper: " + ein);
                     laufen = 1;
                 } else {
@@ -85,10 +85,11 @@ public class TippspielService {
         Tippspiel tippspiel = new Tippspiel();
         Tippspiel.Tipp tipp = new Tippspiel.Tipp();
 
-        tippspiel.se
+
 
         Tippspiel.Tipp.Spiel spiel = new Tippspiel.Tipp.Spiel();
 
+        tipp.setSpiel(spiel);
         tipp.setName(name);
         spiel.setHeimmannschaft(heim);
         spiel.setGastmannschaft(gast);

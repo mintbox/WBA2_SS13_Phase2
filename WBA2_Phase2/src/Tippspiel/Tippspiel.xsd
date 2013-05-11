@@ -7,17 +7,15 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Name" type="xs:string"/>
-
-                                <xs:element name="Spiel" minOccurs="0" maxOccurs="9">
-                                    <xs:complexType>
-                                        <xs:sequence>
-                                            <xs:element name="Heimmannschaft" type="xs:string"/>
-                                            <xs:element name="Gastmannschaft" type="xs:string"/>
-                                            <xs:element name="Ergebnis" type="xs:string"/>
-                                        </xs:sequence>
-                                    </xs:complexType>
-                                </xs:element>
-
+                            <xs:element name="Spiel">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Heimmannschaft" type="xs:string"/>
+                                        <xs:element name="Gastmannschaft" type="xs:string"/>
+                                        <xs:element name="Ergebnis" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>

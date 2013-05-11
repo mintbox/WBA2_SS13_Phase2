@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                 &lt;sequence>
  *                   &lt;element name="Name" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *                   &lt;element name="Spiel" maxOccurs="9" minOccurs="0">
+ *                   &lt;element name="Spiel">
  *                     &lt;complexType>
  *                       &lt;complexContent>
  *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -103,7 +103,7 @@ public class Tippspiel {
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *       &lt;sequence>
      *         &lt;element name="Name" type="{http://www.w3.org/2001/XMLSchema}string"/>
-     *         &lt;element name="Spiel" maxOccurs="9" minOccurs="0">
+     *         &lt;element name="Spiel">
      *           &lt;complexType>
      *             &lt;complexContent>
      *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
@@ -133,8 +133,8 @@ public class Tippspiel {
 
         @XmlElement(name = "Name", required = true)
         protected String name;
-        @XmlElement(name = "Spiel")
-        protected List<Tippspiel.Tipp.Spiel> spiel;
+        @XmlElement(name = "Spiel", required = true)
+        protected Tippspiel.Tipp.Spiel spiel;
 
         /**
          * Gets the value of the name property.
@@ -163,30 +163,25 @@ public class Tippspiel {
         /**
          * Gets the value of the spiel property.
          * 
-         * <p>
-         * This accessor method returns a reference to the live list,
-         * not a snapshot. Therefore any modification you make to the
-         * returned list will be present inside the JAXB object.
-         * This is why there is not a <CODE>set</CODE> method for the spiel property.
-         * 
-         * <p>
-         * For example, to add a new item, do as follows:
-         * <pre>
-         *    getSpiel().add(newItem);
-         * </pre>
-         * 
-         * 
-         * <p>
-         * Objects of the following type(s) are allowed in the list
-         * {@link Tippspiel.Tipp.Spiel }
-         * 
-         * 
+         * @return
+         *     possible object is
+         *     {@link Tippspiel.Tipp.Spiel }
+         *     
          */
-        public List<Tippspiel.Tipp.Spiel> getSpiel() {
-            if (spiel == null) {
-                spiel = new ArrayList<Tippspiel.Tipp.Spiel>();
-            }
-            return this.spiel;
+        public Tippspiel.Tipp.Spiel getSpiel() {
+            return spiel;
+        }
+
+        /**
+         * Sets the value of the spiel property.
+         * 
+         * @param value
+         *     allowed object is
+         *     {@link Tippspiel.Tipp.Spiel }
+         *     
+         */
+        public void setSpiel(Tippspiel.Tipp.Spiel value) {
+            this.spiel = value;
         }
 
 

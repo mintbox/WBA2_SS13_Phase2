@@ -32,4 +32,12 @@
             <Ergebnis>0:2</Ergebnis>
         </Spiel>
     </Tipp>
+    <Tipp>
+        <Name>Troll</Name>
+        <Spiel>
+            <Heimmannschaft>Bayern</Heimmannschaft>
+            <Gastmannschaft>HSV</Gastmannschaft>
+            <Ergebnis>7:6</Ergebnis>
+        </Spiel>
+    </Tipp>
 </Tippspiel>
