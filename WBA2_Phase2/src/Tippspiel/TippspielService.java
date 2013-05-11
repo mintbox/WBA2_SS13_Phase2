@@ -31,13 +31,16 @@ public class TippspielService {
         int laufen = 0;
         String ein;
         while (laufen != 1) {
-            ein = tippspiel.getTipp().getName();
+            ein = tippspiel.getTipp().get(i).getName();
             if (ein.equalsIgnoreCase(tipp)) {
                 // Schleife benötigt
-                System.out.println("Heimmannschaft: " + tippspiel.getTipp().getSpiel().getHeimmannschaft());
-                System.out.println("Gastmannschaft: " + tippspiel.getTipp().getSpiel().getGastmannschaft());
-                System.out.println("Ergebnis: " + tippspiel.getTipp().getSpiel().getErgebnis());
-                laufen = 1;
+                for (int j = 0; j < tippspiel.getTipp().size(); j++) {
+                    System.out.println("Heimmannschaft: " + tippspiel.getTipp().get(i).getSpiel().get(j).getHeimmannschaft());
+                    System.out.println("Gastmannschaft: " + tippspiel.getTipp().get(i).getSpiel().get(j).getGastmannschaft());
+                    System.out.println("Ergebnis: " + tippspiel.getTipp().get(i).getSpiel().get(j).getErgebnis());
+                    laufen = 1;
+                }
+
             } else {
                 i++;
 
@@ -60,27 +63,19 @@ public class TippspielService {
         int laufen = 0;
         String ein;
         while (laufen != 1) {
-            ein = tippspiel.getTipp().getName();
-           // for (int j = 0; j < 10; j++) {
-                if (tippspiel.getTipp().getSpiel().getErgebnis().compareTo(erg) == 0) {
+            ein = tippspiel.getTipp().get(i).getName();
+            for (int j = 0; j < tippspiel.getTipp().size(); j++) {
+                if (tippspiel.getTipp().get(i).getSpiel().get(j).getErgebnis().compareTo(erg) == 0) {
                     System.out.println("Tipper: " + ein);
                     laufen = 1;
                 } else {
-                  //  j++;
+                    j++;
 
                 }
-           // }
+            }
         }
 
     }
-
-
-
-
-
-
-
-
 
 
 
@@ -98,29 +93,28 @@ public class TippspielService {
         JAXBContext context = JAXBContext.newInstance(Tippspiel.class);
         Unmarshaller um = context.createUnmarshaller();
         Tippspiel tippspiel = (Tippspiel) um.unmarshal(new FileReader("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Tippspiel/Tippspiel_Test.xml"));
+        int i = 0;
+        if (ts.getTipp().get(i).getName() == x) {
 
-       // for (int i = 0; i < ts.getTipp().SIZE; i++) {
-        int laufen2 = 0;
-        int y=0;
-        //while(laufen2 != 1){
-        if (tippspiel.getTipp().getName() == x){
-            ts.getTipp().setName("TestName");
-            ts.getTipp().getSpiel().setErgebnis("TestErgebnis");
-            laufen2 = 1;
-        //}
+            ts.getTipp().addAll(tippspiel.getTipp());
+            ts.getTipp().remove(tippspiel.getTipp().get(i));
+
+
+            // Marshall content to XML-File.
+            Marshaller m = context.createMarshaller();
+            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
+            m.marshal(ts, System.out);
+
+
+            Writer w = new FileWriter("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Tippspiel/Tippspiel_Test.xml");
+            m.marshal(ts, w);
+            w.close();
+            return ts;
         }
-        Marshaller m = context.createMarshaller();
-        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-        m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
-        m.marshal(ts, System.out);
-
-        Writer w;
-        w = new FileWriter("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Tippspiel/Tippspiel_Test.xml");
-        m.marshal(ts, w);
-        w.close();
-
-
         return ts;
+
+
         }
 
 }
