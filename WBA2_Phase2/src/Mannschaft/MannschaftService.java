@@ -68,16 +68,45 @@ public class MannschaftService {
 
     }
 
+    @POST
+    @Path("mannschaft/user/id")
+    @Produces("application/xml")
+    public Mannschaften newAbo(@FormParam("Abonnent") String abo, @FormParam("Mann_ID") String id, @FormParam("Mannschaftsname") String mn) throws JAXBException, IOException {
+
+        Mannschaften mannschaften = new Mannschaften();
+        Mannschaften.Mannschaft mannschaft = new Mannschaften.Mannschaft();
+
+        //Die Restriction mit 18 Mannschaften macht nur Sinn wenn Datenbank vorhanden bzw. die Möglichkeit irgendwie auf die IDs zuzugreifen und mehrere Abonnenten abzuspeichern.
+        // Evtl ist es sinnvoller die 18 Mannschaftsnamen festzulegen mit einer Art Pulldown und jedes Abo neu anzulegen. Dann bräuchte man beim GET allerdings eine weitere Schleife
+
+
+        mannschaft.setAbonnent(abo);
+        mannschaft.setMannID(id);
+        mannschaft.setMannschaftsname(mn);
+
+
+        ObjectFactory ob = new ObjectFactory();
+        mannschaften = ob.createMannschaften();
+        JAXBContext context = JAXBContext.newInstance(Mannschaften.class);
+        Unmarshaller um = context.createUnmarshaller();
+        mannschaften = (Mannschaften) um.unmarshal(new FileReader("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml"));
+        mannschaften.getMannschaft().add(mannschaften.getMannschaft().size(), mannschaft);
+
+
+        Marshaller m = context.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+        m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
+        m.marshal(mannschaften, System.out);
+
+        Writer w = new FileWriter("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml");
+        m.marshal(mannschaften, w);
+        w.close();
+
+        return mannschaften;
 
 
 
-
-
-
-
-
-
-
+    }
 
 
 
