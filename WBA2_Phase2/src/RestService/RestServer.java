@@ -1,4 +1,7 @@
-/*package RestService;
+/* Kann nichts mehr machen da hier Fehler angezeigt werden, deswegen musste ich den Server auskommentieren.
+
+
+package RestService;
 
 import com.sun.grizzly.http.SelectorThread;
 import com.sun.jersey.api.container.grizzly.GrizzlyServerFactory;
