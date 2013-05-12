@@ -14,6 +14,7 @@ public class Testing {
     public static void main(String[] args) throws JAXBException, IOException {
         MannschaftService test = new MannschaftService();
         //test.getMannschaft(16);
-        test.getUser("Oli");
+        //test.getUser("Oli");
+        test.deleteAbo("Hans");
     }
 }
