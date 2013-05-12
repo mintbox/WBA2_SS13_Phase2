@@ -33,7 +33,7 @@ public class TippspielService {
         while (laufen != 1) {
             ein = tippspiel.getTipp().get(i).getName();
             if (ein.equalsIgnoreCase(tipp)) {
-                // Schleife benötigt
+
                 for (int j = 0; j < tippspiel.getTipp().size(); j++) {
                     System.out.println("Heimmannschaft: " + tippspiel.getTipp().get(i).getSpiel().getHeimmannschaft());
                     System.out.println("Gastmannschaft: " + tippspiel.getTipp().get(i).getSpiel().getGastmannschaft());
@@ -101,7 +101,7 @@ public class TippspielService {
         JAXBContext context = JAXBContext.newInstance(Tippspiel.class);
         Unmarshaller um = context.createUnmarshaller();
         tippspiel = (Tippspiel) um.unmarshal(new FileReader("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Tippspiel/Tippspiel_Test.xml"));
-
+        //evtl nach namen sortieren? bisher immer ans ende einfügen
         tippspiel.getTipp().add(tippspiel.getTipp().size(), tipp);
 
         Marshaller m = context.createMarshaller();
@@ -130,12 +130,19 @@ public class TippspielService {
         Unmarshaller um = context.createUnmarshaller();
         Tippspiel tippspiel = (Tippspiel) um.unmarshal(new FileReader("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Tippspiel/Tippspiel_Test.xml"));
         int i = 0;
-        if (tippspiel.getTipp().get(i).getName().equalsIgnoreCase(x)) {
+        //int laufen3 = 0;
+        //while(laufen3 != 1){
+            //for (int j = 0; j < tippspiel.; j++) {
 
+        //Geht bisher nur auf index 1 also den ersten abgegebenen Tipp
+        if (tippspiel.getTipp().get(i).getName().equalsIgnoreCase(x)) {
+           // laufen3 = 1;
             ts.getTipp().addAll(tippspiel.getTipp());
             ts.getTipp().remove(tippspiel.getTipp().get(i));
 
-
+       // }else{
+         //   i++;
+        //} }
             // Marshall content to XML-File.
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);

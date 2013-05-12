@@ -17,7 +17,7 @@ public class Testing {
         TippspielService test = new TippspielService();
         //test.getTippspiel("Oli");
         //test.getErgebnis("0:4");
-        //test.deleteTipp("Oli");
+        //test.deleteTipp("Peter");
         test.newTipp("Troll", "Bayern", "HSV", "7:6");
     }
 }
