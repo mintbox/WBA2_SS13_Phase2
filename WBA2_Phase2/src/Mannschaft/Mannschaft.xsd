@@ -6,7 +6,7 @@
                 <xs:element name="Mannschaft" minOccurs="18" maxOccurs="18">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="Abonnent" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="Abonnent" type="xs:string" />
                             <xs:element name="Mann_ID" type="xs:ID"/>
                             <xs:element name="Mannschaftsname" type="xs:string"/>
                         </xs:sequence>

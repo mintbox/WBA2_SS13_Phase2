@@ -13,7 +13,7 @@ import java.io.IOException;
 public class Testing {
     public static void main(String[] args) throws JAXBException, IOException {
         MannschaftService test = new MannschaftService();
-      //  test.getMannschaft1(16);
-        test.getMannschaft2("Oli");
+        //test.getMannschaft(16);
+        test.getUser("Oli");
     }
 }

@@ -22,7 +22,7 @@ public class MannschaftService {
     @Path("/test/{id}")
     @GET
 
-    public void getMannschaft1(@PathParam("test/id") int follow) throws JAXBException, IOException {
+    public void getMannschaft(@PathParam("test/id") int follow) throws JAXBException, IOException {
 
         JAXBContext jc = JAXBContext.newInstance(Mannschaften.class);
         Unmarshaller unmarshaller = jc.createUnmarshaller();
@@ -46,7 +46,7 @@ public class MannschaftService {
 
     }
 
-    public void getMannschaft2(@PathParam("test/user") String abo) throws JAXBException, IOException {
+    public void getUser(@PathParam("test/user") String abo) throws JAXBException, IOException {
 
         JAXBContext jc = JAXBContext.newInstance(Mannschaften.class);
         Unmarshaller unmarshaller = jc.createUnmarshaller();
@@ -54,13 +54,7 @@ public class MannschaftService {
 
         int i = 0;
         int laufen = 0;
-        String ein;
-        while (laufen != 1) {
-            // IOOB Exception weil Abonnent vom Typ <List>String durch minOccurs/maxOccurs
-            //VERSUCH1
-            //ein = String.valueOf(mannschaft.getMannschaft().get(i).getAbonnent());
-            //VERSUCH2
-            //ein = mannschaft.getMannschaft().get(i).getAbonnent().toString();
+        while (laufen != 1) {;
             if (mannschaft.getMannschaft().get(i).getAbonnent().equals(abo)) {
                 System.out.println(" " + mannschaft.getMannschaft().get(i).getAbonnent());
                 System.out.println(" " + mannschaft.getMannschaft().get(i).getMannschaftsname());
