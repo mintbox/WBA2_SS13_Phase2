@@ -29,10 +29,14 @@ public class MannschaftService {
         int i = 0;
         int laufen = 0;
         while (laufen != 1) {
-            int mannId = Integer.parseInt(mannschaft.getMannschaft().get(i).getMannID());
+            int mannId = Integer.parseInt(mannschaft.getAbonnement().get(i).getMannID());
             if (mannId == follow) {
-                System.out.println(" " + mannschaft.getMannschaft().get(i).getMannschaftsname());
-                System.out.println(" " + mannschaft.getMannschaft().get(i).getAbonnent());
+                System.out.println("Mannschaft: " + mannschaft.getAbonnement().get(i).getMannschaftsname());
+                System.out.println("Follower:");
+                for (int j = 0; j < mannschaft.getAbonnement().get(i).getAbonnent().size(); j++) {
+
+                    System.out.println(" " + mannschaft.getAbonnement().get(i).getAbonnent().get(j));
+                }
                 laufen = 1;
             } else {
                 i++;
@@ -42,7 +46,7 @@ public class MannschaftService {
         }
 
     }
-
+    /*
     public void getUser(@PathParam("mannschaft/user") String abo) throws JAXBException, IOException {
 
         JAXBContext jc = JAXBContext.newInstance(Mannschaften.class);
@@ -54,9 +58,9 @@ public class MannschaftService {
         // Jeder User nur 1 Abo. Muss noch geändert werden.
         while (laufen != 1) {
             ;
-            if (mannschaft.getMannschaft().get(i).getAbonnent().equals(abo)) {
-                System.out.println(" " + mannschaft.getMannschaft().get(i).getAbonnent());
-                System.out.println(" " + mannschaft.getMannschaft().get(i).getMannschaftsname());
+            if (mannschaft.getAbonnement().get(i).getAbonnent().equals(abo)) {
+                System.out.println(" " + mannschaft.getAbonnement().get(i).getAbonnent());
+                System.out.println(" " + mannschaft.getAbonnement().get(i).getMannschaftsname());
                 laufen = 1;
             } else {
                 i++;
@@ -67,6 +71,8 @@ public class MannschaftService {
 
 
     }
+    */
+
 
     @POST
     @Path("mannschaft/user/id")
@@ -74,13 +80,13 @@ public class MannschaftService {
     public Mannschaften newAbo(@FormParam("Abonnent") String abo, @FormParam("Mann_ID") String id, @FormParam("Mannschaftsname") String mn) throws JAXBException, IOException {
 
         Mannschaften mannschaften = new Mannschaften();
-        Mannschaften.Mannschaft mannschaft = new Mannschaften.Mannschaft();
+        Mannschaften.Abonnement mannschaft = new Mannschaften.Abonnement();
 
         //Die Restriction mit 18 Mannschaften macht nur Sinn wenn Datenbank vorhanden bzw. die Möglichkeit irgendwie auf die IDs zuzugreifen und mehrere Abonnenten abzuspeichern.
         // Evtl ist es sinnvoller die 18 Mannschaftsnamen festzulegen mit einer Art Pulldown und jedes Abo neu anzulegen. Dann bräuchte man beim GET allerdings eine weitere Schleife
 
 
-        mannschaft.setAbonnent(abo);
+        mannschaft.getAbonnent().set(0, abo);
         mannschaft.setMannID(id);
         mannschaft.setMannschaftsname(mn);
 
@@ -90,7 +96,7 @@ public class MannschaftService {
         JAXBContext context = JAXBContext.newInstance(Mannschaften.class);
         Unmarshaller um = context.createUnmarshaller();
         mannschaften = (Mannschaften) um.unmarshal(new FileReader("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml"));
-        mannschaften.getMannschaft().add(mannschaften.getMannschaft().size(), mannschaft);
+        mannschaften.getAbonnement().add(mannschaften.getAbonnement().size(), mannschaft);
 
 
         Marshaller m = context.createMarshaller();
@@ -105,10 +111,7 @@ public class MannschaftService {
         return mannschaften;
 
 
-
     }
-
-
 
     @DELETE
     @Path("mannschaft/user")
@@ -120,14 +123,15 @@ public class MannschaftService {
         Unmarshaller um = context.createUnmarshaller();
         Mannschaften mannschaften = (Mannschaften) um.unmarshal(new FileReader("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml"));
 
-        int i = 0;
 
-        //löscht noch eine komplette mannschaft inkl abonnent
 
-        if (mannschaften.getMannschaft().get(i).getAbonnent().equalsIgnoreCase(x)) {
-            man.getMannschaft().addAll(mannschaften.getMannschaft());
-            man.getMannschaft().remove(mannschaften.getMannschaft().get(i));
-
+        for (int i = 0; i < 18; i++) {
+        //LÖSCHT KOMPLETTES XML
+        //EQUALS VERGLEICHT NICHT
+        if (mannschaften.getAbonnement().get(i).getAbonnent().equals(x)) {
+            man.getAbonnement().addAll(mannschaften.getAbonnement());
+            man.getAbonnement().remove(mannschaften.getAbonnement().get(i));
+        }
             // Marshall content to XML-File.
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
