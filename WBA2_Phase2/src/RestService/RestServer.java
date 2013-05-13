@@ -1,7 +1,3 @@
-/* Kann nichts mehr machen, da hier Fehler angezeigt werden, deswegen musste ich den Server auskommentieren.
-
-
-
 package RestService;
 
 import com.sun.grizzly.http.SelectorThread;
@@ -24,4 +20,3 @@ public class RestServer {
     }
 
 }
- */
