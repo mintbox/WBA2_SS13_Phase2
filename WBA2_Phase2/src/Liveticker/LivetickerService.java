@@ -17,8 +17,10 @@ import java.io.*;
 @Path("/liveticker")
 public class LivetickerService {
 
-    @Path("Liveticker/{id}")
+    @Path("/{id}")
     @GET
+    @Produces("applicaction/xml")
+    //Return XML, nicht void
     public void getMannschaft(@PathParam("id") int team) throws JAXBException, IOException {
         int test = 0;
 
@@ -54,6 +56,7 @@ public class LivetickerService {
 
 
         }
+
 
     }
 
