@@ -1,5 +1,8 @@
 package Spieltag;
 
+import javax.xml.bind.JAXBException;
+import java.io.IOException;
+
 /**
  * Created with IntelliJ IDEA.
  * User: djga
@@ -8,8 +11,9 @@ package Spieltag;
  * To change this template use File | Settings | File Templates.
  */
 public class SpieltagTest {
-    public static void main(String[] args) {
-        Spieltag test = new Spieltag();
+    public static void main(String[] args) throws JAXBException, IOException {
+        SpieltagService test = new SpieltagService();
+        test.getSpieltag(1);
 
     }
 }

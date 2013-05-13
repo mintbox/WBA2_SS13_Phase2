@@ -17,7 +17,7 @@ import java.io.*;
 @Path("/liveticker")
 public class LivetickerService {
 
-    @Path("/{id}")
+    @Path("Liveticker/{id}")
     @GET
     public void getMannschaft(@PathParam("id") int team) throws JAXBException, IOException {
         int test = 0;
@@ -58,7 +58,7 @@ public class LivetickerService {
     }
 
     @DELETE
-    @Path("{id}")
+    @Path("liveticker/{id}")
     @Produces("application/xml")
     public Liveticker deleteComment(@PathParam("id") int i) throws JAXBException, IOException {
 
