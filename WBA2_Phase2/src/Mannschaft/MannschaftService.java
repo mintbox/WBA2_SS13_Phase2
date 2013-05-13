@@ -73,7 +73,6 @@ public class MannschaftService {
     }
     */
 
-
     @POST
     @Path("mannschaft/user/id")
     @Produces("application/xml")
@@ -124,27 +123,28 @@ public class MannschaftService {
         Mannschaften mannschaften = (Mannschaften) um.unmarshal(new FileReader("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml"));
 
 
-
+        man.getAbonnement().addAll(mannschaften.getAbonnement());
         for (int i = 0; i < 18; i++) {
-        //LÖSCHT KOMPLETTES XML
-        //EQUALS VERGLEICHT NICHT
-        if (mannschaften.getAbonnement().get(i).getAbonnent().equals(x)) {
-            man.getAbonnement().addAll(mannschaften.getAbonnement());
-            man.getAbonnement().remove(mannschaften.getAbonnement().get(i));
+            for (int j = 0; j < man.getAbonnement().get(i).getAbonnent().size(); j++) {
+                if (mannschaften.getAbonnement().get(i).getAbonnent().get(j).equals(x)) {
+                    man.getAbonnement().get(i).getAbonnent().remove(j);
+                }
+            }
         }
-            // Marshall content to XML-File.
-            Marshaller m = context.createMarshaller();
-            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-            m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
-            m.marshal(man, System.out);
 
 
-            Writer w = new FileWriter("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml");
-            m.marshal(man, w);
-            w.close();
-            return man;
-        }
+        // Marshall content to XML-File.
+        Marshaller m = context.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+        m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
+        m.marshal(man, System.out);
+
+
+        Writer w = new FileWriter("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml");
+        m.marshal(man, w);
+        w.close();
         return man;
+
 
     }
 
