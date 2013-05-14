@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
 <Mannschaften>
     <Abonnement>
         <Abonnent>Alf</Abonnent>
@@ -93,4 +92,5 @@
         <Mann_ID>18</Mann_ID>
         <Mannschaftsname>VFL Wolfsburg</Mannschaftsname>
     </Abonnement>
+    <Abonnement/>
 </Mannschaften>
