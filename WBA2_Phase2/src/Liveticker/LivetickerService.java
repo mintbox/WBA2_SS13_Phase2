@@ -64,7 +64,7 @@ public class LivetickerService {
             m.marshal(lt, System.out);
 
             Writer w = null;
-            w = new FileWriter("/Users/djga/Dropbox/coding/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
+            w = new FileWriter("/Users/djga/Dropbox/coding/WBA2_SS13/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
             m.marshal(lt, w);
             w.close();
             return lt;
