@@ -44,7 +44,6 @@ public class LivetickerService {
     @Path("/{id}")
     @Produces("application/xml")
     public Liveticker deleteComment(@PathParam("id") int i) throws JAXBException, IOException {
-
         ObjectFactory ob = new ObjectFactory();
         Liveticker liveticker = ob.createLiveticker();
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
@@ -54,7 +53,7 @@ public class LivetickerService {
 
         if (i <= liveticker.getSpiel().size()) {
 
-         //   lt.getSpiel().addAll(liveticker.getSpiel());
+            //   lt.getSpiel().addAll(liveticker.getSpiel());
             lt.getSpiel().remove(liveticker.getSpiel().get(i));
 
             // Marshall content to XML-File.

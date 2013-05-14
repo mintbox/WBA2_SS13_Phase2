@@ -110,18 +110,15 @@
 
     </Spiel>
     <Spiel>
-
-        <Heimmannschaft>
+                 <Heimmannschaft>
             <mann_id>8</mann_id>
             <name>FC Augsburg</name>
         </Heimmannschaft>
-
-        <Gastmannschaft>
+                     <Gastmannschaft>
             <mann_id>11</mann_id>
             <name>Fortuna Duesseldorf</name>
         </Gastmannschaft>
-
-        <Endergebnis>
+                 <Endergebnis>
             <Ergebnis></Ergebnis>
             <Tore>
                 <Tor>
@@ -131,8 +128,7 @@
                 </Tor>
             </Tore>
         </Endergebnis>
-
-        <Kommentare>
+                  <Kommentare>
             <Kommentar>
                 <Minute></Minute>
                 <Text></Text>
@@ -141,13 +137,11 @@
 
     </Spiel>
     <Spiel>
-
         <Heimmannschaft>
             <mann_id>12</mann_id>
             <name>Hamburger SV</name>
         </Heimmannschaft>
-
-        <Gastmannschaft>
+             <Gastmannschaft>
             <mann_id>2</mann_id>
             <name>FC Nuernberg</name>
         </Gastmannschaft>
