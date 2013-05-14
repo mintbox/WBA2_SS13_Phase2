@@ -87,14 +87,16 @@ public class MannschaftService {
         JAXBContext context = JAXBContext.newInstance(Mannschaften.class);
         Unmarshaller um = context.createUnmarshaller();
         mannschaften = (Mannschaften) um.unmarshal(new FileReader("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml"));
-        mannschaften.getAbonnement().add(mannschaften.getAbonnement().size(), mannschaft);
+
         //Die Restriction mit 18 Mannschaften macht nur Sinn wenn Datenbank vorhanden bzw. die Möglichkeit irgendwie auf die IDs zuzugreifen und mehrere Abonnenten abzuspeichern.
         // Evtl ist es sinnvoller die 18 Mannschaftsnamen festzulegen mit einer Art Pulldown und jedes Abo neu anzulegen. Dann bräuchte man beim GET allerdings eine weitere Schleife
 
         int z = 0;
         int i = 0;
         while (z != 1) {
-            int mannId = Integer.parseInt(mannschaften.getAbonnement().get(i).getMannID());
+            // Ich spring hier von Fehler zu Fehler. NumberFormatException weil er die ID nicht parsen kann.
+            // Dann ".toString()" hinzugefügt und eine NullPointerException taucht auf.
+            int mannId = Integer.parseInt(mannschaften.getAbonnement().get(i).getMannID().toString());
             if (mannId == id) {
                 for (int j = 0; j < mannschaft.getAbonnent().size(); j++) {
                     mannschaft.getAbonnent().add(mannschaft.getAbonnent().size(), abo);
@@ -105,9 +107,12 @@ public class MannschaftService {
             }
         }
 
+        mannschaften.getAbonnement().add(mannschaften.getAbonnement().size(), mannschaft);
+
     /*    mannschaft.getAbonnent().set(0, abo);
         mannschaft.setMannID(id);
         mannschaft.setMannschaftsname(mn);       */
+
 
         Marshaller m = context.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
