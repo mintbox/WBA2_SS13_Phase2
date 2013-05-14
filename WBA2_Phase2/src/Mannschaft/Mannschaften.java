@@ -24,12 +24,12 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Mannschaft" maxOccurs="18" minOccurs="18">
+ *         &lt;element name="Abonnement" maxOccurs="18" minOccurs="18">
  *           &lt;complexType>
  *             &lt;complexContent>
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                 &lt;sequence>
- *                   &lt;element name="Abonnent" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *                   &lt;element name="Abonnent" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
  *                   &lt;element name="Mann_ID" type="{http://www.w3.org/2001/XMLSchema}ID"/>
  *                   &lt;element name="Mannschaftsname" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *                 &lt;/sequence>
@@ -47,41 +47,41 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "mannschaft"
+    "abonnement"
 })
 @XmlRootElement(name = "Mannschaften")
 public class Mannschaften {
 
-    @XmlElement(name = "Mannschaft", required = true)
-    protected List<Mannschaften.Mannschaft> mannschaft;
+    @XmlElement(name = "Abonnement", required = true)
+    protected List<Mannschaften.Abonnement> abonnement;
 
     /**
-     * Gets the value of the mannschaft property.
+     * Gets the value of the abonnement property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the mannschaft property.
+     * This is why there is not a <CODE>set</CODE> method for the abonnement property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getMannschaft().add(newItem);
+     *    getAbonnement().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link Mannschaften.Mannschaft }
+     * {@link Mannschaften.Abonnement }
      * 
      * 
      */
-    public List<Mannschaften.Mannschaft> getMannschaft() {
-        if (mannschaft == null) {
-            mannschaft = new ArrayList<Mannschaften.Mannschaft>();
+    public List<Mannschaften.Abonnement> getAbonnement() {
+        if (abonnement == null) {
+            abonnement = new ArrayList<Mannschaften.Abonnement>();
         }
-        return this.mannschaft;
+        return this.abonnement;
     }
 
 
@@ -95,7 +95,7 @@ public class Mannschaften {
      *   &lt;complexContent>
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *       &lt;sequence>
-     *         &lt;element name="Abonnent" type="{http://www.w3.org/2001/XMLSchema}string"/>
+     *         &lt;element name="Abonnent" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
      *         &lt;element name="Mann_ID" type="{http://www.w3.org/2001/XMLSchema}ID"/>
      *         &lt;element name="Mannschaftsname" type="{http://www.w3.org/2001/XMLSchema}string"/>
      *       &lt;/sequence>
@@ -112,10 +112,10 @@ public class Mannschaften {
         "mannID",
         "mannschaftsname"
     })
-    public static class Mannschaft {
+    public static class Abonnement {
 
         @XmlElement(name = "Abonnent", required = true)
-        protected String abonnent;
+        protected List<String> abonnent;
         @XmlElement(name = "Mann_ID", required = true)
         @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
         @XmlID
@@ -127,25 +127,30 @@ public class Mannschaften {
         /**
          * Gets the value of the abonnent property.
          * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
-         */
-        public String getAbonnent() {
-            return abonnent;
-        }
-
-        /**
-         * Sets the value of the abonnent property.
+         * <p>
+         * This accessor method returns a reference to the live list,
+         * not a snapshot. Therefore any modification you make to the
+         * returned list will be present inside the JAXB object.
+         * This is why there is not a <CODE>set</CODE> method for the abonnent property.
          * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
+         * <p>
+         * For example, to add a new item, do as follows:
+         * <pre>
+         *    getAbonnent().add(newItem);
+         * </pre>
+         * 
+         * 
+         * <p>
+         * Objects of the following type(s) are allowed in the list
+         * {@link String }
+         * 
+         * 
          */
-        public void setAbonnent(String value) {
-            this.abonnent = value;
+        public List<String> getAbonnent() {
+            if (abonnent == null) {
+                abonnent = new ArrayList<String>();
+            }
+            return this.abonnent;
         }
 
         /**

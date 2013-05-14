@@ -14,14 +14,7 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
-    <orderEntry type="library" name="grizzly-servlet-webserver-1.9.18" level="project" />
     <orderEntry type="library" name="jersey" level="project" />
-    <orderEntry type="library" name="asm-3.1" level="project" />
-    <orderEntry type="library" name="jackson-core-asl-1.1.1" level="project" />
-    <orderEntry type="library" name="jersey-client-1.1.5.1" level="project" />
-    <orderEntry type="library" name="jersey-core-1.1.5.1" level="project" />
-    <orderEntry type="library" name="jersey-json-1.1.5.1" level="project" />
-    <orderEntry type="library" name="jersey-server-1.1.5.1" level="project" />
     <orderEntry type="library" name="jsr311-api-1.1.1" level="project" />
     <orderEntry type="library" name="JAX-RS-jersey-1.12" level="project" />
     <orderEntry type="library" name="JAX-WS-Glassfish / JAX-WS 2.2 RI / Metro 1.X / JWSDP 2.2" level="project" />
@@ -34,6 +27,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>
 
