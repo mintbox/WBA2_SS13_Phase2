@@ -17,10 +17,11 @@ import java.io.*;
  */
 public class MannschaftService {
     // never used?
-    @Path("/test/{id}")
+    @Path("/mannschaft")
     @GET
+    @Produces("application/xml")
 
-    public void getMannschaft(@PathParam("mannschaft/id") int follow) throws JAXBException, IOException {
+    public Mannschaften getMannschaft(@PathParam("id") int follow) throws JAXBException, IOException {
 
         JAXBContext jc = JAXBContext.newInstance(Mannschaften.class);
         Unmarshaller unmarshaller = jc.createUnmarshaller();
@@ -42,8 +43,8 @@ public class MannschaftService {
                 i++;
 
             }
-
         }
+        return mannschaft;
 
     }
     /*
@@ -76,18 +77,35 @@ public class MannschaftService {
     @POST
     @Path("mannschaft/user/id")
     @Produces("application/xml")
-    public Mannschaften newAbo(@FormParam("Abonnent") String abo, @FormParam("Mann_ID") String id, @FormParam("Mannschaftsname") String mn) throws JAXBException, IOException {
+    public Mannschaften newAbo(@FormParam("Abonnent") String abo, @FormParam("Mann_ID") int id) throws JAXBException, IOException {
 
         Mannschaften mannschaften = new Mannschaften();
         Mannschaften.Abonnement mannschaft = new Mannschaften.Abonnement();
 
+
         //Die Restriction mit 18 Mannschaften macht nur Sinn wenn Datenbank vorhanden bzw. die Möglichkeit irgendwie auf die IDs zuzugreifen und mehrere Abonnenten abzuspeichern.
         // Evtl ist es sinnvoller die 18 Mannschaftsnamen festzulegen mit einer Art Pulldown und jedes Abo neu anzulegen. Dann bräuchte man beim GET allerdings eine weitere Schleife
 
+        int z = 0;
+        int i = 0;
+        while (z != 1) {
 
-        mannschaft.getAbonnent().set(0, abo);
+            int mannId = Integer.parseInt(mannschaften.getAbonnement().get(i).getMannID());
+            if (mannId == id) {
+                for (int j = 0; j < mannschaft.getAbonnent().size(); j++) {
+                    mannschaft.getAbonnent().add(mannschaft.getAbonnent().size(), abo);
+
+                }
+                z = 1;
+            } else {
+                i++;
+            }
+
+        }
+
+    /*    mannschaft.getAbonnent().set(0, abo);
         mannschaft.setMannID(id);
-        mannschaft.setMannschaftsname(mn);
+        mannschaft.setMannschaftsname(mn);       */
 
 
         ObjectFactory ob = new ObjectFactory();

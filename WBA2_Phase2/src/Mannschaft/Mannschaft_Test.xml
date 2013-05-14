@@ -59,7 +59,7 @@
         <Mannschaftsname>Fortuna Duesseldorf</Mannschaftsname>
     </Abonnement>
     <Abonnement>
-        <Abonnent></Abonnent>
+        <Abonnent>Alf</Abonnent>
         <Mann_ID>12</Mann_ID>
         <Mannschaftsname>Hamburger SV</Mannschaftsname>
     </Abonnement>
@@ -84,7 +84,7 @@
         <Mannschaftsname>SV Werder Bremen</Mannschaftsname>
     </Abonnement>
     <Abonnement>
-        <Abonnent></Abonnent>
+        <Abonnent>Alf</Abonnent>
         <Mann_ID>17</Mann_ID>
         <Mannschaftsname>VFB Stuttgart</Mannschaftsname>
     </Abonnement>

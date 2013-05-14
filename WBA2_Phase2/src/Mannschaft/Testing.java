@@ -15,7 +15,7 @@ public class Testing {
         MannschaftService test = new MannschaftService();
         //test.getMannschaft(1);
         //test.getUser("Oli");
-        test.deleteAbo("Alf");
-        //test.newAbo("Ich", "11", "Mein Verein");
+        //test.deleteAbo("Alf");
+        test.newAbo("Ich", 3);
     }
 }
