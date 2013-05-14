@@ -5,7 +5,10 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import java.io.*;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,49 +22,26 @@ public class LivetickerService {
 
     @Path("/{id}")
     @GET
-    @Produces("applicaction/xml")
-    //Return XML, nicht void
-    public void getMannschaft(@PathParam("id") int team) throws JAXBException, IOException {
-        int test = 0;
-
-        JAXBContext jc = JAXBContext.newInstance(Liveticker.class);
-        Unmarshaller unmarshaller = jc.createUnmarshaller();
-                /*FRAGE: Wie funktioniert das bei verteilten Systemen?*/
-        Liveticker liveticker = (Liveticker) unmarshaller.unmarshal(new File("/Users/djga/Dropbox/coding/WBA2_SS13/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
-        //Evtl ID's der Mannschaften ausgeben
-        int i = 0;
-        while (test != 1) {
-            int heimId = Integer.parseInt(liveticker.getSpiel().get(i).getHeimmannschaft().getMannId());
-            int gastId = Integer.parseInt(liveticker.getSpiel().get(i).getGastmannschaft().getMannId());
-            if (heimId == (team) || gastId == team) {
-                System.out.println("Heimmannschaft: " + liveticker.getSpiel().get(i).getHeimmannschaft().getName());
-                System.out.println("Gastmannschaft: " + liveticker.getSpiel().get(i).getGastmannschaft().getName());
-                for (int j = 0; liveticker.getSpiel().get(i).getEndergebnis().getTore().getTor().size() > j; j++) {
-                    System.out.println("TOR:");
-                    System.out.println("Torschuetze: " + liveticker.spiel.get(i).endergebnis.tore.tor.get(j).getTorschuetze());
-                    System.out.println("Mannschaft: " + liveticker.spiel.get(i).endergebnis.tore.tor.get(j).getMannschaftSchuetze());
-                    System.out.println("Spielminute " + liveticker.spiel.get(i).endergebnis.tore.tor.get(j).getMinute());
-                    System.out.println("-----------------------------------");
-
-
-                }
-                for (int k = 0; k < liveticker.getSpiel().get(i).getKommentare().getKommentar().size(); k++) {
-                    System.out.println(liveticker.spiel.get(i).getKommentare().getKommentar().get(k).getMinute() + " Minute:");
-                    System.out.println(liveticker.spiel.get(i).getKommentare().getKommentar().get(k).getText());
-                    System.out.println("-----------------------------------");
-                }
-                test = 1;
-            } else
-                i++;
-
-
+    @Produces("application/xml")
+    public Liveticker getMannschaft(@PathParam("id") int team) throws JAXBException, IOException {
+        Liveticker liveticker = new Liveticker();
+        ObjectFactory ob = new ObjectFactory();
+        liveticker = ob.createLiveticker();
+        JAXBContext context = JAXBContext.newInstance(Liveticker.class);
+        Unmarshaller um = context.createUnmarshaller();
+        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/Dropbox/coding/WBA2_SS13/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
+        Liveticker rt = ob.createLiveticker();
+        for (int j = 0; j < liveticker.getSpiel().size(); j++) {
+            int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
+            int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
+            if (heim == team || gast == team)
+                rt.getSpiel().add(liveticker.getSpiel().get(j));
         }
-
-
+        return rt;
     }
 
     @DELETE
-    @Path("liveticker/{id}")
+    @Path("/{id}")
     @Produces("application/xml")
     public Liveticker deleteComment(@PathParam("id") int i) throws JAXBException, IOException {
 
@@ -69,12 +49,12 @@ public class LivetickerService {
         Liveticker liveticker = ob.createLiveticker();
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
         Unmarshaller um = context.createUnmarshaller();
-        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/Dropbox/coding/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
+        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/Dropbox/coding/WBA2_SS13/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
         Liveticker lt = ob.createLiveticker();
 
         if (i <= liveticker.getSpiel().size()) {
 
-            lt.getSpiel().addAll(liveticker.getSpiel());
+         //   lt.getSpiel().addAll(liveticker.getSpiel());
             lt.getSpiel().remove(liveticker.getSpiel().get(i));
 
             // Marshall content to XML-File.
