@@ -75,7 +75,7 @@
     <Abonnement>
         <Abonnent></Abonnent>
         <Mann_ID>15</Mann_ID>
-        <Mannschaftsname>SpVgg Greuther Fürth</Mannschaftsname>
+        <Mannschaftsname>SpVgg Greuther F&#65533;rth</Mannschaftsname>
     </Abonnement>
     <Abonnement>
         <Abonnent></Abonnent>
@@ -92,5 +92,7 @@
         <Mann_ID>18</Mann_ID>
         <Mannschaftsname>VFL Wolfsburg</Mannschaftsname>
     </Abonnement>
+    <Abonnement/>
+    <Abonnement/>
     <Abonnement/>
 </Mannschaften>

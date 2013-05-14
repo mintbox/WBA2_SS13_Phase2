@@ -88,8 +88,6 @@ public class MannschaftService {
         Unmarshaller um = context.createUnmarshaller();
         mannschaften = (Mannschaften) um.unmarshal(new FileReader("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml"));
         mannschaften.getAbonnement().add(mannschaften.getAbonnement().size(), mannschaft);
-
-
         //Die Restriction mit 18 Mannschaften macht nur Sinn wenn Datenbank vorhanden bzw. die Möglichkeit irgendwie auf die IDs zuzugreifen und mehrere Abonnenten abzuspeichern.
         // Evtl ist es sinnvoller die 18 Mannschaftsnamen festzulegen mit einer Art Pulldown und jedes Abo neu anzulegen. Dann bräuchte man beim GET allerdings eine weitere Schleife
 
@@ -114,13 +112,13 @@ public class MannschaftService {
         Marshaller m = context.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
         m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
-        m.marshal(mannschaft, System.out);
+        m.marshal(mannschaften, System.out);
 
         Writer w = new FileWriter("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml");
-        m.marshal(mannschaft, w);
+        m.marshal(mannschaften, w);
         w.close();
 
-        return mannschaft;
+        return mannschaften;
 
 
     }
