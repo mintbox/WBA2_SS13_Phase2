@@ -9,9 +9,8 @@ import java.util.Scanner;
 public class RestServer {
 
 
-    public static void main(String[] args) throws IllegalArgumentException,IOException {
+    public static void main(String[] args) throws IllegalArgumentException, IOException {
         String url = "http://localhost:4434";
-
         SelectorThread srv = GrizzlyServerFactory.create(url);
         System.out.println("Server gestartet ... [ENTER]");
         (new Scanner(System.in)).nextLine();
