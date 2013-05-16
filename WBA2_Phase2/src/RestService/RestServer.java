@@ -1,4 +1,4 @@
-package REST;
+package RestService;
 
 import java.io.IOException;
 import java.lang.IllegalArgumentException;
