@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Tippspiel>
+
+    <Tipp>
+        <Name></Name>
+        <Spiel>
+            <Heimmannschaft></Heimmannschaft>
+            <Gastmannschaft></Gastmannschaft>
+            <Tipp></Tipp>
+        </Spiel>
+    </Tipp>
+
+</Tippspiel> 

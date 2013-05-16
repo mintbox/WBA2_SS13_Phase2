@@ -1,19 +1,19 @@
-package Liveticker;
+package Mannschaft;
 
 import javax.xml.bind.JAXBException;
 import java.io.IOException;
 
 /**
  * Created with IntelliJ IDEA.
- * User: djga
- * Date: 07.05.13
- * Time: 17:25
+ * User: Oli
+ * Date: 08.05.13
+ * Time: 14:09
  * To change this template use File | Settings | File Templates.
  */
-public class LivetickerTest {
+public class Testing {
     public static void main(String[] args) throws JAXBException, IOException {
-        LivetickerService test = new LivetickerService();
-        //test.getMannschaft(1);
-       test.deleteComment(1);
+        MannschaftService test = new MannschaftService();
+      //  test.getMannschaft1(16);
+        test.getMannschaft2("Oli");
     }
 }
