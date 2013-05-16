@@ -53,8 +53,10 @@ public class LivetickerService {
 
         if (i <= liveticker.getSpiel().size()) {
 
-            //   lt.getSpiel().addAll(liveticker.getSpiel());
-            lt.getSpiel().remove(liveticker.getSpiel().get(i));
+            lt.getSpiel().addAll(liveticker.getSpiel());
+            for (int j = 0; j <lt.getSpiel().get(i).kommentare.kommentar.size(); j++) {
+                lt.getSpiel().get(i).kommentare.kommentar.set(j, null);
+            }
 
             // Marshall content to XML-File.
             Marshaller m = context.createMarshaller();
