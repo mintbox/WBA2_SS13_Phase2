@@ -1,285 +1,237 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
 <Liveticker>
-
     <Spiel>
-
         <Heimmannschaft>
             <mann_id>5</mann_id>
             <name>Borussia Dortmund</name>
         </Heimmannschaft>
-
         <Gastmannschaft>
             <mann_id>16</mann_id>
             <name>Werder Bremen</name>
         </Gastmannschaft>
-
         <Endergebnis>
             <Ergebnis></Ergebnis>
             <Tore>
                 <Tor>
                     <Torschuetze></Torschuetze>
                     <Mannschaft_Schuetze></Mannschaft_Schuetze>
-                    <Minute></Minute>
+                    <Minute>0</Minute>
                 </Tor>
             </Tore>
         </Endergebnis>
-
         <Kommentare>
             <Kommentar>
-                <Minute></Minute>
+                <Minute>0</Minute>
                 <Text></Text>
             </Kommentar>
         </Kommentare>
-
     </Spiel>
     <Spiel>
-
         <Heimmannschaft>
             <mann_id>6</mann_id>
             <name>Borussia Moenchengladbach</name>
         </Heimmannschaft>
-
         <Gastmannschaft>
             <mann_id>1</mann_id>
             <name>1899 Hoffenheim</name>
         </Gastmannschaft>
-
         <Endergebnis>
             <Ergebnis></Ergebnis>
             <Tore>
                 <Tor>
                     <Torschuetze></Torschuetze>
                     <Mannschaft_Schuetze></Mannschaft_Schuetze>
-                    <Minute></Minute>
+                    <Minute>0</Minute>
                 </Tor>
             </Tore>
         </Endergebnis>
-
         <Kommentare>
             <Kommentar>
-                <Minute></Minute>
+                <Minute>0</Minute>
                 <Text></Text>
             </Kommentar>
         </Kommentare>
-
     </Spiel>
     <Spiel>
-
         <Heimmannschaft>
             <mann_id>3</mann_id>
             <name>FSV Mainz</name>
         </Heimmannschaft>
-
         <Gastmannschaft>
             <mann_id>14</mann_id>
             <name>SC Freiburg</name>
         </Gastmannschaft>
-
         <Endergebnis>
             <Ergebnis></Ergebnis>
             <Tore>
                 <Tor>
                     <Torschuetze></Torschuetze>
                     <Mannschaft_Schuetze></Mannschaft_Schuetze>
-                    <Minute></Minute>
+                    <Minute>0</Minute>
                 </Tor>
             </Tore>
         </Endergebnis>
-
         <Kommentare>
             <Kommentar>
-                <Minute></Minute>
+                <Minute>0</Minute>
                 <Text></Text>
             </Kommentar>
         </Kommentare>
-
     </Spiel>
     <Spiel>
-
         <Heimmannschaft>
             <mann_id>8</mann_id>
             <name>FC Augsburg</name>
         </Heimmannschaft>
-
         <Gastmannschaft>
             <mann_id>11</mann_id>
             <name>Fortuna Duesseldorf</name>
         </Gastmannschaft>
-
         <Endergebnis>
             <Ergebnis></Ergebnis>
             <Tore>
                 <Tor>
                     <Torschuetze></Torschuetze>
                     <Mannschaft_Schuetze></Mannschaft_Schuetze>
-                    <Minute></Minute>
+                    <Minute>0</Minute>
                 </Tor>
             </Tore>
         </Endergebnis>
-
         <Kommentare>
             <Kommentar>
-                <Minute></Minute>
+                <Minute>0</Minute>
                 <Text></Text>
             </Kommentar>
         </Kommentare>
-
     </Spiel>
     <Spiel>
-
         <Heimmannschaft>
             <mann_id>12</mann_id>
             <name>Hamburger SV</name>
         </Heimmannschaft>
-
         <Gastmannschaft>
             <mann_id>2</mann_id>
             <name>FC Nuernberg</name>
         </Gastmannschaft>
-
         <Endergebnis>
             <Ergebnis></Ergebnis>
             <Tore>
                 <Tor>
                     <Torschuetze></Torschuetze>
                     <Mannschaft_Schuetze></Mannschaft_Schuetze>
-                    <Minute></Minute>
+                    <Minute>0</Minute>
                 </Tor>
             </Tore>
         </Endergebnis>
-
         <Kommentare>
             <Kommentar>
-                <Minute></Minute>
+                <Minute>0</Minute>
                 <Text></Text>
             </Kommentar>
         </Kommentare>
-
     </Spiel>
     <Spiel>
-
         <Heimmannschaft>
             <mann_id>15</mann_id>
             <name>Greuter Fuerth</name>
         </Heimmannschaft>
-
         <Gastmannschaft>
             <mann_id>9</mann_id>
             <name>FC Bayern Muenchen</name>
         </Gastmannschaft>
-
         <Endergebnis>
             <Ergebnis></Ergebnis>
             <Tore>
                 <Tor>
                     <Torschuetze></Torschuetze>
                     <Mannschaft_Schuetze></Mannschaft_Schuetze>
-                    <Minute></Minute>
+                    <Minute>0</Minute>
                 </Tor>
             </Tore>
         </Endergebnis>
-
         <Kommentare>
             <Kommentar>
-                <Minute></Minute>
+                <Minute>0</Minute>
                 <Text></Text>
             </Kommentar>
         </Kommentare>
-
     </Spiel>
     <Spiel>
-
         <Heimmannschaft>
             <mann_id>7</mann_id>
             <name>Eintracht Frankfurt</name>
         </Heimmannschaft>
-
         <Gastmannschaft>
             <mann_id>4</mann_id>
             <name>Bayer Leverkusen</name>
         </Gastmannschaft>
-
         <Endergebnis>
             <Ergebnis></Ergebnis>
             <Tore>
                 <Tor>
                     <Torschuetze></Torschuetze>
                     <Mannschaft_Schuetze></Mannschaft_Schuetze>
-                    <Minute></Minute>
+                    <Minute>0</Minute>
                 </Tor>
             </Tore>
         </Endergebnis>
-
         <Kommentare>
             <Kommentar>
-                <Minute></Minute>
+                <Minute>0</Minute>
                 <Text></Text>
             </Kommentar>
         </Kommentare>
-
     </Spiel>
     <Spiel>
-
         <Heimmannschaft>
             <mann_id>17</mann_id>
             <name>Vfb Stuttgart</name>
         </Heimmannschaft>
-
         <Gastmannschaft>
             <mann_id>18</mann_id>
             <name>Vfl Wolfsburg</name>
         </Gastmannschaft>
-
         <Endergebnis>
             <Ergebnis></Ergebnis>
             <Tore>
                 <Tor>
                     <Torschuetze></Torschuetze>
                     <Mannschaft_Schuetze></Mannschaft_Schuetze>
-                    <Minute></Minute>
+                    <Minute>0</Minute>
                 </Tor>
             </Tore>
         </Endergebnis>
-
         <Kommentare>
             <Kommentar>
-                <Minute></Minute>
+                <Minute>0</Minute>
                 <Text></Text>
             </Kommentar>
         </Kommentare>
-
     </Spiel>
     <Spiel>
-
         <Heimmannschaft>
             <mann_id>13</mann_id>
             <name>Hannover 96</name>
         </Heimmannschaft>
-
         <Gastmannschaft>
             <mann_id>10</mann_id>
             <name>FC Schalke 04</name>
         </Gastmannschaft>
-
         <Endergebnis>
             <Ergebnis></Ergebnis>
             <Tore>
                 <Tor>
                     <Torschuetze></Torschuetze>
                     <Mannschaft_Schuetze></Mannschaft_Schuetze>
-                    <Minute></Minute>
+                    <Minute>0</Minute>
                 </Tor>
             </Tore>
         </Endergebnis>
-
         <Kommentare>
             <Kommentar>
-                <Minute></Minute>
+                <Minute>0</Minute>
                 <Text></Text>
             </Kommentar>
         </Kommentare>
-
     </Spiel>
-
 </Liveticker>
