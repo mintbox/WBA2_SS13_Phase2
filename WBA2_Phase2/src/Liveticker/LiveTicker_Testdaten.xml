@@ -15,7 +15,7 @@
                 <Tor>
                     <Torschuetze></Torschuetze>
                     <Mannschaft_Schuetze></Mannschaft_Schuetze>
-                    <Minute>0</Minute>
+                    <Minute></Minute>
                 </Tor>
             </Tore>
         </Endergebnis>
