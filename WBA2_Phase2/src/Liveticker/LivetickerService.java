@@ -44,7 +44,8 @@ public class LivetickerService {
     @Path("/{id}")
     @Produces("application/xml")
     public Liveticker deleteComment(@PathParam("id") int team) throws JAXBException, IOException {
-
+        int test = 0;
+        int j = 0;
         ObjectFactory ob = new ObjectFactory();
         Liveticker liveticker;
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
@@ -52,12 +53,21 @@ public class LivetickerService {
         liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
         Liveticker lt = ob.createLiveticker();
 
-       lt.getSpiel().addAll(liveticker.getSpiel());
-        for (int j = 0; j < liveticker.getSpiel().size(); j++) {
+        lt.getSpiel().addAll(liveticker.getSpiel());
+        while (test == 0) {
+
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
             int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
-            if (heim == team || gast == team)
-                lt.getSpiel().remove(liveticker.getSpiel().get(team).getKommentare().getKommentar());
+            System.out.println(heim);
+            System.out.println(gast);
+            System.out.println(team);
+            System.out.println("------");
+            j++;
+            if (heim == team || gast == team) {
+                System.out.println("Mannschaft-id gefunden");
+                lt.getSpiel().remove(liveticker.getSpiel().get(team));
+                test++;
+            }
         }
         // Marshall content to XML-File.
         Marshaller m = context.createMarshaller();
