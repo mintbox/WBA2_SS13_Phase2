@@ -44,6 +44,7 @@ public class LivetickerService {
     @Path("/{id}")
     @Produces("application/xml")
     public Liveticker deleteComment(@PathParam("id") int team) throws JAXBException, IOException {
+
         ObjectFactory ob = new ObjectFactory();
         Liveticker liveticker = ob.createLiveticker();
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
@@ -51,26 +52,23 @@ public class LivetickerService {
         liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
         Liveticker lt = ob.createLiveticker();
 
-        for (int j = 0; j < liveticker.getSpiel().get(team).getKommentare().kommentar.size(); j++) {
-            System.out.println("bla");
+       lt.getSpiel().addAll(liveticker.getSpiel());
+        for (int j = 0; j < liveticker.getSpiel().size(); j++) {
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
             int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
-            if (heim == team || gast == team);
-            lt.getSpiel().get(team).getKommentare().getKommentar().get(j).setMinute(0);
-            lt.getSpiel().get(team).getKommentare().getKommentar().get(j).setText(null);
-
-            // Marshall content to XML-File.
-            Marshaller m = context.createMarshaller();
-            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-            m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
-            m.marshal(lt, System.out);
-
-            Writer w = null;
-            w = new FileWriter("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
-            m.marshal(lt, w);
-            w.close();
-            return lt;
+            if (heim == team || gast == team)
+                lt.getSpiel().remove(liveticker.getSpiel().get(j).getKommentare());
         }
+        // Marshall content to XML-File.
+        Marshaller m = context.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+        m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
+        m.marshal(lt, System.out);
+
+        Writer w = null;
+        w = new FileWriter("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
+        m.marshal(lt, w);
+        w.close();
         return lt;
     }
 }
