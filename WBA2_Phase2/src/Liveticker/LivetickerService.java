@@ -29,7 +29,7 @@ public class LivetickerService {
         liveticker = ob.createLiveticker();
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
         Unmarshaller um = context.createUnmarshaller();
-        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/Dropbox/coding/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker.xml"));
+        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker.xml"));
         Liveticker rt = ob.createLiveticker();
         for (int j = 0; j < liveticker.getSpiel().size(); j++) {
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
@@ -48,15 +48,15 @@ public class LivetickerService {
         Liveticker liveticker = ob.createLiveticker();
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
         Unmarshaller um = context.createUnmarshaller();
-        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/Dropbox/coding/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
+        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
         Liveticker lt = ob.createLiveticker();
 
-        for (int j = 0; j < liveticker.getSpiel().size(); j++) {
+        for (int j = 0; j < liveticker.getSpiel().get(team).getKommentare().kommentar.size(); j++) {
+            System.out.println("bla");
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
             int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
-            if (heim == team || gast == team)
-                lt.getSpiel().add(liveticker.getSpiel().get(j));
-                    lt.getSpiel().get(team).getKommentare().getKommentar().get(j).setMinute(0);
+            if (heim == team || gast == team);
+            lt.getSpiel().get(team).getKommentare().getKommentar().get(j).setMinute(0);
             lt.getSpiel().get(team).getKommentare().getKommentar().get(j).setText(null);
 
             // Marshall content to XML-File.
@@ -66,7 +66,7 @@ public class LivetickerService {
             m.marshal(lt, System.out);
 
             Writer w = null;
-            w = new FileWriter("/Users/djga/Dropbox/coding/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
+            w = new FileWriter("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
             m.marshal(lt, w);
             w.close();
             return lt;
