@@ -7,7 +7,7 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="Abonnent" type="xs:string" maxOccurs="unbounded"/>
-                            <xs:element name="Mann_ID" type="xs:ID"/>
+                            <xs:element name="Mann_ID" type="xs:int"/>
                             <xs:element name="Mannschaftsname" type="xs:string"/>
                         </xs:sequence>
                     </xs:complexType>

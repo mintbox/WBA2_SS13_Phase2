@@ -16,6 +16,6 @@ public class Testing {
         //test.getMannschaft(1);
         //test.getUser("Oli");
         //test.deleteAbo("Alf");
-        test.newAbo("Ich", 3);
+        test.newAbo("Ich", 2);
     }
 }

@@ -6,12 +6,8 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -30,7 +26,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                 &lt;sequence>
  *                   &lt;element name="Abonnent" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
- *                   &lt;element name="Mann_ID" type="{http://www.w3.org/2001/XMLSchema}ID"/>
+ *                   &lt;element name="Mann_ID" type="{http://www.w3.org/2001/XMLSchema}int"/>
  *                   &lt;element name="Mannschaftsname" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *                 &lt;/sequence>
  *               &lt;/restriction>
@@ -96,7 +92,7 @@ public class Mannschaften {
      *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *       &lt;sequence>
      *         &lt;element name="Abonnent" type="{http://www.w3.org/2001/XMLSchema}string" maxOccurs="unbounded"/>
-     *         &lt;element name="Mann_ID" type="{http://www.w3.org/2001/XMLSchema}ID"/>
+     *         &lt;element name="Mann_ID" type="{http://www.w3.org/2001/XMLSchema}int"/>
      *         &lt;element name="Mannschaftsname" type="{http://www.w3.org/2001/XMLSchema}string"/>
      *       &lt;/sequence>
      *     &lt;/restriction>
@@ -116,11 +112,8 @@ public class Mannschaften {
 
         @XmlElement(name = "Abonnent", required = true)
         protected List<String> abonnent;
-        @XmlElement(name = "Mann_ID", required = true)
-        @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
-        @XmlID
-        @XmlSchemaType(name = "ID")
-        protected String mannID;
+        @XmlElement(name = "Mann_ID")
+        protected int mannID;
         @XmlElement(name = "Mannschaftsname", required = true)
         protected String mannschaftsname;
 
@@ -156,24 +149,16 @@ public class Mannschaften {
         /**
          * Gets the value of the mannID property.
          * 
-         * @return
-         *     possible object is
-         *     {@link String }
-         *     
          */
-        public String getMannID() {
+        public int getMannID() {
             return mannID;
         }
 
         /**
          * Sets the value of the mannID property.
          * 
-         * @param value
-         *     allowed object is
-         *     {@link String }
-         *     
          */
-        public void setMannID(String value) {
+        public void setMannID(int value) {
             this.mannID = value;
         }
 

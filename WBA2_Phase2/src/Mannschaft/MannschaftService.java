@@ -30,8 +30,8 @@ public class MannschaftService {
         int i = 0;
         int laufen = 0;
         while (laufen != 1) {
-            int mannId = Integer.parseInt(mannschaft.getAbonnement().get(i).getMannID());
-            if (mannId == follow) {
+            //int mannId = Integer.parseInt(mannschaft.getAbonnement().get(i).getMannID());
+            if (mannschaft.getAbonnement().get(i).getMannID() == follow) {
                 System.out.println("Mannschaft: " + mannschaft.getAbonnement().get(i).getMannschaftsname());
                 System.out.println("Follower:");
                 for (int j = 0; j < mannschaft.getAbonnement().get(i).getAbonnent().size(); j++) {
@@ -96,9 +96,13 @@ public class MannschaftService {
         while (z != 1) {
             // Ich spring hier von Fehler zu Fehler. NumberFormatException weil er die ID nicht parsen kann.
             // Dann ".toString()" hinzugefügt und eine NullPointerException taucht auf.
-            int mannId = Integer.parseInt(mannschaften.getAbonnement().get(i).getMannID().toString());
-            if (mannId == id) {
+            //int mannId = Integer.parseInt(mannschaften.getAbonnement().get(i).getMannID().toString());
+            if (mannschaften.getAbonnement().get(i).getMannID() == id) {
+                System.out.println("HALLO");
+                // Geht nicht in die Schleife rein.
                 for (int j = 0; j < mannschaft.getAbonnent().size(); j++) {
+                    System.out.println("GEHT DOCH");
+                 //   mannschaften.getAbonnement().get(j).getAbonnent().add(mannschaften.getAbonnement().get(j).getAbonnent().size(), abo);
                     mannschaft.getAbonnent().add(mannschaft.getAbonnent().size(), abo);
                 }
                 z = 1;
@@ -108,11 +112,6 @@ public class MannschaftService {
         }
 
         mannschaften.getAbonnement().add(mannschaften.getAbonnement().size(), mannschaft);
-
-    /*    mannschaft.getAbonnent().set(0, abo);
-        mannschaft.setMannID(id);
-        mannschaft.setMannschaftsname(mn);       */
-
 
         Marshaller m = context.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
