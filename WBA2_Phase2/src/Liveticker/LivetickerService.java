@@ -51,16 +51,20 @@ public class LivetickerService {
         Unmarshaller um = context.createUnmarshaller();
         liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
         Liveticker lt = ob.createLiveticker();
+        int id = 0;
 
         lt.getSpiel().addAll(liveticker.getSpiel());
         for (int j = 0; j < liveticker.getSpiel().size(); j++) {
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
             int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
-            if (heim == team || gast == team) {
-                lt.getSpiel().remove(liveticker.getSpiel().get(j).getKommentare().getKommentar());
-
+            System.out.println(heim);
+            if (heim == team || gast == team){
+                id=j;
             }
         }
+
+            int commentsize=liveticker.getSpiel().get(id).getKommentare().getKommentar().size();
+            liveticker.getSpiel().get(id).getKommentare().getKommentar().remove(commentsize);
 
 
         // Marshall content to XML-File.
