@@ -76,6 +76,36 @@
                 <Text>test5</Text>
             </Kommentar>
         </Kommentare>
+        <Kommentare>
+            <Kommentar>
+                <Minute>55</Minute>
+                <Text>test6</Text>
+            </Kommentar>
+        </Kommentare>
+        <Kommentare>
+            <Kommentar>
+                <Minute>60</Minute>
+                <Text>test7</Text>
+            </Kommentar>
+        </Kommentare>
+        <Kommentare>
+            <Kommentar>
+                <Minute>70</Minute>
+                <Text>test8</Text>
+            </Kommentar>
+        </Kommentare>
+        <Kommentare>
+            <Kommentar>
+                <Minute>80</Minute>
+                <Text>test9</Text>
+            </Kommentar>
+        </Kommentare>
+        <Kommentare>
+            <Kommentar>
+                <Minute>90</Minute>
+                <Text>test10</Text>
+            </Kommentar>
+        </Kommentare>
     </Spiel>
     <Spiel>
         <Heimmannschaft>
