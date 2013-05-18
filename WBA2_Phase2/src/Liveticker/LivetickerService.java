@@ -93,16 +93,16 @@ public class LivetickerService {
         for (int j = 0; j < liveticker.getSpiel().size(); j++) {
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
             int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
+            System.out.println(heim);
             if (heim == team || gast == team){
                 id=j;
             }
         }
-
         if(text!=null){
             int commentsize=liveticker.getSpiel().get(id).getKommentare().getKommentar().size();
-            liveticker.getSpiel().get(team).getKommentare().getKommentar().add(commentsize,comment);
-            liveticker.getSpiel().get(team).getKommentare().getKommentar().get(id).setMinute(min);
-            liveticker.getSpiel().get(team).getKommentare().getKommentar().get(id).setText(text);
+            liveticker.getSpiel().get(id).getKommentare().getKommentar().add(commentsize,comment);
+            liveticker.getSpiel().get(id).getKommentare().getKommentar().get(commentsize).setMinute(min);
+            liveticker.getSpiel().get(id).getKommentare().getKommentar().get(commentsize).setText(text);
 
         }
 
