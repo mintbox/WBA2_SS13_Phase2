@@ -44,8 +44,7 @@ public class LivetickerService {
     @Path("/{id}")
     @Produces("application/xml")
     public Liveticker deleteComment(@PathParam("id") int team) throws JAXBException, IOException {
-        int test = 0;
-        int j = 0;
+
         ObjectFactory ob = new ObjectFactory();
         Liveticker liveticker;
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
@@ -54,21 +53,20 @@ public class LivetickerService {
         Liveticker lt = ob.createLiveticker();
 
         lt.getSpiel().addAll(liveticker.getSpiel());
-        while (test == 0) {
-
+        for (int j = 0; j < liveticker.getSpiel().size(); j++) {
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
             int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
-            System.out.println(heim);
+           /* System.out.println(heim);
             System.out.println(gast);
             System.out.println(team);
-            System.out.println("------");
-            j++;
+            System.out.println("------");*/
             if (heim == team || gast == team) {
                 System.out.println("Mannschaft-id gefunden");
-                lt.getSpiel().remove(liveticker.getSpiel().get(team));
-                test++;
+                lt.getSpiel().remove(liveticker.getSpiel().get(team).getKommentare());
             }
         }
+
+
         // Marshall content to XML-File.
         Marshaller m = context.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);

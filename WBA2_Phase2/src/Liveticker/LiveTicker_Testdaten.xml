@@ -28,6 +28,57 @@
     </Spiel>
     <Spiel>
         <Heimmannschaft>
+            <mann_id>6</mann_id>
+            <name>Borussia Moenchengladbach</name>
+        </Heimmannschaft>
+        <Gastmannschaft>
+            <mann_id>1</mann_id>
+            <name>1899 Hoffenheim</name>
+        </Gastmannschaft>
+        <Endergebnis>
+            <Ergebnis></Ergebnis>
+            <Tore>
+                <Tor>
+                    <Torschuetze></Torschuetze>
+                    <Mannschaft_Schuetze></Mannschaft_Schuetze>
+                    <Minute>0</Minute>
+                </Tor>
+            </Tore>
+        </Endergebnis>
+
+        <Kommentare>
+            <Kommentar>
+                <Minute>10</Minute>
+                <Text>test1</Text>
+            </Kommentar>
+        </Kommentare>
+
+        <Kommentare>
+            <Kommentar>
+                <Minute>20</Minute>
+                <Text>test2</Text>
+            </Kommentar>
+        </Kommentare>
+        <Kommentare>            <Kommentar>
+                <Minute>30</Minute>
+                <Text>test3</Text>
+            </Kommentar>
+        </Kommentare>
+        <Kommentare>
+            <Kommentar>
+                <Minute>40</Minute>
+                <Text>test4</Text>
+            </Kommentar>
+        </Kommentare>
+        <Kommentare>
+            <Kommentar>
+                <Minute>50</Minute>
+                <Text>test5</Text>
+            </Kommentar>
+        </Kommentare>
+    </Spiel>
+    <Spiel>
+        <Heimmannschaft>
             <mann_id>8</mann_id>
             <name>FC Augsburg</name>
         </Heimmannschaft>
