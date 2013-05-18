@@ -79,13 +79,14 @@ public class LivetickerService {
     @POST
     @Path("/{id}")
     @Produces("application/xml")
-    public Liveticker postComment(@PathParam("id") int team, @FormParam("Minute")int min, @FormParam("Kommentar") Liveticker.Spiel.Kommentare.Kommentar text) throws JAXBException, IOException {
+    public Liveticker postComment(@PathParam("id") int team, @FormParam("Minute")int min, @FormParam("Kommentar") String text) throws JAXBException, IOException {
         Liveticker liveticker;
         ObjectFactory ob = new ObjectFactory();
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
         Unmarshaller um = context.createUnmarshaller();
         liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
         int id=0;
+        Liveticker.Spiel.Kommentare.Kommentar comment = new Liveticker.Spiel.Kommentare.Kommentar();
 
 
 
@@ -99,7 +100,10 @@ public class LivetickerService {
 
         if(text!=null){
             int commentsize=liveticker.getSpiel().get(id).getKommentare().getKommentar().size();
-            liveticker.getSpiel().get(id).getKommentare().getKommentar().add(commentsize,text);
+            liveticker.getSpiel().get(team).getKommentare().getKommentar().add(commentsize,comment);
+            liveticker.getSpiel().get(team).getKommentare().getKommentar().get(id).setMinute(min);
+            liveticker.getSpiel().get(team).getKommentare().getKommentar().get(id).setText(text);
+
         }
 
         Marshaller m = context.createMarshaller();

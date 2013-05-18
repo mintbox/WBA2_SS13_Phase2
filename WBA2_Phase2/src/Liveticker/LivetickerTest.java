@@ -15,5 +15,6 @@ public class LivetickerTest {
         LivetickerService test = new LivetickerService();
         //test.getMannschaft(1);
         //  test.deleteComment(5);
+        test.postComment(9,20, "elfmeter" );
     }
 }
