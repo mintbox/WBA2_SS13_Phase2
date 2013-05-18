@@ -58,6 +58,7 @@ public class LivetickerService {
             int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
             if (heim == team || gast == team) {
                 lt.getSpiel().remove(liveticker.getSpiel().get(team).getKommentare().getKommentar());
+
             }
         }
 
@@ -74,4 +75,24 @@ public class LivetickerService {
         w.close();
         return lt;
     }
+
+    @POST
+    @Path("/{id}")
+    @Produces("application/xml")
+    public Liveticker postComment(@PathParam("id") int team, , @FormParam("Minute")int min, @FormParam("Kommentar")String text) throws JAXBException, IOException {
+        Liveticker liveticker;
+        ObjectFactory ob = new ObjectFactory();
+        JAXBContext context = JAXBContext.newInstance(Liveticker.class);
+        Unmarshaller um = context.createUnmarshaller();
+        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
+        Liveticker rt = ob.createLiveticker();
+        for (int j = 0; j < liveticker.getSpiel().size(); j++) {
+            int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
+            int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
+            if (heim == team || gast == team)
+                rt.getSpiel().get(j).getKommentare().getKommentar().set(j);
+        }
+        return rt;
+    }
+}
 }
