@@ -79,20 +79,44 @@ public class LivetickerService {
     @POST
     @Path("/{id}")
     @Produces("application/xml")
-    public Liveticker postComment(@PathParam("id") int team, , @FormParam("Minute")int min, @FormParam("Kommentar")String text) throws JAXBException, IOException {
+    public Liveticker postComment(@PathParam("id") int team, @FormParam("Minute")int min, @FormParam("Kommentar") Liveticker.Spiel.Kommentare.Kommentar text) throws JAXBException, IOException {
         Liveticker liveticker;
         ObjectFactory ob = new ObjectFactory();
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
         Unmarshaller um = context.createUnmarshaller();
         liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
-        Liveticker rt = ob.createLiveticker();
-        for (int j = 0; j < liveticker.getSpiel().size(); j++) {
+        int id=0;
+
+
+
+        for(int j=0; j<liveticker.getSpiel().size(); j++){
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
             int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
-            if (heim == team || gast == team)
-                rt.getSpiel().get(j).getKommentare().getKommentar().set(j);
+            if (heim == team || gast == team){
+                id=j;
+            }
         }
-        return rt;
+
+        if(text!=null){
+            int commentsize=liveticker.getSpiel().get(id).getKommentare().getKommentar().size();
+            liveticker.getSpiel().get(id).getKommentare().getKommentar().add(commentsize,text);
+        }
+
+        Marshaller m = context.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+        m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
+        m.marshal(liveticker, System.out);
+
+        Writer w = null;
+        w = new FileWriter("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
+        m.marshal(liveticker, w);
+        w.close();
+        return liveticker;
+
+
+
     }
-}
-}
+
+    }
+
+
