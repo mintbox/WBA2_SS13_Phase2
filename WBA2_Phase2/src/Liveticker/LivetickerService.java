@@ -57,7 +57,7 @@ public class LivetickerService {
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
             int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
             if (heim == team || gast == team) {
-                lt.getSpiel().remove(liveticker.getSpiel().get(team).getKommentare().getKommentar());
+                lt.getSpiel().remove(liveticker.getSpiel().get(j).getKommentare().getKommentar());
 
             }
         }
@@ -90,7 +90,7 @@ public class LivetickerService {
 
 
 
-        for(int j=0; j<liveticker.getSpiel().size(); j++){
+        for (int j = 0; j < liveticker.getSpiel().size(); j++) {
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
             int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
             if (heim == team || gast == team){
