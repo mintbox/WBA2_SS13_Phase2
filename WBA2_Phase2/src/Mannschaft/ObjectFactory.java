@@ -38,11 +38,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Mannschaften.Abonnement }
+     * Create an instance of {@link Mannschaften.Mannschaft }
      * 
      */
-    public Mannschaften.Abonnement createMannschaftenAbonnement() {
-        return new Mannschaften.Abonnement();
+    public Mannschaften.Mannschaft createMannschaftenMannschaft() {
+        return new Mannschaften.Mannschaft();
     }
 
 }
