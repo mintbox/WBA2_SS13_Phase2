@@ -132,6 +132,18 @@
                 <Text>Test</Text>
             </Kommentar>
         </Kommentare>
+        <Kommentare>
+            <Kommentar>
+                <Minute>22</Minute>
+                <Text>Test</Text>
+            </Kommentar>
+        </Kommentare>
+        <Kommentare>
+            <Kommentar>
+                <Minute>33</Minute>
+                <Text>Test</Text>
+            </Kommentar>
+        </Kommentare>
     </Spiel>
     <Spiel>
         <Heimmannschaft>
