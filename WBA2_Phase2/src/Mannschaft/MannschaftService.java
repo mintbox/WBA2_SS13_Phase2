@@ -91,6 +91,7 @@ public class MannschaftService {
         //Die Restriction mit 18 Mannschaften macht nur Sinn wenn Datenbank vorhanden bzw. die Möglichkeit irgendwie auf die IDs zuzugreifen und mehrere Abonnenten abzuspeichern.
         // Evtl ist es sinnvoller die 18 Mannschaftsnamen festzulegen mit einer Art Pulldown und jedes Abo neu anzulegen. Dann bräuchte man beim GET allerdings eine weitere Schleife
 
+
         int z = 0;
         int i = 0;
         while (z != 1) {
