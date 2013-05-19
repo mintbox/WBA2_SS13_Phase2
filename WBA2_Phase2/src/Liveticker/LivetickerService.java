@@ -17,6 +17,7 @@ import java.io.*;
 @Path("/liveticker")
 public class LivetickerService {
 
+    //Gibt Liveticker einer bestimmten Mannschaft zurueck
     @Path("/{id}")
     @GET
     @Produces("application/xml")
@@ -77,6 +78,7 @@ public class LivetickerService {
         return lt;
     }
 
+    //fuegt einen Kommentar hinzu
     @POST
     @Path("/{id}")
     @Produces("application/xml")
@@ -122,7 +124,7 @@ public class LivetickerService {
 
     }
 
-
+     //Setzt oder aktualisiert das Endergebnis
     @PUT
     @Path("/{id}")
     @Produces("application/xml")
