@@ -16,6 +16,7 @@ public class LivetickerTest {
         //test.getMannschaft(1);
          // test.deleteComment(1);
         //test.postComment(4,21, "elfmeter" );
-        test.setErgebnis(5, "2:2");
+        //test.setErgebnis(5, "2:2");
+        test.getTicker();
     }
 }

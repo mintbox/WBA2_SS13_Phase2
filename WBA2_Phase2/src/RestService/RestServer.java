@@ -1,13 +1,10 @@
 package RestService;
-/*
-import java.io.IOException;
-import java.lang.IllegalArgumentException;
-import java.lang.String;
-import java.lang.System;
-import java.util.Scanner;
 
 import com.sun.grizzly.http.SelectorThread;
 import com.sun.jersey.api.container.grizzly.GrizzlyServerFactory;
+
+import java.io.IOException;
+import java.util.Scanner;
 
 public class RestServer {
 
@@ -21,4 +18,4 @@ public class RestServer {
         srv.stopEndpoint();
     }
 
-}     */
+}
