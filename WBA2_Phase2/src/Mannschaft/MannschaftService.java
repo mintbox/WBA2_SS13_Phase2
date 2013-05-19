@@ -7,6 +7,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.*;
+import Mannschaft.Mannschaften.Abonnement.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -94,6 +95,7 @@ public class MannschaftService {
 
         int z = 0;
         int i = 0;
+        //mannschaften.getAbonnement().addAll(mannschaften.getAbonnement());
         while (z != 1) {
             // Ich spring hier von Fehler zu Fehler. NumberFormatException weil er die ID nicht parsen kann.
             // Dann ".toString()" hinzugefügt und eine NullPointerException taucht auf.
@@ -111,8 +113,9 @@ public class MannschaftService {
                 i++;
             }
         }
-
+        //get INDEX?
         mannschaften.getAbonnement().add(mannschaften.getAbonnement().size(), mannschaft);
+        //mannschaften.getAbonnement().get(i).getAbonnent().add(mannschaften.getAbonnement().get(i).getAbonnent().size(), mannschaft);
 
         Marshaller m = context.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
