@@ -135,9 +135,6 @@ public class LivetickerService {
         Unmarshaller um = context.createUnmarshaller();
         liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
         int id=0;
-        Liveticker.Spiel.Kommentare.Kommentar comment = new Liveticker.Spiel.Kommentare.Kommentar();
-
-
 
         for (int j = 0; j < liveticker.getSpiel().size(); j++) {
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
@@ -156,7 +153,7 @@ public class LivetickerService {
         m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
         m.marshal(liveticker, System.out);
 
-        Writer w = null;
+        Writer w;
         w = new FileWriter("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
         m.marshal(liveticker, w);
         w.close();
