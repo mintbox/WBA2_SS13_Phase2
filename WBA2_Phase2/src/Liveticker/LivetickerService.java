@@ -134,11 +134,11 @@ public class LivetickerService {
 
     }
 
-    //Setzt oder aktualisiert das Endergebnis
+    //Setzt oder aktualisiert das Endergebnis und das Tor
     @PUT
     @Path("/{id}")
     @Produces("application/xml")
-    public Liveticker setErgebnis(@PathParam("id") int team, @FormParam("Ergebnis") String erg) throws JAXBException, IOException {
+    public Liveticker setErgebnis(@PathParam("id") int team, @FormParam("Ergebnis") String erg, @FormParam("Torschuetze") String schuetze, @FormParam("Mannschaft des Torschuetzen") String mannschaft, @PathParam("Minute") int min) throws JAXBException, IOException {
         Liveticker liveticker;
         ObjectFactory ob = new ObjectFactory();
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
