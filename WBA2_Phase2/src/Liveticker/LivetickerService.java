@@ -1,5 +1,7 @@
 package Liveticker;
 
+import Spieltag.Spieltag;
+
 import javax.ws.rs.*;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -67,7 +69,7 @@ public class LivetickerService {
         for (int j = 0; j < liveticker.getSpiel().size(); j++) {
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
             int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
-                        if (heim == team || gast == team) {
+            if (heim == team || gast == team) {
                 id = j;
             }
         }
@@ -145,6 +147,7 @@ public class LivetickerService {
         Unmarshaller um = context.createUnmarshaller();
         liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
         int id = 0;
+        Spieltag.Spiel.Endergebnis.Tore.Tor tor = new Spieltag.Spiel.Endergebnis.Tore.Tor();
 
         for (int j = 0; j < liveticker.getSpiel().size(); j++) {
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
@@ -156,7 +159,12 @@ public class LivetickerService {
         }
         if (erg != null) {
             liveticker.getSpiel().get(id).getEndergebnis().setErgebnis(erg);
-            liveticker.getSpiel().get(id).getEndergebnis().getTore().
+            int torsize = liveticker.getSpiel().get(id).getEndergebnis().getTore().getTor().size();
+           // liveticker.getSpiel().get(id).getEndergebnis().getTore().getTor().add(torsize, tor);
+            tor.setTorschuetze(schuetze);
+            tor.setMannschaftSchuetze(mannschaft);
+            tor.setMinute(min);
+
         }
 
         Marshaller m = context.createMarshaller();
