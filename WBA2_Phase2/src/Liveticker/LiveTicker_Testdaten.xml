@@ -10,7 +10,7 @@
             <name>Werder Bremen</name>
         </Gastmannschaft>
         <Endergebnis>
-            <Ergebnis></Ergebnis>
+            <Ergebnis>2:2</Ergebnis>
             <Tore>
                 <Tor>
                     <Torschuetze></Torschuetze>
@@ -36,7 +36,7 @@
             <name>1899 Hoffenheim</name>
         </Gastmannschaft>
         <Endergebnis>
-            <Ergebnis></Ergebnis>
+            <Ergebnis>2:2</Ergebnis>
             <Tore>
                 <Tor>
                     <Torschuetze></Torschuetze>
