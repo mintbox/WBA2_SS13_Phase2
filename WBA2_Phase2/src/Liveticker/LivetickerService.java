@@ -81,13 +81,13 @@ public class LivetickerService {
         Marshaller m = context.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
         m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
-        m.marshal(lt, System.out);
+        m.marshal(liveticker, System.out);
 
         Writer w = null;
         w = new FileWriter("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
-        m.marshal(lt, w);
+        m.marshal(liveticker, w);
         w.close();
-        return lt;
+        return liveticker;
     }
 
     //fuegt einen Kommentar hinzu
@@ -156,6 +156,7 @@ public class LivetickerService {
         }
         if (erg != null) {
             liveticker.getSpiel().get(id).getEndergebnis().setErgebnis(erg);
+            liveticker.getSpiel().get(id).getEndergebnis().getTore().
         }
 
         Marshaller m = context.createMarshaller();
