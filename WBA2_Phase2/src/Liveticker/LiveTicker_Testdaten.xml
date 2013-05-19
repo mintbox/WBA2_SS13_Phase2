@@ -10,7 +10,7 @@
             <name>Werder Bremen</name>
         </Gastmannschaft>
         <Endergebnis>
-            <Ergebnis></Ergebnis>
+            <Ergebnis>2:2</Ergebnis>
             <Tore>
                 <Tor>
                     <Torschuetze></Torschuetze>
@@ -23,6 +23,39 @@
             <Kommentar>
                 <Minute>11</Minute>
                 <Text>Test</Text>
+            </Kommentar>
+        </Kommentare>
+    </Spiel>
+    <Spiel>
+        <Heimmannschaft>
+            <mann_id>6</mann_id>
+            <name>Borussia Moenchengladbach</name>
+        </Heimmannschaft>
+        <Gastmannschaft>
+            <mann_id>1</mann_id>
+            <name>1899 Hoffenheim</name>
+        </Gastmannschaft>
+        <Endergebnis>
+            <Ergebnis>2:2</Ergebnis>
+            <Tore>
+                <Tor>
+                    <Torschuetze></Torschuetze>
+                    <Mannschaft_Schuetze></Mannschaft_Schuetze>
+                    <Minute>0</Minute>
+                </Tor>
+            </Tore>
+        </Endergebnis>
+        <Kommentare>
+            <Kommentar>
+                <Minute>90</Minute>
+                <Text>test10</Text>
+            </Kommentar>
+            <Kommentar>
+                <Minute>20</Minute>
+                <Text>elfmeter</Text>
+            </Kommentar>
+            <Kommentar>
+                <Minute>0</Minute>
             </Kommentar>
         </Kommentare>
     </Spiel>
@@ -47,7 +80,7 @@
         </Endergebnis>
         <Kommentare>
             <Kommentar>
-                <Minute>11</Minute>
+                <Minute>33</Minute>
                 <Text>Test</Text>
             </Kommentar>
         </Kommentare>
@@ -127,6 +160,21 @@
             <Kommentar>
                 <Minute>11</Minute>
                 <Text>Test</Text>
+            </Kommentar>
+            <Kommentar>
+                <Minute>0</Minute>
+            </Kommentar>
+            <Kommentar>
+                <Minute>20</Minute>
+                <Text>elfmeter</Text>
+            </Kommentar>
+            <Kommentar>
+                <Minute>21</Minute>
+                <Text>elfmeter</Text>
+            </Kommentar>
+            <Kommentar>
+                <Minute>21</Minute>
+                <Text>elfmeter</Text>
             </Kommentar>
         </Kommentare>
     </Spiel>

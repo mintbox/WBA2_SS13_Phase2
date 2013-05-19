@@ -5,10 +5,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import java.io.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,6 +17,7 @@ import java.io.Writer;
 @Path("/liveticker")
 public class LivetickerService {
 
+    //Gibt Liveticker einer bestimmten Mannschaft zurueck
     @Path("/{id}")
     @GET
     @Produces("application/xml")
@@ -44,31 +42,29 @@ public class LivetickerService {
     @Path("/{id}")
     @Produces("application/xml")
     public Liveticker deleteComment(@PathParam("id") int team) throws JAXBException, IOException {
-        int test = 0;
-        int j = 0;
+
         ObjectFactory ob = new ObjectFactory();
         Liveticker liveticker;
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
         Unmarshaller um = context.createUnmarshaller();
         liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
         Liveticker lt = ob.createLiveticker();
+        int id = 0;
 
         lt.getSpiel().addAll(liveticker.getSpiel());
-        while (test == 0) {
-
+        for (int j = 0; j < liveticker.getSpiel().size(); j++) {
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
             int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
             System.out.println(heim);
-            System.out.println(gast);
-            System.out.println(team);
-            System.out.println("------");
-            j++;
-            if (heim == team || gast == team) {
-                System.out.println("Mannschaft-id gefunden");
-                lt.getSpiel().remove(liveticker.getSpiel().get(team));
-                test++;
+            if (heim == team || gast == team){
+                id=j;
             }
         }
+
+            int commentsize=liveticker.getSpiel().get(id).getKommentare().getKommentar().size();
+            liveticker.getSpiel().get(id).getKommentare().getKommentar().remove(commentsize);
+
+
         // Marshall content to XML-File.
         Marshaller m = context.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
@@ -81,4 +77,91 @@ public class LivetickerService {
         w.close();
         return lt;
     }
-}
+
+    //fuegt einen Kommentar hinzu
+    @POST
+    @Path("/{id}")
+    @Produces("application/xml")
+    public Liveticker postComment(@PathParam("id") int team, @FormParam("Minute")int min, @FormParam("Kommentar") String text) throws JAXBException, IOException {
+        Liveticker liveticker;
+        ObjectFactory ob = new ObjectFactory();
+        JAXBContext context = JAXBContext.newInstance(Liveticker.class);
+        Unmarshaller um = context.createUnmarshaller();
+        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
+        int id=0;
+        Liveticker.Spiel.Kommentare.Kommentar comment = new Liveticker.Spiel.Kommentare.Kommentar();
+
+
+
+        for (int j = 0; j < liveticker.getSpiel().size(); j++) {
+            int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
+            int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
+            System.out.println(heim);
+            if (heim == team || gast == team){
+                id=j;
+            }
+        }
+        if(text!=null){
+            int commentsize=liveticker.getSpiel().get(id).getKommentare().getKommentar().size();
+            liveticker.getSpiel().get(id).getKommentare().getKommentar().add(commentsize,comment);
+            liveticker.getSpiel().get(id).getKommentare().getKommentar().get(commentsize).setMinute(min);
+            liveticker.getSpiel().get(id).getKommentare().getKommentar().get(commentsize).setText(text);
+
+        }
+
+        Marshaller m = context.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+        m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
+        m.marshal(liveticker, System.out);
+
+        Writer w = null;
+        w = new FileWriter("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
+        m.marshal(liveticker, w);
+        w.close();
+        return liveticker;
+
+
+
+    }
+
+     //Setzt oder aktualisiert das Endergebnis
+    @PUT
+    @Path("/{id}")
+    @Produces("application/xml")
+    public Liveticker setErgebnis(@PathParam("id") int team, @FormParam("Ergebnis") String erg) throws JAXBException, IOException {
+        Liveticker liveticker;
+        ObjectFactory ob = new ObjectFactory();
+        JAXBContext context = JAXBContext.newInstance(Liveticker.class);
+        Unmarshaller um = context.createUnmarshaller();
+        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
+        int id=0;
+
+        for (int j = 0; j < liveticker.getSpiel().size(); j++) {
+            int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
+            int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
+            System.out.println(heim);
+            if (heim == team || gast == team){
+                id=j;
+            }
+        }
+        if(erg!=null){
+            liveticker.getSpiel().get(id).getEndergebnis().setErgebnis(erg);
+        }
+
+        Marshaller m = context.createMarshaller();
+        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+        m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
+        m.marshal(liveticker, System.out);
+
+        Writer w;
+        w = new FileWriter("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
+        m.marshal(liveticker, w);
+        w.close();
+        return liveticker;
+    }
+    }
+
+
+
+
+
