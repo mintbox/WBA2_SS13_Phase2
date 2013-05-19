@@ -67,15 +67,15 @@ public class LivetickerService {
         for (int j = 0; j < liveticker.getSpiel().size(); j++) {
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
             int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
-            System.out.println(heim);
-            if (heim == team || gast == team) {
+                        if (heim == team || gast == team) {
                 id = j;
             }
         }
-
-        int commentsize = liveticker.getSpiel().get(id).getKommentare().getKommentar().size();
-        liveticker.getSpiel().get(id).getKommentare().getKommentar().remove(commentsize);
-
+        if (team != 0) {
+            System.out.println("Treffer");
+            int commentsize = liveticker.getSpiel().get(id).getKommentare().getKommentar().size();
+            liveticker.getSpiel().remove(commentsize);
+        }
 
         // Marshall content to XML-File.
         Marshaller m = context.createMarshaller();

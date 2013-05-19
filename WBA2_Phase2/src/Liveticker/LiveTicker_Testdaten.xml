@@ -24,7 +24,11 @@
                 <Minute>11</Minute>
                 <Text>Test</Text>
             </Kommentar>
-        </Kommentare>
+            <Kommentar>
+                <Minute>11</Minute>
+                <Text>Test</Text>
+            </Kommentar>
+           </Kommentare>
     </Spiel>
     <Spiel>
         <Heimmannschaft>
@@ -47,15 +51,12 @@
         </Endergebnis>
         <Kommentare>
             <Kommentar>
-                <Minute>90</Minute>
-                <Text>test10</Text>
+                <Minute>11</Minute>
+                <Text>Test</Text>
             </Kommentar>
             <Kommentar>
-                <Minute>20</Minute>
-                <Text>elfmeter</Text>
-            </Kommentar>
-            <Kommentar>
-                <Minute>0</Minute>
+                <Minute>11</Minute>
+                <Text>Test</Text>
             </Kommentar>
         </Kommentare>
     </Spiel>
@@ -80,7 +81,11 @@
         </Endergebnis>
         <Kommentare>
             <Kommentar>
-                <Minute>33</Minute>
+                <Minute>11</Minute>
+                <Text>Test</Text>
+            </Kommentar>
+            <Kommentar>
+                <Minute>11</Minute>
                 <Text>Test</Text>
             </Kommentar>
         </Kommentare>
@@ -109,6 +114,10 @@
                 <Minute>11</Minute>
                 <Text>Test</Text>
             </Kommentar>
+            <Kommentar>
+                <Minute>11</Minute>
+                <Text>Test</Text>
+            </Kommentar>
         </Kommentare>
     </Spiel>
     <Spiel>
@@ -131,6 +140,10 @@
             </Tore>
         </Endergebnis>
         <Kommentare>
+            <Kommentar>
+                <Minute>11</Minute>
+                <Text>Test</Text>
+            </Kommentar>
             <Kommentar>
                 <Minute>11</Minute>
                 <Text>Test</Text>
@@ -162,19 +175,8 @@
                 <Text>Test</Text>
             </Kommentar>
             <Kommentar>
-                <Minute>0</Minute>
-            </Kommentar>
-            <Kommentar>
-                <Minute>20</Minute>
-                <Text>elfmeter</Text>
-            </Kommentar>
-            <Kommentar>
-                <Minute>21</Minute>
-                <Text>elfmeter</Text>
-            </Kommentar>
-            <Kommentar>
-                <Minute>21</Minute>
-                <Text>elfmeter</Text>
+                <Minute>11</Minute>
+                <Text>Test</Text>
             </Kommentar>
         </Kommentare>
     </Spiel>
@@ -202,6 +204,10 @@
                 <Minute>11</Minute>
                 <Text>Test</Text>
             </Kommentar>
+            <Kommentar>
+                <Minute>11</Minute>
+                <Text>Test</Text>
+            </Kommentar>
         </Kommentare>
     </Spiel>
     <Spiel>
@@ -224,6 +230,10 @@
             </Tore>
         </Endergebnis>
         <Kommentare>
+            <Kommentar>
+                <Minute>11</Minute>
+                <Text>Test</Text>
+            </Kommentar>
             <Kommentar>
                 <Minute>11</Minute>
                 <Text>Test</Text>
