@@ -73,7 +73,11 @@ public class LivetickerService {
         }
         if (team != 0) {
             int commentsize = (liveticker.getSpiel().get(id).getKommentare().getKommentar().size())-1;
+            if(commentsize>=0){
             lt.getSpiel().get(id).getKommentare().getKommentar().remove(liveticker.getSpiel().get(id).getKommentare().getKommentar().get(commentsize));
+            }
+            else
+                System.exit(1);
         }
 
         // Marshall content to XML-File.
