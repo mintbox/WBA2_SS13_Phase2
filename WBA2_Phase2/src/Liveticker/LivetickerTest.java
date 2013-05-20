@@ -14,9 +14,9 @@ public class LivetickerTest {
     public static void main(String[] args) throws JAXBException, IOException {
         LivetickerService test = new LivetickerService();
         //test.getMannschaft(1);
-        test.deleteComment(18);
+        test.deleteComment(5);
         //test.postComment(4,21, "elfmeter" );
-        //test.setErgebnis(5, "2:2");
+        //test.setErgebnis(5,"2:0", "Mario Goetze", "Dortmund", 88);
         //test.getTicker();
     }
 }

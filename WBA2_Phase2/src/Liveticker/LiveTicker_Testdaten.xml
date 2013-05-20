@@ -19,16 +19,7 @@
                 </Tor>
             </Tore>
         </Endergebnis>
-        <Kommentare>
-            <Kommentar>
-                <Minute>11</Minute>
-                <Text>Test</Text>
-            </Kommentar>
-            <Kommentar>
-                <Minute>11</Minute>
-                <Text>Test</Text>
-            </Kommentar>
-        </Kommentare>
+        <Kommentare/>
     </Spiel>
     <Spiel>
         <Heimmannschaft>
@@ -199,16 +190,7 @@
                 </Tor>
             </Tore>
         </Endergebnis>
-        <Kommentare>
-            <Kommentar>
-                <Minute>11</Minute>
-                <Text>Test</Text>
-            </Kommentar>
-            <Kommentar>
-                <Minute>11</Minute>
-                <Text>Test</Text>
-            </Kommentar>
-        </Kommentare>
+        <Kommentare/>
     </Spiel>
     <Spiel>
         <Heimmannschaft>

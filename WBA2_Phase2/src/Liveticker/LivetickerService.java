@@ -1,7 +1,5 @@
 package Liveticker;
 
-import Spieltag.Spieltag;
-
 import javax.ws.rs.*;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -74,22 +72,21 @@ public class LivetickerService {
             }
         }
         if (team != 0) {
-            System.out.println("Treffer");
-            int commentsize = liveticker.getSpiel().get(id).getKommentare().getKommentar().size();
-            liveticker.getSpiel().get(id).getKommentare().getKommentar().remove(commentsize);
+            int commentsize = (liveticker.getSpiel().get(id).getKommentare().getKommentar().size())-1;
+            lt.getSpiel().get(id).getKommentare().getKommentar().remove(liveticker.getSpiel().get(id).getKommentare().getKommentar().get(commentsize));
         }
 
         // Marshall content to XML-File.
         Marshaller m = context.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
         m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
-        m.marshal(liveticker, System.out);
+        m.marshal(lt, System.out);
 
         Writer w = null;
         w = new FileWriter("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
-        m.marshal(liveticker, w);
+        m.marshal(lt, w);
         w.close();
-        return liveticker;
+        return lt;
     }
 
     //fuegt einen Kommentar hinzu
@@ -109,8 +106,7 @@ public class LivetickerService {
         for (int j = 0; j < liveticker.getSpiel().size(); j++) {
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
             int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
-            System.out.println(heim);
-            if (heim == team || gast == team) {
+                        if (heim == team || gast == team) {
                 id = j;
             }
         }
@@ -127,7 +123,7 @@ public class LivetickerService {
         m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
         m.marshal(liveticker, System.out);
 
-        Writer w = null;
+        Writer w;
         w = new FileWriter("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
         m.marshal(liveticker, w);
         w.close();
@@ -151,8 +147,7 @@ public class LivetickerService {
         for (int j = 0; j < liveticker.getSpiel().size(); j++) {
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
             int gast = Integer.parseInt(liveticker.getSpiel().get(j).getGastmannschaft().getMannId());
-            System.out.println(heim);
-            if (heim == team || gast == team) {
+                       if (heim == team || gast == team) {
                 id = j;
             }
         }
