@@ -76,7 +76,7 @@ public class LivetickerService {
         if (team != 0) {
             System.out.println("Treffer");
             int commentsize = liveticker.getSpiel().get(id).getKommentare().getKommentar().size();
-            liveticker.getSpiel().remove(commentsize);
+            liveticker.getSpiel().get(id).getKommentare().getKommentar().remove(commentsize);
         }
 
         // Marshall content to XML-File.
@@ -142,12 +142,11 @@ public class LivetickerService {
     @Produces("application/xml")
     public Liveticker setErgebnis(@PathParam("id") int team, @FormParam("Ergebnis") String erg, @FormParam("Torschuetze") String schuetze, @FormParam("Mannschaft des Torschuetzen") String mannschaft, @PathParam("Minute") int min) throws JAXBException, IOException {
         Liveticker liveticker;
-        ObjectFactory ob = new ObjectFactory();
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
         Unmarshaller um = context.createUnmarshaller();
         liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
         int id = 0;
-        Spieltag.Spiel.Endergebnis.Tore.Tor tor = new Spieltag.Spiel.Endergebnis.Tore.Tor();
+        Liveticker.Spiel.Endergebnis.Tore.Tor tor = new Liveticker.Spiel.Endergebnis.Tore.Tor();
 
         for (int j = 0; j < liveticker.getSpiel().size(); j++) {
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
@@ -160,7 +159,7 @@ public class LivetickerService {
         if (erg != null) {
             liveticker.getSpiel().get(id).getEndergebnis().setErgebnis(erg);
             int torsize = liveticker.getSpiel().get(id).getEndergebnis().getTore().getTor().size();
-           // liveticker.getSpiel().get(id).getEndergebnis().getTore().getTor().add(torsize, tor);
+            liveticker.getSpiel().get(id).getEndergebnis().getTore().getTor().add(torsize, tor);
             tor.setTorschuetze(schuetze);
             tor.setMannschaftSchuetze(mannschaft);
             tor.setMinute(min);
