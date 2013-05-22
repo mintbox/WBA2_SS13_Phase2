@@ -10,7 +10,7 @@ import java.io.IOException;
  * Time: 14:09
  * To change this template use File | Settings | File Templates.
  */
-public class Testing {
+public class MannschaftTest {
     public static void main(String[] args) throws JAXBException, IOException {
         MannschaftService test = new MannschaftService();
         //test.getMannschaft(1);
