@@ -14,17 +14,17 @@ import org.jivesoftware.smackx.pubsub.PubSubManager;
  */
 public class AdminClient {
     public static void main(String[]args) throws XMPPException {
-        // Create a connection to the igniterealtime.org XMPP server.
+        // Erzeugt Connection zum Server
         XMPPConnection connection = new XMPPConnection("localhost");
 // Connect to the server
         connection.connect();
-// Most servers require you to login before performing other tasks.
+// Login auf dem Server
         connection.login("user1", "1234");
 
-// Create a pubsub manager using an existing Connection
+// Erzeugt einen PubSubManager
         PubSubManager mgr = new PubSubManager(connection);
 
-// Create the node
+// Erzeugt Leaf
         LeafNode leaf = mgr.createNode();
     }
 }
