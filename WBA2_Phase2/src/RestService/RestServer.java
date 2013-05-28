@@ -1,4 +1,4 @@
-package RestService;
+package RESTService;
 
 import com.sun.grizzly.http.SelectorThread;
 import com.sun.jersey.api.container.grizzly.GrizzlyServerFactory;
@@ -6,7 +6,7 @@ import com.sun.jersey.api.container.grizzly.GrizzlyServerFactory;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class RestServer {
+public class RESTServer {
 
     public static void main(String[] args) throws IllegalArgumentException,IOException {
         String url = "http://localhost:4434";

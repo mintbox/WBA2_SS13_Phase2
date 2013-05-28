@@ -12,7 +12,7 @@ import org.jivesoftware.smackx.pubsub.PubSubManager;
  * Time: 17:09
  * To change this template use File | Settings | File Templates.
  */
-public class AdminClient {
+public class XmppServer {
     public static void main(String[]args) throws XMPPException {
         // Erzeugt Connection zum Server
         XMPPConnection connection = new XMPPConnection("localhost");
