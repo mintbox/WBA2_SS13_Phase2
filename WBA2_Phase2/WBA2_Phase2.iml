@@ -9,6 +9,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="library" name="JAX-RS-jersey-1.12" level="project" />
+    <orderEntry type="library" name="JAX-RS-jersey-1.12" level="project" />
+    <orderEntry type="library" name="smackx" level="project" />
   </component>
 </module>
 
