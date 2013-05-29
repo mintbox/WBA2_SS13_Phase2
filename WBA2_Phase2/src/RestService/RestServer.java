@@ -6,7 +6,7 @@ import com.sun.jersey.api.container.grizzly.GrizzlyServerFactory;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class RESTServer {
+public class RestServer {
 
     public static void main(String[] args) throws IllegalArgumentException,IOException {
         String url = "http://localhost:4434";
