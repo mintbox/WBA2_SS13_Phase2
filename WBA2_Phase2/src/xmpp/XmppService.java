@@ -16,11 +16,13 @@ public class XmppService {
     public static void main(String[] args) throws XMPPException {
         XMPPConnection connection = new XMPPConnection("localhost");
         connection.connect();
+        connection.login("user1","1234");
         PubSubManager mgr = new PubSubManager(connection);
         System.out.println("Verbunden: " + connection.isConnected());
 
         //Testknoten  erzeugen
-        LeafNode node = mgr.getNode("testNode");
+        mgr.getNode("testNode");
+        mgr.createNode("testNode2");
         connection.disconnect();
 //        LeafNode leaf = mgr.createNode("testNode2");
 //        ConfigureForm form = new ConfigureForm(FormType.submit);
