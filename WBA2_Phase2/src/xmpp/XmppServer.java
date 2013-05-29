@@ -13,17 +13,14 @@ import org.jivesoftware.smackx.pubsub.*;
  * To change this template use File | Settings | File Templates.
  */
 public class XmppServer {
+    public static void main(String[] args) throws XMPPException {
+        XMPPConnection connection = new XMPPConnection("localhost");
+        PubSubManager mgr = new PubSubManager(connection);
+        connection.connect();
+        System.out.println("Verbunden: " + connection.isConnected());
 
-       public boolean connect() throws XMPPException {
-           XMPPConnection connection = new XMPPConnection("localhost");
-           PubSubManager mgr =new PubSubManager(connection);
-           connection.connect();
-           //System.out.println("Verbunden: " + connection.isConnected());
-               return connection.isConnected();
-       }
 
         //Testknoten  erzeugen
-    public void createNode(PubSubManager mgr) throws XMPPException {
         LeafNode leaf = mgr.createNode("testNode2");
         ConfigureForm form = new ConfigureForm(FormType.submit);
         form.setAccessModel(AccessModel.open);
@@ -32,14 +29,11 @@ public class XmppServer {
         form.setPersistentItems(true);
         form.setPublishModel(PublishModel.open);
         leaf.sendConfigurationForm(form);
-    }
+
 
         //Zu Testknoten publishen
-        public void publishToNode(PubSubManager mgr) throws XMPPException {
         LeafNode node = mgr.getNode("testNode");
         node.send(new Item());
-        }
-
-
     }
+}
 

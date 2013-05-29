@@ -1,5 +1,7 @@
 package xmpp;
 
+import org.jivesoftware.smack.XMPPException;
+
 /**
  * Created with IntelliJ IDEA.
  * User: djga
@@ -8,7 +10,8 @@ package xmpp;
  * To change this template use File | Settings | File Templates.
  */
 public class XMPPTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws XMPPException {
+
 
     }
 }
