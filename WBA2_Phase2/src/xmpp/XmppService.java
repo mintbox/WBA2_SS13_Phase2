@@ -4,6 +4,7 @@ package xmpp;
 import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
 import org.jivesoftware.smackx.pubsub.*;
+import org.jivesoftware.smackx.pubsub.listener.ItemEventListener;
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,7 +21,7 @@ public class XmppService {
         PubSubManager mgr = new PubSubManager(connection);
         System.out.println("Verbunden: " + connection.isConnected());
 
-      //Knoten  erzeugen
+        //Knoten  erzeugen
         LeafNode leaf = mgr.createNode("testNode");
         ConfigureForm form = new ConfigureForm(FormType.submit);
         form.setAccessModel(AccessModel.open);
@@ -34,11 +35,26 @@ public class XmppService {
 
         //Zu Testknoten publishen
         LeafNode node = mgr.getNode("testNode");
-
-      node.send(new Item("TestInhalt"));
+        node.send(new PayloadItem("test" + System.currentTimeMillis(), new SimplePayload("book", "pubsub:test:book", "")));
         System.out.println(node.getItems());
 
 
+        //Listener zu Node hinzufuegen
+        node = mgr.getNode("testNode");
+
+        node.addItemEventListener(new ItemEventCoordinator<Item>());
+        node.subscribe("user2");
+
+
+    }
+
+    private static class ItemEventCoordinator<T> implements ItemEventListener {
+        @Override
+        public void handlePublishedItems(ItemPublishEvent items)
+        {
+            System.out.println("Item count: " + items.getItems().size());
+            System.out.println(items);
+        }
     }
 }
 
