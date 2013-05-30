@@ -9,27 +9,10 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="library" name="JAX-RS-jersey-1.12" level="project" />
-    <orderEntry type="library" name="JAX-RS-jersey-1.12" level="project" />
-    <orderEntry type="library" name="smackx" level="project" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../org.apache.servicemix.bundles.smack-3.0.4_1.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../smack-3.1.0.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="smack" level="project" />
+    <orderEntry type="library" name="smackx-debug" level="project" />
+    <orderEntry type="library" name="smackx-jingle" level="project" />
+    <orderEntry type="library" name="smackx" level="project" />
   </component>
 </module>
 

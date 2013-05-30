@@ -20,21 +20,22 @@ public class XmppService {
         PubSubManager mgr = new PubSubManager(connection);
         System.out.println("Verbunden: " + connection.isConnected());
 
- /*       //Testknoten  erzeugen
+      //Knoten  erzeugen
         LeafNode leaf = mgr.createNode("testNode");
         ConfigureForm form = new ConfigureForm(FormType.submit);
         form.setAccessModel(AccessModel.open);
-        form.setDeliverPayloads(false);
+        form.setDeliverPayloads(true);
         form.setNotifyRetract(true);
         form.setPersistentItems(true);
         form.setPublishModel(PublishModel.open);
+
         leaf.sendConfigurationForm(form);
 
-*/
+
         //Zu Testknoten publishen
         LeafNode node = mgr.getNode("testNode");
 
-  //      node.send(new Item("1899 Hoffenheim"));
+      node.send(new Item("TestInhalt"));
         System.out.println(node.getItems());
 
 
