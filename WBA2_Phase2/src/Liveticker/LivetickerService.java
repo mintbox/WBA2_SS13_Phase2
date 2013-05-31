@@ -86,7 +86,7 @@ public class LivetickerService {
         m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
         m.marshal(lt, System.out);
 
-        Writer w = null;
+        Writer w;
         w = new FileWriter("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
         m.marshal(lt, w);
         w.close();

@@ -184,7 +184,6 @@ public class XmppService {
         form18.setPublishModel(PublishModel.open);
         wob.sendConfigurationForm(form18);
 
-
         //Verbindung trennen
         connection.disconnect();
 
