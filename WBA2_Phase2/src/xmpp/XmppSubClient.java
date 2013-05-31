@@ -2,9 +2,10 @@ package xmpp;
 
 import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
-import org.jivesoftware.smackx.pubsub.Item;
-import org.jivesoftware.smackx.pubsub.LeafNode;
-import org.jivesoftware.smackx.pubsub.PubSubManager;
+import org.jivesoftware.smackx.packet.DiscoverInfo;
+import org.jivesoftware.smackx.pubsub.*;
+
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,10 +27,19 @@ public class XmppSubClient {
 
     public void abonniere(String team) throws XMPPException {
         LeafNode node = mgr.getNode(team);
-
         node.addItemEventListener(new ItemEventCoordinator<Item>());
         node.subscribe(connection.getUser());
 
+    }
+
+    public void discoverAll() throws XMPPException {
+        List<Subscription> subscriptions = mgr.getSubscriptions();
+        System.out.println(subscriptions);
+    }
+
+    public void discoverUser() throws XMPPException {
+        List<Affiliation> affiliations = mgr.getAffiliations();
+        System.out.println(affiliations);
     }
 
 
