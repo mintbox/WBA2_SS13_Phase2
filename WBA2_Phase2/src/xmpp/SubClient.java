@@ -2,8 +2,10 @@ package xmpp;
 
 import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
-import org.jivesoftware.smackx.packet.DiscoverInfo;
-import org.jivesoftware.smackx.pubsub.*;
+import org.jivesoftware.smackx.pubsub.Item;
+import org.jivesoftware.smackx.pubsub.LeafNode;
+import org.jivesoftware.smackx.pubsub.PubSubManager;
+import org.jivesoftware.smackx.pubsub.Subscription;
 
 import java.util.List;
 
@@ -14,12 +16,11 @@ import java.util.List;
  * Time: 13:47
  * To change this template use File | Settings | File Templates.
  */
-public class XmppSubClient {
-    XMPPConnection connection;
+public class SubClient {
+    XMPPConnection connection = new XMPPConnection("localhost");
     PubSubManager mgr = new PubSubManager(connection);
 
-    XmppSubClient(String user, String pass) throws XMPPException {
-        connection = new XMPPConnection("localhost");
+    SubClient(String user, String pass) throws XMPPException {
         connection.connect();
         connection.login(user, pass);
     }
@@ -36,11 +37,4 @@ public class XmppSubClient {
         List<Subscription> subscriptions = mgr.getSubscriptions();
         System.out.println(subscriptions);
     }
-
-    public void discoverUser() throws XMPPException {
-        List<Affiliation> affiliations = mgr.getAffiliations();
-        System.out.println(affiliations);
-    }
-
-
 }
