@@ -4,6 +4,7 @@ import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
 import org.jivesoftware.smackx.pubsub.Item;
 import org.jivesoftware.smackx.pubsub.LeafNode;
+import org.jivesoftware.smackx.pubsub.PayloadItem;
 import org.jivesoftware.smackx.pubsub.PubSubManager;
 
 /**
@@ -24,6 +25,7 @@ public class PubClient {
     public void pubComment(String team) throws XMPPException {
         LeafNode node = mgr.getNode(team);
         node.send(new Item("test"));
+      //  PayloadItem payload =new PayloadItem();
     }
 
     public void pubTor() {
