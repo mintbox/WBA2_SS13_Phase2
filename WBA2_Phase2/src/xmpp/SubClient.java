@@ -25,6 +25,10 @@ public class SubClient {
         connection.login(user, pass);
     }
 
+    public void disconnect(){
+        connection.disconnect();
+    }
+
 
     public void abonniere(String team) throws XMPPException {
         LeafNode node = mgr.getNode(team);

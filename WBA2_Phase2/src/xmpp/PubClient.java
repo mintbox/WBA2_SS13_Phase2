@@ -22,6 +22,9 @@ public class PubClient {
         connection.connect();
         connection.login(user, pass);
     }
+    public void disconnect(){
+        connection.disconnect();
+    }
     public void pubComment(String team) throws XMPPException {
         LeafNode node = mgr.getNode(team);
         node.send(new Item("test"));
