@@ -1,11 +1,9 @@
 package xmpp;
 
+import Liveticker.Liveticker;
 import org.jivesoftware.smack.XMPPConnection;
 import org.jivesoftware.smack.XMPPException;
-import org.jivesoftware.smackx.pubsub.Item;
-import org.jivesoftware.smackx.pubsub.LeafNode;
-import org.jivesoftware.smackx.pubsub.PayloadItem;
-import org.jivesoftware.smackx.pubsub.PubSubManager;
+import org.jivesoftware.smackx.pubsub.*;
 
 /**
  * Created with IntelliJ IDEA.
@@ -25,13 +23,12 @@ public class PubClient {
     public void disconnect(){
         connection.disconnect();
     }
-    public void pubComment(String team) throws XMPPException {
+    public void pubComment(String team, int min, String comment) throws XMPPException {
         LeafNode node = mgr.getNode(team);
-        node.send(new Item("test"));
-      //  PayloadItem payload =new PayloadItem();
+        SimplePayload payload = new SimplePayload("Liveticker", null, "");
+        PayloadItem item = new PayloadItem<SimplePayload>(team, payload);
+        node.publish(item);
+        System.out.println("Item wurde erzeugt.");
     }
 
-    public void pubTor() {
-
-    }
 }

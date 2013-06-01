@@ -13,6 +13,7 @@ public class XmppTest {
     public static void main(String[] args) throws XMPPException {
         SubClient test = new SubClient("user1", "1234");
      //   test.abonniere("FC Bayern Muenchen");
-        test.discoverAll();
+       // test.discoverAll();
+        test.discover();
     }
 }
