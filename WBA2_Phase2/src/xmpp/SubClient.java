@@ -25,6 +25,8 @@ public class SubClient {
     private PubSubManager mgr = new PubSubManager(connection);
     private ServiceDiscoveryManager sdMgr;
 
+
+
     SubClient(String user, String pass) throws XMPPException {
         connection.connect();
         connection.login(user, pass);
@@ -46,13 +48,21 @@ public class SubClient {
     public List<String> discover() throws XMPPException {
         this.sdMgr = ServiceDiscoveryManager.getInstanceFor(connection);
         List<String> list = new ArrayList<String>();
-        for (Iterator<DiscoverItems.Item> iterator = sdMgr.discoverItems("pubsub." + "localhost").getItems(); iterator.hasNext(); ) {
-            DiscoverItems.Item item = (DiscoverItems.Item) iterator.next();
+        for (Iterator<DiscoverItems.Item> iterator = sdMgr.discoverItems("localhost").getItems(); iterator.hasNext(); ) {
+            DiscoverItems.Item item = iterator.next();
             list.add(item.getNode());
         }
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
         return list;
+    }
+       //bad request
+    public void getMessages(String team) throws XMPPException{
+        LeafNode node = mgr.getNode(team);
+        for (int i = 0; i < node.getItems().size(); i++) {
+            node.getItems().get(i);
+        }
+
     }
 }

@@ -25,7 +25,15 @@ public class PubClient {
     }
     public void pubComment(String team, int min, String comment) throws XMPPException {
         LeafNode node = mgr.getNode(team);
-        SimplePayload payload = new SimplePayload("Liveticker", null, "");
+        SimplePayload payload = new SimplePayload("Liveticker", null, "<Spiel><Kommentare><Kommentar><Minute>"+min+"</Minute><Text>"+comment+"</Text></Kommentar></Kommentare></Spiel>");
+        PayloadItem item = new PayloadItem<SimplePayload>(team, payload);
+        node.publish(item);
+        System.out.println("Item wurde erzeugt.");
+    }
+
+    public void pubGoal(String team, String schuetze, int min, String ergebnis) throws XMPPException {
+        LeafNode node = mgr.getNode(team);
+        SimplePayload payload = new SimplePayload("Liveticker", null, "Endergebnis><Ergebnis>"+ergebnis+"</Ergebnis><Tore><Tor><Torschuetze>"+schuetze+"</Torschuetze><Mannschaft_Schuetze>"+team+"</Mannschaft_Schuetze><Minute>"+min+"</Minute></Tor></Tore></Endergebnis>");
         PayloadItem item = new PayloadItem<SimplePayload>(team, payload);
         node.publish(item);
         System.out.println("Item wurde erzeugt.");
