@@ -19,7 +19,7 @@ public class XmppTest {
         //   testPub.pubComment("FC Bayern Muenchen", 11, "Test ob Publishen klappt");
         // testPub.pubGoal("FC Bayern Muenchen", "Thomas Mueller", 12, "1:0");
         // testSub.discover();
-        testSub.getMessages("FC Bayern Muenchen");
+        //testSub.getMessages("FC Bayern Muenchen");
 
     }
 }
