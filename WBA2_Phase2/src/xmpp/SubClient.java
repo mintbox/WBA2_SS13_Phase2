@@ -7,7 +7,6 @@ import org.jivesoftware.smackx.packet.DiscoverItems;
 import org.jivesoftware.smackx.pubsub.Item;
 import org.jivesoftware.smackx.pubsub.LeafNode;
 import org.jivesoftware.smackx.pubsub.PubSubManager;
-import org.jivesoftware.smackx.pubsub.Subscription;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -24,7 +23,6 @@ public class SubClient {
     private XMPPConnection connection = new XMPPConnection("localhost");
     private PubSubManager mgr = new PubSubManager(connection);
     private ServiceDiscoveryManager sdMgr;
-
 
 
     SubClient(String user, String pass) throws XMPPException {
@@ -48,7 +46,7 @@ public class SubClient {
     public List<String> discover() throws XMPPException {
         this.sdMgr = ServiceDiscoveryManager.getInstanceFor(connection);
         List<String> list = new ArrayList<String>();
-        for (Iterator<DiscoverItems.Item> iterator = sdMgr.discoverItems("localhost").getItems(); iterator.hasNext(); ) {
+        for (Iterator<DiscoverItems.Item> iterator = sdMgr.discoverItems("pubsub." + "localhost").getItems(); iterator.hasNext(); ) {
             DiscoverItems.Item item = iterator.next();
             list.add(item.getNode());
         }
@@ -57,12 +55,12 @@ public class SubClient {
         }
         return list;
     }
-       //bad request
-    public void getMessages(String team) throws XMPPException{
+
+    //bad request
+    public void getMessages(String team) throws XMPPException {
         LeafNode node = mgr.getNode(team);
         for (int i = 0; i < node.getItems().size(); i++) {
             node.getItems().get(i);
         }
-
     }
 }
