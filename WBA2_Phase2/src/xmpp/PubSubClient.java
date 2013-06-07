@@ -55,7 +55,6 @@ public class PubSubClient {
 
     }
 
-
     public List<String> discover() throws XMPPException {
         this.sdMgr = ServiceDiscoveryManager.getInstanceFor(connection);
         List<String> list = new ArrayList<String>();
@@ -70,8 +69,7 @@ public class PubSubClient {
     }
 
     public void getMessagesFromNode(String team) throws XMPPException {
-
-        LeafNode node = (LeafNode) mgr.getNode(team);
+        LeafNode node = mgr.getNode(team);
         System.out.println("Alle Messages von " + team + ":");
         for (int i = 0; i < node.getItems().size(); i++) {
             System.out.println(node.getItems(node.getSubscriptions().get(0).getId()).get(i));
@@ -96,8 +94,8 @@ public class PubSubClient {
         System.out.println("Tor erzeugt.");
     }
 
-    public void deleteMessage(String Id, String nodeName) throws XMPPException {
-        LeafNode node = mgr.getNode(nodeName);
+    public void deleteMessage(String Id, String team) throws XMPPException {
+        LeafNode node = mgr.getNode(team);
         node.deleteItem(Id);
         System.out.println("Item entfernt");
         System.out.println("");
