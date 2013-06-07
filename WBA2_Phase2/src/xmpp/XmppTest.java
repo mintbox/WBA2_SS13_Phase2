@@ -11,15 +11,15 @@ import org.jivesoftware.smack.XMPPException;
  */
 public class XmppTest {
     public static void main(String[] args) throws XMPPException {
-        SubClient testSub = new SubClient("user1", "1234");
-        PubClient testPub = new PubClient("user2", "user2");
-        //     testSub.abonniere("FC Bayern Muenchen");
-        // testSub.discoverAll();
-        // testSub.discover();
-        //   testPub.pubComment("FC Bayern Muenchen", 11, "Test ob Publishen klappt");
-        // testPub.pubGoal("FC Bayern Muenchen", "Thomas Mueller", 12, "1:0");
-        //testSub.discover();
-        testSub.getMessages("FC Bayern Muenchen");
+        PubSubClient pubsub = new PubSubClient("user1", "user1");
 
+        // pubsub.subscribe("FC Bayern Muenchen");
+        //pubsub.discover();
+       // pubsub.pubGoal("FC Bayern Muenchen", "Thomas Mueller", 12, "1:0");
+         pubsub.pubComment("FC Bayern Muenchen", 12, "Test Comment");
+        pubsub.getMessagesFromNode("FC Bayern Muenchen");
+        //pubsub.deleteAllNodes();
+
+        pubsub.disconnect();
     }
 }
