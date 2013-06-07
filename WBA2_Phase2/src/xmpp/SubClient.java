@@ -60,6 +60,7 @@ public class SubClient {
     public void getMessages(String team) throws XMPPException {
         LeafNode node = mgr.getNode(team);
         for (int i = 0; i < node.getItems().size(); i++) {
+            System.out.println("bin in der Schleife");
             node.getItems().get(i);
         }
     }
