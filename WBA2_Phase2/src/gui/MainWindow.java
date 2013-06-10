@@ -1,7 +1,5 @@
 package gui;
 
-import javax.swing.*;
-
 /**
  * Created with IntelliJ IDEA.
  * User: djga

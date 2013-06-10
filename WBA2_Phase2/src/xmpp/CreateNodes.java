@@ -13,7 +13,7 @@ import org.jivesoftware.smackx.pubsub.listener.ItemEventListener;
  * Time: 17:09
  * To change this template use File | Settings | File Templates.
  */
-public class XmppService {
+public class CreateNodes {
     public static void main(String[] args) throws XMPPException {
         XMPPConnection connection = new XMPPConnection("localhost");
         connection.connect();

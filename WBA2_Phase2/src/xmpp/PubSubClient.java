@@ -23,11 +23,11 @@ public class PubSubClient {
     private ServiceDiscoveryManager sdMgr;
 
 
-    PubSubClient(String user, String pass) throws XMPPException {
+    public PubSubClient(String user, String pass) throws XMPPException {
         connection.connect();
         connection.login(user, pass);
     }
-
+   //TODO delete erstellen
     public void disconnect() {
         connection.disconnect();
     }
