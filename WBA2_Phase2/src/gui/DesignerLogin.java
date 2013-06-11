@@ -21,13 +21,12 @@ public class DesignerLogin {
 
     public DesignerLogin() {
         absendenButton.addActionListener(new ActionListener() {
-            @Override
+            String user= benutzernameTextField.getText();
+            String pass = new String(passwortPasswordField.getPassword());
             public void actionPerformed(ActionEvent e) {
-                String user= benutzernameTextField.getText();
-                String pass = new String(passwortPasswordField.getPassword());
                 try {
                     PubSubClient pubSub = new PubSubClient(user, pass);
-                } catch (XMPPException e1) {
+                                   } catch (XMPPException e1) {
                     e1.printStackTrace();
                 }
             }
