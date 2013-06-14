@@ -13,6 +13,7 @@
     <orderEntry type="library" name="smackx-debug" level="project" />
     <orderEntry type="library" name="smackx-jingle" level="project" />
     <orderEntry type="library" name="smackx" level="project" />
+    <orderEntry type="library" name="JAX-RS-jersey-1.12" level="project" />
   </component>
 </module>
 
