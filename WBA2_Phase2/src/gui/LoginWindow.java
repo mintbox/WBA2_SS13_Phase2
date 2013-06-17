@@ -7,13 +7,11 @@ import java.awt.event.ActionEvent;
 
 
 /**
- * @author FlorianWolf
+ * @author Dennis Jaeger
  */
 public class LoginWindow extends javax.swing.JFrame {
 
     private static String user, pass;
-    private static String host = "localhost";
-    private static int port = 5222;
 
     /**
      * Creates new form NewJFrame
