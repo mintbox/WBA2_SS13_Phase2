@@ -27,142 +27,142 @@ public class AdminWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jLabel4 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        jLabelKonsole = new javax.swing.JLabel();
+        jLabelTor = new javax.swing.JLabel();
+        jComboBoxMannschaften1 = new javax.swing.JComboBox();
+        jTextFieldSchuetze = new javax.swing.JTextField();
+        jTextMinute = new javax.swing.JTextField();
+        jTextErgebnis = new javax.swing.JTextField();
+        jToggleAbsenden1 = new javax.swing.JToggleButton();
+        jLabelKommentar = new javax.swing.JLabel();
+        jComboBoxMannschaften2 = new javax.swing.JComboBox();
+        jTextFieldKommentar = new javax.swing.JTextField();
+        jTextMinute2 = new javax.swing.JTextField();
+        jToggleButtonAbsenden2 = new javax.swing.JToggleButton();
 
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Publisher-Konsole");
+        jLabelKonsole.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        jLabelKonsole.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelKonsole.setText("Publisher-Konsole");
 
-        jLabel3.setText("Tor hinzufuegen");
+        jLabelTor.setText("Tor hinzufuegen");
 
-        jComboBox1.setMaximumRowCount(18);
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1899 Hoffenheim", "1.FC Nuernberg", "1.FSV Mainz 05", "Bayer 04 Leverkusen", "Borussia Dortmund", "Borussia Moenchengladbach", "Eintracht Frankfurt", "FC Augsburg", "FC Bayern Muenchen", "FC Schalke 04", "Fortuna Duesseldorf", "Hamburger SV", "Hannover 96", "Sportclub Freiburg", "SpVgg Greuther Feurth", "SV Werder Bremen", "VFB Stuttgart", "VFL Wolfsburg" }));
+        jComboBoxMannschaften1.setMaximumRowCount(18);
+        jComboBoxMannschaften1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1899 Hoffenheim", "1.FC Nuernberg", "1.FSV Mainz 05", "Bayer 04 Leverkusen", "Borussia Dortmund", "Borussia Moenchengladbach", "Eintracht Frankfurt", "FC Augsburg", "FC Bayern Muenchen", "FC Schalke 04", "Fortuna Duesseldorf", "Hamburger SV", "Hannover 96", "Sportclub Freiburg", "SpVgg Greuther Feurth", "SV Werder Bremen", "VFB Stuttgart", "VFL Wolfsburg" }));
 
-        jTextField1.setText("Torschuetze");
+        jTextFieldSchuetze.setText("Torschuetze");
 
-        jTextField2.setText("Minute");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jTextMinute.setText("Minute");
+        jTextMinute.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jTextMinuteActionPerformed(evt);
             }
         });
 
-        jTextField3.setText("Ergebnis");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        jTextErgebnis.setText("Ergebnis");
+        jTextErgebnis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                jTextErgebnisActionPerformed(evt);
             }
         });
 
-        jToggleButton1.setText("Absenden");
+        jToggleAbsenden1.setText("Absenden");
 
-        jLabel4.setText("Kommentar hinzufuegen");
+        jLabelKommentar.setText("Kommentar hinzufuegen");
 
-        jComboBox2.setMaximumRowCount(18);
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1899 Hoffenheim", "1.FC Nuernberg", "1.FSV Mainz 05", "Bayer 04 Leverkusen", "Borussia Dortmund", "Borussia Moenchengladbach", "Eintracht Frankfurt", "FC Augsburg", "FC Bayern Muenchen", "FC Schalke 04", "Fortuna Duesseldorf", "Hamburger SV", "Hannover 96", "Sportclub Freiburg", "SpVgg Greuther Feurth", "SV Werder Bremen", "VFB Stuttgart", "VFL Wolfsburg" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        jComboBoxMannschaften2.setMaximumRowCount(18);
+        jComboBoxMannschaften2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1899 Hoffenheim", "1.FC Nuernberg", "1.FSV Mainz 05", "Bayer 04 Leverkusen", "Borussia Dortmund", "Borussia Moenchengladbach", "Eintracht Frankfurt", "FC Augsburg", "FC Bayern Muenchen", "FC Schalke 04", "Fortuna Duesseldorf", "Hamburger SV", "Hannover 96", "Sportclub Freiburg", "SpVgg Greuther Feurth", "SV Werder Bremen", "VFB Stuttgart", "VFL Wolfsburg" }));
+        jComboBoxMannschaften2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                jComboBoxMannschaften2ActionPerformed(evt);
             }
         });
 
-        jTextField4.setText("Kommentar");
+        jTextFieldKommentar.setText("Kommentar");
 
-        jTextField5.setText("Minute");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        jTextMinute2.setText("Minute");
+        jTextMinute2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                jTextMinute2ActionPerformed(evt);
             }
         });
 
-        jToggleButton2.setText("Absenden");
+        jToggleButtonAbsenden2.setText("Absenden");
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                        .add(jLabel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(jLabelKonsole, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .add(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                        .add(jLabel3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 148, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(jLabel4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 181, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(jLabelTor, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 148, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(jLabelKommentar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 181, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
                                                 .add(org.jdesktop.layout.GroupLayout.LEADING, layout.createSequentialGroup()
-                                                        .add(jComboBox2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 181, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                                        .add(jComboBoxMannschaften2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 181, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                                         .add(18, 18, 18)
-                                                        .add(jTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                                        .add(jTextFieldKommentar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                                         .add(18, 18, 18)
-                                                        .add(jTextField5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                                        .add(jTextMinute2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .add(jToggleButton2))
+                                                        .add(jToggleButtonAbsenden2))
                                                 .add(org.jdesktop.layout.GroupLayout.LEADING, layout.createSequentialGroup()
-                                                        .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 181, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                                        .add(jComboBoxMannschaften1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 181, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                                         .add(18, 18, 18)
-                                                        .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                                        .add(jTextFieldSchuetze, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                                        .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                                        .add(jTextMinute, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                                        .add(jTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                                        .add(jTextErgebnis, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                                        .add(jToggleButton1))))
+                                                        .add(jToggleAbsenden1))))
                                 .addContainerGap(29, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                         .add(layout.createSequentialGroup()
-                                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(jLabelKonsole, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 36, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .add(18, 18, 18)
-                                .add(jLabel3)
-                                .add(18, 18, 18)
-                                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                        .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(jTextField2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(jTextField3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(jToggleButton1))
-                                .add(18, 18, 18)
-                                .add(jLabel4)
+                                .add(jLabelTor)
                                 .add(18, 18, 18)
                                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                                        .add(jComboBox2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(jTextField4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(jTextField5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(jToggleButton2))
+                                        .add(jComboBoxMannschaften1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(jTextFieldSchuetze, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(jTextMinute, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(jTextErgebnis, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(jToggleAbsenden1))
+                                .add(18, 18, 18)
+                                .add(jLabelKommentar)
+                                .add(18, 18, 18)
+                                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                        .add(jComboBoxMannschaften2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(jTextFieldKommentar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(jTextMinute2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(jToggleButtonAbsenden2))
                                 .add(0, 21, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>                        
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jTextMinuteActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jTextErgebnisActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jTextMinute2ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jComboBoxMannschaften2ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
@@ -201,18 +201,18 @@ public class AdminWindow extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify                     
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox jComboBoxMannschaften1;
+    private javax.swing.JComboBox jComboBoxMannschaften2;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JLabel jLabelKommentar;
+    private javax.swing.JLabel jLabelKonsole;
+    private javax.swing.JLabel jLabelTor;
+    private javax.swing.JTextField jTextErgebnis;
+    private javax.swing.JTextField jTextFieldKommentar;
+    private javax.swing.JTextField jTextFieldSchuetze;
+    private javax.swing.JTextField jTextMinute;
+    private javax.swing.JTextField jTextMinute2;
+    private javax.swing.JToggleButton jToggleAbsenden1;
+    private javax.swing.JToggleButton jToggleButtonAbsenden2;
     // End of variables declaration                   
 }
