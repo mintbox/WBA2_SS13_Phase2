@@ -9,6 +9,10 @@ import java.awt.event.ActionEvent;
 /**
  * @author Dennis Jaeger
  */
+
+//TODO Login funktioniert auch mit falschen Daten
+
+
 public class LoginWindow extends javax.swing.JFrame {
 
     private static String user, pass;
@@ -89,7 +93,7 @@ public class LoginWindow extends javax.swing.JFrame {
         }
 
         dispose();
-        AdminWindow mg = new AdminWindow();
+        MainWindow mg = new MainWindow();
         mg.setVisible(true);
 
     }//GEN-LAST:event_jButton1ActionPerformed
