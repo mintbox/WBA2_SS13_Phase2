@@ -4,10 +4,10 @@
  */
 package gui;
 
+import org.jivesoftware.smack.XMPPException;
 import xmpp.PubSubClient;
 
 /**
- *
  * @author denjae
  */
 public class MainWindow extends javax.swing.JFrame {
@@ -19,9 +19,9 @@ public class MainWindow extends javax.swing.JFrame {
         initComponents();
     }
 
-    public void setPubSub(PubSubClient ps){
+    public void setPubSub(PubSubClient ps) {
 
-        this.ps=ps;
+        this.ps = ps;
 
     }
 
@@ -66,7 +66,11 @@ public class MainWindow extends javax.swing.JFrame {
         jComboBoxFunction.setModel(new javax.swing.DefaultComboBoxModel(new String[]{"Mannschaft abonnieren ", "Abonnement beenden", "Alle Mannschaften anzeigen", "Nachrichten empfangen", "Kommentar senden ", "Tor senden"}));
         jComboBoxFunction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxFunctionActionPerformed(evt);
+                try {
+                    jComboBoxFunctionActionPerformed(evt);
+                } catch (XMPPException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
             }
         });
 
@@ -115,11 +119,32 @@ public class MainWindow extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {
-        String team = jComboBoxMannschaften.getToolTipText();
+        team = jComboBoxMannschaften.getToolTipText();
     }
 
-    private void jComboBoxFunctionActionPerformed(java.awt.event.ActionEvent evt) {
-        String function = (String)jComboBoxFunction.getSelectedItem();
+    //Funktion aus Dropdown waehlen und ausfuehren
+    private void jComboBoxFunctionActionPerformed(java.awt.event.ActionEvent evt) throws XMPPException {
+        function = jComboBoxFunction.getSelectedIndex();
+
+        switch (function) {
+            case 0:
+                ps.subscribe(team);
+                break;
+            case 1:
+                ps.unsubscribe(team);
+                break;
+            case 2:
+                ps.discover();
+                break;
+            case 3:
+                ps.getMessagesFromNode(team);
+                break;
+            case 4:
+            case 5:
+                dispose();
+                AdminWindow adminWindow = new AdminWindow();
+                adminWindow.setVisible(true);
+        }
     }
 
     /**
@@ -156,7 +181,8 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
     }
-    // Variables declaration - do not modify                     
+
+    // Variables declaration - do not modify
     private javax.swing.JComboBox jComboBoxMannschaften;
     private javax.swing.JComboBox jComboBoxFunction;
     private javax.swing.JLabel jLabelTitle;
@@ -166,6 +192,8 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextAreaAusgabe;
     private javax.swing.JTextField jTextField1;
 
+    private String team;
+    int function;
     private PubSubClient ps;
     // End of variables declaration                   
 }

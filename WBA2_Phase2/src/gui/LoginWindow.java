@@ -86,14 +86,16 @@ public class LoginWindow extends javax.swing.JFrame {
         pass = new String(jPasswordField1.getPassword()) ;
 
         try {
-            PubSubClient pubSub = new PubSubClient(user, pass);
+            pubSub = new PubSubClient(user, pass);
+            mainWindow.setPubSub(pubSub);
+
         } catch (XMPPException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
         dispose();
         MainWindow mg = new MainWindow();
+        mg.setPubSub(pubSub);
         mg.setVisible(true);
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -136,4 +138,6 @@ public class LoginWindow extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
+    MainWindow mainWindow = new MainWindow();
+    PubSubClient pubSub;
 }
