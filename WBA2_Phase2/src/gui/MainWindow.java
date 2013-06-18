@@ -7,6 +7,9 @@ package gui;
 import org.jivesoftware.smack.XMPPException;
 import xmpp.PubSubClient;
 
+import javax.swing.*;
+import java.awt.*;
+
 /**
  * @author denjae
  */
@@ -21,8 +24,12 @@ public class MainWindow extends javax.swing.JFrame {
 
     public void setPubSub(PubSubClient ps) {
 
-        this.ps = ps;
+        this.pubSub = ps;
 
+    }
+
+    public MainWindow(JComboBox jComboBoxMannschaften) throws HeadlessException {
+        this.jComboBoxMannschaften = jComboBoxMannschaften;
     }
 
     /**
@@ -42,6 +49,7 @@ public class MainWindow extends javax.swing.JFrame {
         jComboBoxFunction = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextAreaAusgabe = new javax.swing.JTextArea();
+
 
         jTextField1.setText("jTextField1");
 
@@ -119,7 +127,9 @@ public class MainWindow extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {
-        team = jComboBoxMannschaften.getToolTipText();
+        team = (String)jComboBoxMannschaften.getSelectedItem();
+        System.out.println(team);
+
     }
 
     //Funktion aus Dropdown waehlen und ausfuehren
@@ -128,21 +138,25 @@ public class MainWindow extends javax.swing.JFrame {
 
         switch (function) {
             case 0:
-                ps.subscribe(team);
+                pubSub.subscribe(team);
+                JOptionPane.showMessageDialog(null, "abonniert");
                 break;
             case 1:
-                ps.unsubscribe(team);
+                pubSub.unsubscribe(team);
+                JOptionPane.showMessageDialog(null, "Abonnement beendet");
                 break;
             case 2:
-                ps.discover();
+                pubSub.discover();
                 break;
             case 3:
-                ps.getMessagesFromNode(team);
+                pubSub.getMessagesFromNode(team);
+
                 break;
             case 4:
             case 5:
                 dispose();
                 AdminWindow adminWindow = new AdminWindow();
+                adminWindow.setPubSub(pubSub);
                 adminWindow.setVisible(true);
         }
     }
@@ -194,6 +208,5 @@ public class MainWindow extends javax.swing.JFrame {
 
     private String team;
     int function;
-    private PubSubClient ps;
-    // End of variables declaration                   
+    private PubSubClient pubSub;
 }
