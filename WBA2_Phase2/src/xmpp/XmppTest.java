@@ -14,10 +14,10 @@ public class XmppTest {
         PubSubClient pubsub = new PubSubClient("user1", "user1");
 
         //pubsub.subscribe("FC Bayern Muenchen");
-       pubsub.discover();
+       //pubsub.discover();
         //pubsub.pubGoal("FC Bayern Muenchen", "Thomas Mueller", 12, "1:0");
         //pubsub.pubComment("FC Bayern Muenchen", 12, "Test Comment");
-        //pubsub.getMessagesFromNode("FC Bayern Muenchen");
+        pubsub.getMessagesFromNode("FC Bayern Muenchen");
         //pubsub.deleteAllNodes();
         //pubsub.unsubscribe("FC Bayern Muenchen");
         //pubsub.getAllSubscriptions();

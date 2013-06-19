@@ -157,6 +157,7 @@ public class MainWindow extends javax.swing.JFrame {
                 dispose();
                 AdminWindow adminWindow = new AdminWindow();
                 adminWindow.setPubSub(pubSub);
+                adminWindow.setTeam(team);
                 adminWindow.setVisible(true);
         }
     }
@@ -205,6 +206,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaAusgabe;
     private javax.swing.JTextField jTextField1;
+
 
     private String team;
     int function;

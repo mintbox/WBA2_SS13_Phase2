@@ -4,11 +4,16 @@
  */
 package gui;
 
+import org.jivesoftware.smack.XMPPException;
+import xmpp.PubSubClient;
+
 /**
  *
  * @author denjae
  */
 public class AdminWindow extends javax.swing.JFrame {
+
+    private PubSubClient pubSub;
 
     /**
      * Creates new form AdminWindow
@@ -58,8 +63,22 @@ public class AdminWindow extends javax.swing.JFrame {
         jTextFieldErgebnis.setText("Ergebnis");
 
         jToggleButtonTor.setText("Absenden");
+        jToggleButtonTor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                try {
+                    jToggleButtonTorActionPerformed(evt);
+                } catch (XMPPException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
+            }
+        });
 
         jToggleButtonComment.setText("Absenden");
+        jToggleButtonComment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButtonCommentActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,6 +135,18 @@ public class AdminWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
+    private void jToggleButtonCommentActionPerformed(java.awt.event.ActionEvent evt) {
+        int min = Integer.parseInt(jTextFieldMinComment.getText());
+        String comment = jTextFieldComment.getText();
+    }
+
+    private void jToggleButtonTorActionPerformed(java.awt.event.ActionEvent evt) throws XMPPException {
+        Integer min = Integer.parseInt(jTextFieldMinComment.getText());
+        String schuetze= jTextFieldSchuetze.getText();
+        String ergebnis = jTextFieldErgebnis.getText();
+        pubSub.pubGoal(team, schuetze, min, ergebnis);
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -161,5 +192,16 @@ public class AdminWindow extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldSchuetze;
     private javax.swing.JToggleButton jToggleButtonComment;
     private javax.swing.JToggleButton jToggleButtonTor;
+    private String team;
+
+    public void setPubSub(PubSubClient pubSub) {
+        this.pubSub = pubSub;
+    }
+
+
+    public void setTeam(String team) {
+        this.team = team;
+    }
+
     // End of variables declaration                   
 }
