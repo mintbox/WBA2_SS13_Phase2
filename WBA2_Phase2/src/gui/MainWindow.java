@@ -127,9 +127,7 @@ public class MainWindow extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {
-        team = (String)jComboBoxMannschaften.getSelectedItem();
-        System.out.println(team);
-
+        team = (String) jComboBoxMannschaften.getSelectedItem();
     }
 
     //Funktion aus Dropdown waehlen und ausfuehren

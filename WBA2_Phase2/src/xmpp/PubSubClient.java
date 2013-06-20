@@ -27,28 +27,30 @@ public class PubSubClient {
         connection.connect();
         connection.login(user, pass);
     }
-   //TODO delete erstellen
+    //TODO delete erstellen
 
     //Verbindung trennen
     public void disconnect() {
         connection.disconnect();
     }
 
-  //Abonniert Topic fuer angemeldeten Benutzer
+    //Abonniert Topic fuer angemeldeten Benutzer
     public void subscribe(String team) throws XMPPException {
         LeafNode node = mgr.getNode(team);
         node.addItemEventListener(new ItemEventCoordinator<Item>());
         node.subscribe(connection.getUser());
 
     }
- //Meldet angemeldeten Benutzer von uebergebenem Knoten ab
+
+    //Meldet angemeldeten Benutzer von uebergebenem Knoten ab
     public void unsubscribe(String team) throws XMPPException {
 
         LeafNode node = mgr.getNode(team);
         node.addItemEventListener(new ItemEventCoordinator<Item>());
         node.unsubscribe(connection.getUser());
     }
-  //Gibt alle Abonnenten aus
+
+    //Gibt alle Abonnenten aus
     public void getAllSubscriptions() throws XMPPException {
         List<Subscription> subscriptions = mgr.getSubscriptions();
         System.out.println("Abonennten aller Nodes:");
@@ -56,7 +58,8 @@ public class PubSubClient {
         System.out.println("");
 
     }
-  //Gibt alle Topics (Nodes) zurueck
+
+    //Gibt alle Topics (Nodes) zurueck
     public List<String> discover() throws XMPPException {
         this.sdMgr = ServiceDiscoveryManager.getInstanceFor(connection);
         List<String> list = new ArrayList<String>();
@@ -69,7 +72,8 @@ public class PubSubClient {
         }
         return list;
     }
-     //Gibt die publizierten Nachrichten des ausgewaehlten Knoten zurueck
+
+    //Gibt die publizierten Nachrichten des ausgewaehlten Knoten zurueck
     public void getMessagesFromNode(String team) throws XMPPException {
         LeafNode node = mgr.getNode(team);
         System.out.println("Alle Messages von " + team + ":");
@@ -78,24 +82,28 @@ public class PubSubClient {
         }
         System.out.println("");
     }
+
     //TODO Pub-Methoden ueberschreiben vorherige Nodes, ueberarbeiten!
     //Publiziert Kommentar
     public void pubComment(String team, int min, String comment) throws XMPPException {
+        System.out.println(team);
         LeafNode node = mgr.getNode(team);
         SimplePayload payload = new SimplePayload("Liveticker", null, "<Spiel><Kommentare><Kommentar><Minute>" + min + "</Minute><Text>" + comment + "</Text></Kommentar></Kommentare></Spiel>");
         PayloadItem item = new PayloadItem<SimplePayload>(team, payload);
         node.publish(item);
         System.out.println("Kommentar erzeugt.");
     }
-     //Publiziert ein Tor und korrigiert manuell das aktuelle Ergebnis
+
+    //Publiziert ein Tor und korrigiert manuell das aktuelle Ergebnis
     public void pubGoal(String team, String schuetze, int min, String ergebnis) throws XMPPException {
+        System.out.println(team);
         LeafNode node = mgr.getNode(team);
         SimplePayload payload = new SimplePayload("Liveticker", null, "<Endergebnis><Ergebnis>" + ergebnis + "</Ergebnis><Tore><Tor><Torschuetze>" + schuetze + "</Torschuetze><Mannschaft_Schuetze>" + team + "</Mannschaft_Schuetze><Minute>" + min + "</Minute></Tor></Tore></Endergebnis>");
         PayloadItem item = new PayloadItem<SimplePayload>(team, payload);
         node.publish(item);
-        System.out.println("Tor erzeugt.");
     }
-   //Entfernt letzte Publikation
+
+    //Entfernt letzte Publikation
     public void deleteMessage(String Id, String team) throws XMPPException {
         LeafNode node = mgr.getNode(team);
         node.deleteItem(Id);
@@ -103,6 +111,7 @@ public class PubSubClient {
         System.out.println("");
 
     }
+
     //Entfernt alle Knoten
     public void deleteAllNodes() throws XMPPException {
         mgr.deleteNode("1899 Hoffenheim");

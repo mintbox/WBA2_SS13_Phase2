@@ -138,6 +138,11 @@ public class AdminWindow extends javax.swing.JFrame {
     private void jToggleButtonCommentActionPerformed(java.awt.event.ActionEvent evt) {
         int min = Integer.parseInt(jTextFieldMinComment.getText());
         String comment = jTextFieldComment.getText();
+        try {
+            pubSub.pubComment(team, min, comment);
+        } catch (XMPPException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
     }
 
     private void jToggleButtonTorActionPerformed(java.awt.event.ActionEvent evt) throws XMPPException {
