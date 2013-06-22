@@ -128,6 +128,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {
         team = (String) jComboBoxMannschaften.getSelectedItem();
+        mannid = jComboBoxMannschaften.getSelectedIndex() + 1;
     }
 
     //Funktion aus Dropdown waehlen und ausfuehren
@@ -145,6 +146,7 @@ public class MainWindow extends javax.swing.JFrame {
                 break;
             case 2:
                 pubSub.discover();
+                jTextAreaAusgabe.setText(pubSub.discover().toString());
                 break;
             case 3:
                 pubSub.getMessagesFromNode(team);
@@ -156,9 +158,11 @@ public class MainWindow extends javax.swing.JFrame {
                 AdminWindow adminWindow = new AdminWindow();
                 adminWindow.setPubSub(pubSub);
                 adminWindow.setTeam(team);
+                adminWindow.setMannid(mannid);
                 adminWindow.setVisible(true);
         }
     }
+
 
     /**
      * @param args the command line arguments
@@ -209,4 +213,5 @@ public class MainWindow extends javax.swing.JFrame {
     private String team;
     int function;
     private PubSubClient pubSub;
+    private int mannid;
 }

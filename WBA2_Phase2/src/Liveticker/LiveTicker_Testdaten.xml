@@ -10,12 +10,17 @@
             <name>Werder Bremen</name>
         </Gastmannschaft>
         <Endergebnis>
-            <Ergebnis>2:2</Ergebnis>
+            <Ergebnis>2:5</Ergebnis>
             <Tore>
                 <Tor>
                     <Torschuetze></Torschuetze>
                     <Mannschaft_Schuetze></Mannschaft_Schuetze>
                     <Minute>0</Minute>
+                </Tor>
+                <Tor>
+                    <Torschuetze>Dennis Jaeger</Torschuetze>
+                    <Mannschaft_Schuetze>SV Werder Bremen</Mannschaft_Schuetze>
+                    <Minute>1</Minute>
                 </Tor>
             </Tore>
         </Endergebnis>

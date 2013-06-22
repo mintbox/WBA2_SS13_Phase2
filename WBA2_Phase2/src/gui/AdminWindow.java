@@ -4,8 +4,13 @@
  */
 package gui;
 
+import Liveticker.LivetickerService;
 import org.jivesoftware.smack.XMPPException;
 import xmpp.PubSubClient;
+
+import javax.swing.*;
+import javax.xml.bind.JAXBException;
+import java.io.IOException;
 
 /**
  *
@@ -69,6 +74,10 @@ public class AdminWindow extends javax.swing.JFrame {
                     jToggleButtonTorActionPerformed(evt);
                 } catch (XMPPException e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (IOException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (JAXBException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
             }
         });
@@ -76,7 +85,13 @@ public class AdminWindow extends javax.swing.JFrame {
         jToggleButtonComment.setText("Absenden");
         jToggleButtonComment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButtonCommentActionPerformed(evt);
+                try {
+                    jToggleButtonCommentActionPerformed(evt);
+                } catch (JAXBException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (IOException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
             }
         });
 
@@ -135,21 +150,26 @@ public class AdminWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void jToggleButtonCommentActionPerformed(java.awt.event.ActionEvent evt) {
+    private void jToggleButtonCommentActionPerformed(java.awt.event.ActionEvent evt) throws JAXBException, IOException {
         int min = Integer.parseInt(jTextFieldMinComment.getText());
         String comment = jTextFieldComment.getText();
         try {
             pubSub.pubComment(team, min, comment);
+            liveticker.postComment(mannid,min,comment);
+            JOptionPane.showMessageDialog(null, "Kommentar gesendet");
         } catch (XMPPException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
     }
 
-    private void jToggleButtonTorActionPerformed(java.awt.event.ActionEvent evt) throws XMPPException {
-        Integer min = Integer.parseInt(jTextFieldMinComment.getText());
+    private void jToggleButtonTorActionPerformed(java.awt.event.ActionEvent evt) throws XMPPException, JAXBException, IOException {
+        Integer min = Integer.parseInt(jTextFieldMinTor.getText());
         String schuetze= jTextFieldSchuetze.getText();
         String ergebnis = jTextFieldErgebnis.getText();
-        pubSub.pubGoal(team, schuetze, min, ergebnis);
+        pubSub.pubGoal(team,schuetze,min,ergebnis);
+        liveticker.setErgebnis(mannid,ergebnis,schuetze,team,min);
+        JOptionPane.showMessageDialog(null, "Tor gesendet");
+
     }
 
     /**
@@ -198,6 +218,8 @@ public class AdminWindow extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButtonComment;
     private javax.swing.JToggleButton jToggleButtonTor;
     private String team;
+    private LivetickerService liveticker = new LivetickerService();
+    private  int mannid;
 
     public void setPubSub(PubSubClient pubSub) {
         this.pubSub = pubSub;
@@ -207,6 +229,11 @@ public class AdminWindow extends javax.swing.JFrame {
     public void setTeam(String team) {
         this.team = team;
     }
+    public void setMannid(int mannid) {
+        this.mannid = mannid;
+    }
+
+
 
     // End of variables declaration                   
 }

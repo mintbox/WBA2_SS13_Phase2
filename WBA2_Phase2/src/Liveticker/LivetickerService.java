@@ -24,7 +24,7 @@ public class LivetickerService {
         Liveticker liveticker;
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
         Unmarshaller um = context.createUnmarshaller();
-        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
+        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/denjae/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
 
         return liveticker;
 
@@ -39,7 +39,7 @@ public class LivetickerService {
         ObjectFactory ob = new ObjectFactory();
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
         Unmarshaller um = context.createUnmarshaller();
-        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker.xml"));
+        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/denjae/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker.xml"));
         Liveticker rt = ob.createLiveticker();
         for (int j = 0; j < liveticker.getSpiel().size(); j++) {
             int heim = Integer.parseInt(liveticker.getSpiel().get(j).getHeimmannschaft().getMannId());
@@ -59,7 +59,7 @@ public class LivetickerService {
         Liveticker liveticker;
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
         Unmarshaller um = context.createUnmarshaller();
-        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
+        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/denjae/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
         Liveticker lt = ob.createLiveticker();
         int id = 0;
 
@@ -87,7 +87,7 @@ public class LivetickerService {
         m.marshal(lt, System.out);
 
         Writer w;
-        w = new FileWriter("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
+        w = new FileWriter("/Users/denjae/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
         m.marshal(lt, w);
         w.close();
         return lt;
@@ -102,7 +102,7 @@ public class LivetickerService {
         ObjectFactory ob = new ObjectFactory();
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
         Unmarshaller um = context.createUnmarshaller();
-        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
+        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/denjae/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
         int id = 0;
         Liveticker.Spiel.Kommentare.Kommentar comment = new Liveticker.Spiel.Kommentare.Kommentar();
 
@@ -128,7 +128,7 @@ public class LivetickerService {
         m.marshal(liveticker, System.out);
 
         Writer w;
-        w = new FileWriter("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
+        w = new FileWriter("/Users/denjae/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
         m.marshal(liveticker, w);
         w.close();
         return liveticker;
@@ -144,7 +144,7 @@ public class LivetickerService {
         Liveticker liveticker;
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
         Unmarshaller um = context.createUnmarshaller();
-        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
+        liveticker = (Liveticker) um.unmarshal(new FileReader("/Users/denjae/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml"));
         int id = 0;
         Liveticker.Spiel.Endergebnis.Tore.Tor tor = new Liveticker.Spiel.Endergebnis.Tore.Tor();
 
@@ -171,11 +171,13 @@ public class LivetickerService {
         m.marshal(liveticker, System.out);
 
         Writer w;
-        w = new FileWriter("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
+        w = new FileWriter("/Users/denjae/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Liveticker/LiveTicker_Testdaten.xml");
         m.marshal(liveticker, w);
         w.close();
         return liveticker;
     }
+
+
 }
 
 
