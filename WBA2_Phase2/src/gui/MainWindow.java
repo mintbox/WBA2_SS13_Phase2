@@ -4,11 +4,15 @@
  */
 package gui;
 
+import Liveticker.LivetickerService;
+import Mannschaft.MannschaftService;
 import org.jivesoftware.smack.XMPPException;
 import xmpp.PubSubClient;
 
 import javax.swing.*;
+import javax.xml.bind.JAXBException;
 import java.awt.*;
+import java.io.IOException;
 
 /**
  * @author denjae
@@ -78,6 +82,10 @@ public class MainWindow extends javax.swing.JFrame {
                     jComboBoxFunctionActionPerformed(evt);
                 } catch (XMPPException e) {
                     e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (IOException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                } catch (JAXBException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
                 }
             }
         });
@@ -132,7 +140,7 @@ public class MainWindow extends javax.swing.JFrame {
     }
 
     //Funktion aus Dropdown waehlen und ausfuehren
-    private void jComboBoxFunctionActionPerformed(java.awt.event.ActionEvent evt) throws XMPPException {
+    private void jComboBoxFunctionActionPerformed(java.awt.event.ActionEvent evt) throws XMPPException, JAXBException, IOException {
         function = jComboBoxFunction.getSelectedIndex();
 
         switch (function) {
@@ -149,7 +157,8 @@ public class MainWindow extends javax.swing.JFrame {
                 jTextAreaAusgabe.setText(pubSub.discover().toString());
                 break;
             case 3:
-                pubSub.getMessagesFromNode(team);
+               // pubSub.getMessagesFromNode(team);
+               // jTextAreaAusgabe.setText("Ergebnis: " +liveticker.toString());
 
                 break;
             case 4:
@@ -158,6 +167,7 @@ public class MainWindow extends javax.swing.JFrame {
                 AdminWindow adminWindow = new AdminWindow();
                 adminWindow.setPubSub(pubSub);
                 adminWindow.setTeam(team);
+                adminWindow.setLiveticker(liveticker);
                 adminWindow.setMannid(mannid);
                 adminWindow.setVisible(true);
         }
@@ -214,4 +224,6 @@ public class MainWindow extends javax.swing.JFrame {
     int function;
     private PubSubClient pubSub;
     private int mannid;
+    private LivetickerService liveticker = new LivetickerService();
+    private MannschaftService mannschaft = new MannschaftService();
 }

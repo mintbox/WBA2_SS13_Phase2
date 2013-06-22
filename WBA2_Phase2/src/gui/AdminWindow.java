@@ -167,7 +167,7 @@ public class AdminWindow extends javax.swing.JFrame {
         String schuetze= jTextFieldSchuetze.getText();
         String ergebnis = jTextFieldErgebnis.getText();
         pubSub.pubGoal(team,schuetze,min,ergebnis);
-        liveticker.setErgebnis(mannid,ergebnis,schuetze,team,min);
+        liveticker.postErgebnis(mannid, ergebnis, schuetze, team, min);
         JOptionPane.showMessageDialog(null, "Tor gesendet");
 
     }
@@ -218,7 +218,7 @@ public class AdminWindow extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButtonComment;
     private javax.swing.JToggleButton jToggleButtonTor;
     private String team;
-    private LivetickerService liveticker = new LivetickerService();
+    private LivetickerService liveticker;
     private  int mannid;
 
     public void setPubSub(PubSubClient pubSub) {
@@ -231,6 +231,10 @@ public class AdminWindow extends javax.swing.JFrame {
     }
     public void setMannid(int mannid) {
         this.mannid = mannid;
+    }
+
+    public void setLiveticker(LivetickerService liveticker){
+        this.liveticker=liveticker;
     }
 
 

@@ -17,7 +17,6 @@ import Mannschaft.Mannschaften.Abonnement.*;
  * To change this template use File | Settings | File Templates.
  */
 public class MannschaftService {
-    // never used?
     @Path("/mannschaft")
     @GET
     @Produces("application/xml")
@@ -75,61 +74,21 @@ public class MannschaftService {
     }
     */
 
-    @POST
-    @Path("mannschaft/user/id")
-    @Produces("application/xml")
-    public Mannschaften newAbo(@FormParam("Abonnent") String abo, @FormParam("Mann_ID") int id) throws JAXBException, IOException {
 
-        Mannschaften mannschaften = new Mannschaften();
-        Mannschaften.Abonnement mannschaft = new Mannschaften.Abonnement();
+        @POST
+        @Path("mannschaft/user/id")
+        @Produces("application/xml")
+        public Mannschaften newAbo(@FormParam("Abonnent") String abo, @FormParam("Mann_ID") int team) throws JAXBException, IOException {
 
-        ObjectFactory ob = new ObjectFactory();
-        mannschaften = ob.createMannschaften();
-        JAXBContext context = JAXBContext.newInstance(Mannschaften.class);
-        Unmarshaller um = context.createUnmarshaller();
-        mannschaften = (Mannschaften) um.unmarshal(new FileReader("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml"));
-
-        //Die Restriction mit 18 Mannschaften macht nur Sinn wenn Datenbank vorhanden bzw. die Möglichkeit irgendwie auf die IDs zuzugreifen und mehrere Abonnenten abzuspeichern.
-        // Evtl ist es sinnvoller die 18 Mannschaftsnamen festzulegen mit einer Art Pulldown und jedes Abo neu anzulegen. Dann bräuchte man beim GET allerdings eine weitere Schleife
-
-
-        int z = 0;
-        int i = 0;
-        //mannschaften.getAbonnement().addAll(mannschaften.getAbonnement());
-        while (z != 1) {
-            // Ich spring hier von Fehler zu Fehler. NumberFormatException weil er die ID nicht parsen kann.
-            // Dann ".toString()" hinzugefügt und eine NullPointerException taucht auf.
-            //int mannId = Integer.parseInt(mannschaften.getAbonnement().get(i).getMannID().toString());
-            if (mannschaften.getAbonnement().get(i).getMannID() == id) {
-                System.out.println("HALLO");
-                // Geht nicht in die Schleife rein.
-                for (int j = 0; j < mannschaft.getAbonnent().size(); j++) {
-                    System.out.println("GEHT DOCH");
-                 //   mannschaften.getAbonnement().get(j).getAbonnent().add(mannschaften.getAbonnement().get(j).getAbonnent().size(), abo);
-                    mannschaft.getAbonnent().add(mannschaft.getAbonnent().size(), abo);
-                }
-                z = 1;
-            } else {
-                i++;
-            }
+            Mannschaften mannschaften;
+            //Mannschaften.Abonnement mannschaft = new Mannschaften.Abonnement();
+            JAXBContext context = JAXBContext.newInstance(Mannschaften.class);
+            Unmarshaller um = context.createUnmarshaller();
+            mannschaften = (Mannschaften) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml"));
+            int id = 0;
+            Mannschaften.Abonnement abonnement = new Mannschaften.Abonnement();
+            return mannschaften;
         }
-        //get INDEX?
-        mannschaften.getAbonnement().add(mannschaften.getAbonnement().size(), mannschaft);
-        //mannschaften.getAbonnement().get(i).getAbonnent().add(mannschaften.getAbonnement().get(i).getAbonnent().size(), mannschaft);
-
-        Marshaller m = context.createMarshaller();
-        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-        m.setProperty(Marshaller.JAXB_ENCODING, "ISO-8859-1");
-        m.marshal(mannschaften, System.out);
-
-        Writer w = new FileWriter("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml");
-        m.marshal(mannschaften, w);
-        w.close();
-
-        return mannschaften;
-
-
-    }
 
     @DELETE
     @Path("mannschaft/user")

@@ -16,7 +16,7 @@ public class LivetickerTest {
         //test.getMannschaft(1);
         test.deleteComment(5);
         //test.postComment(4,21, "elfmeter" );
-        //test.setErgebnis(5,"2:0", "Mario Goetze", "Dortmund", 88);
+        //test.postErgebnis(5,"2:0", "Mario Goetze", "Dortmund", 88);
         //test.getTicker();
     }
 }

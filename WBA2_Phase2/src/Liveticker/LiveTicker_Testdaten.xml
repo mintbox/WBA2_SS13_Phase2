@@ -24,7 +24,16 @@
                 </Tor>
             </Tore>
         </Endergebnis>
-        <Kommentare/>
+        <Kommentare>
+            <Kommentar>
+                <Minute>2</Minute>
+                <Text>Kommentar funktioniert</Text>
+            </Kommentar>
+            <Kommentar>
+                <Minute>90</Minute>
+                <Text>Test</Text>
+            </Kommentar>
+        </Kommentare>
     </Spiel>
     <Spiel>
         <Heimmannschaft>
@@ -186,12 +195,17 @@
             <name>Vfl Wolfsburg</name>
         </Gastmannschaft>
         <Endergebnis>
-            <Ergebnis></Ergebnis>
+            <Ergebnis>1:0</Ergebnis>
             <Tore>
                 <Tor>
                     <Torschuetze></Torschuetze>
                     <Mannschaft_Schuetze></Mannschaft_Schuetze>
                     <Minute>0</Minute>
+                </Tor>
+                <Tor>
+                    <Torschuetze>Dennis</Torschuetze>
+                    <Mannschaft_Schuetze>VFB Stuttgart</Mannschaft_Schuetze>
+                    <Minute>1</Minute>
                 </Tor>
             </Tore>
         </Endergebnis>

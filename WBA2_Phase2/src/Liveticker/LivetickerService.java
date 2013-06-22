@@ -140,7 +140,7 @@ public class LivetickerService {
     @PUT
     @Path("/{id}")
     @Produces("application/xml")
-    public Liveticker setErgebnis(@PathParam("id") int team, @FormParam("Ergebnis") String erg, @FormParam("Torschuetze") String schuetze, @FormParam("Mannschaft des Torschuetzen") String mannschaft, @PathParam("Minute") int min) throws JAXBException, IOException {
+    public Liveticker postErgebnis(@PathParam("id") int team, @FormParam("Ergebnis") String erg, @FormParam("Torschuetze") String schuetze, @FormParam("Mannschaft des Torschuetzen") String mannschaft, @PathParam("Minute") int min) throws JAXBException, IOException {
         Liveticker liveticker;
         JAXBContext context = JAXBContext.newInstance(Liveticker.class);
         Unmarshaller um = context.createUnmarshaller();
