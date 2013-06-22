@@ -9,6 +9,7 @@ log/
 target/*
 .class
 # Package Files #
-*.jar
+appframework-1.0.3.jar
+swing-layout-1.0.3.jar
 *.war
 *.ear

@@ -18,6 +18,7 @@ public class ItemEventCoordinator<T> implements ItemEventListener {
     {
         //System.out.println("Item count: " + items.getItems().size());
         //System.out.println(items);
-        JOptionPane.showMessageDialog(null, "neue Nachricht angekommen");
+        JOptionPane.showMessageDialog(null, "neue Nachricht eingetroffen");
+
     }
 }
