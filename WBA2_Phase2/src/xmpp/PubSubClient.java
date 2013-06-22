@@ -85,13 +85,12 @@ public class PubSubClient {
         }
         System.out.println("");*/
 
-        return  items;
+        return items;
     }
 
     //TODO Pub-Methoden ueberschreiben vorherige Nodes, ueberarbeiten!
     //Publiziert Kommentar
     public void pubComment(String team, int min, String comment) throws XMPPException {
-        System.out.println(team);
         LeafNode node = mgr.getNode(team);
         SimplePayload payload = new SimplePayload("Liveticker", null, "<Spiel><Kommentare><Kommentar><Minute>" + min + "</Minute><Text>" + comment + "</Text></Kommentar></Kommentare></Spiel>");
         PayloadItem item = new PayloadItem<SimplePayload>(team, payload);
@@ -101,7 +100,6 @@ public class PubSubClient {
 
     //Publiziert ein Tor und korrigiert manuell das aktuelle Ergebnis
     public void pubGoal(String team, String schuetze, int min, String ergebnis) throws XMPPException {
-        System.out.println(team);
         LeafNode node = mgr.getNode(team);
         SimplePayload payload = new SimplePayload("Liveticker", null, "<Endergebnis><Ergebnis>" + ergebnis + "</Ergebnis><Tore><Tor><Torschuetze>" + schuetze + "</Torschuetze><Mannschaft_Schuetze>" + team + "</Mannschaft_Schuetze><Minute>" + min + "</Minute></Tor></Tore></Endergebnis>");
         PayloadItem item = new PayloadItem<SimplePayload>(team, payload);
