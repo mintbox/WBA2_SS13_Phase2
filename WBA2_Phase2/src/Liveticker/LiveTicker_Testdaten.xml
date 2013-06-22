@@ -33,6 +33,10 @@
                 <Minute>90</Minute>
                 <Text>Test</Text>
             </Kommentar>
+            <Kommentar>
+                <Minute>1</Minute>
+                <Text>Hallo Welt</Text>
+            </Kommentar>
         </Kommentare>
     </Spiel>
     <Spiel>
@@ -195,7 +199,7 @@
             <name>Vfl Wolfsburg</name>
         </Gastmannschaft>
         <Endergebnis>
-            <Ergebnis>1:0</Ergebnis>
+            <Ergebnis>11:11</Ergebnis>
             <Tore>
                 <Tor>
                     <Torschuetze></Torschuetze>
@@ -206,6 +210,11 @@
                     <Torschuetze>Dennis</Torschuetze>
                     <Mannschaft_Schuetze>VFB Stuttgart</Mannschaft_Schuetze>
                     <Minute>1</Minute>
+                </Tor>
+                <Tor>
+                    <Torschuetze>Kahn</Torschuetze>
+                    <Mannschaft_Schuetze>VFL Wolfsburg</Mannschaft_Schuetze>
+                    <Minute>111</Minute>
                 </Tor>
             </Tore>
         </Endergebnis>

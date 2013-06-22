@@ -146,6 +146,7 @@ public class MainWindow extends javax.swing.JFrame {
         switch (function) {
             case 0:
                 pubSub.subscribe(team);
+                mannschaft.newAbo("user1", mannid);
                 JOptionPane.showMessageDialog(null, "abonniert");
                 break;
             case 1:
@@ -157,8 +158,9 @@ public class MainWindow extends javax.swing.JFrame {
                 jTextAreaAusgabe.setText(pubSub.discover().toString());
                 break;
             case 3:
-               // pubSub.getMessagesFromNode(team);
-               // jTextAreaAusgabe.setText("Ergebnis: " +liveticker.toString());
+                //Gibt unformatierten XML-Code aus
+               jTextAreaAusgabe.setText(pubSub.getMessagesFromNode(team).toString());
+
 
                 break;
             case 4:
@@ -221,7 +223,7 @@ public class MainWindow extends javax.swing.JFrame {
 
 
     private String team;
-    int function;
+    private int function;
     private PubSubClient pubSub;
     private int mannid;
     private LivetickerService liveticker = new LivetickerService();

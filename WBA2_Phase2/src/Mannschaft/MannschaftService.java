@@ -25,7 +25,7 @@ public class MannschaftService {
 
         JAXBContext jc = JAXBContext.newInstance(Mannschaften.class);
         Unmarshaller unmarshaller = jc.createUnmarshaller();
-        Mannschaften mannschaft = (Mannschaften) unmarshaller.unmarshal(new File("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml"));
+        Mannschaften mannschaft = (Mannschaften) unmarshaller.unmarshal(new File("/Users/denjae/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml"));
 
         int i = 0;
         int laufen = 0;
@@ -84,7 +84,7 @@ public class MannschaftService {
             //Mannschaften.Abonnement mannschaft = new Mannschaften.Abonnement();
             JAXBContext context = JAXBContext.newInstance(Mannschaften.class);
             Unmarshaller um = context.createUnmarshaller();
-            mannschaften = (Mannschaften) um.unmarshal(new FileReader("/Users/djga/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml"));
+            mannschaften = (Mannschaften) um.unmarshal(new FileReader("/Users/denjae/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml"));
             int id = 0;
             Mannschaften.Abonnement abonnement = new Mannschaften.Abonnement();
             return mannschaften;
@@ -98,7 +98,7 @@ public class MannschaftService {
         Mannschaften man = ob.createMannschaften();
         JAXBContext context = JAXBContext.newInstance(Mannschaften.class);
         Unmarshaller um = context.createUnmarshaller();
-        Mannschaften mannschaften = (Mannschaften) um.unmarshal(new FileReader("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml"));
+        Mannschaften mannschaften = (Mannschaften) um.unmarshal(new FileReader("/Users/denjae/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml"));
 
 
         man.getAbonnement().addAll(mannschaften.getAbonnement());
@@ -118,7 +118,7 @@ public class MannschaftService {
         m.marshal(man, System.out);
 
 
-        Writer w = new FileWriter("/Users/Oli/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml");
+        Writer w = new FileWriter("/Users/denjae/git/WBA2_SS13_Phase2/WBA2_Phase2/src/Mannschaft/Mannschaft_Test.xml");
         m.marshal(man, w);
         w.close();
         return man;

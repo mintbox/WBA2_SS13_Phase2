@@ -17,7 +17,7 @@ public class XmppTest {
         //pubsub.discover();
         //pubsub.pubGoal("FC Bayern Muenchen", "Thomas Mueller", 12, "1:0");
         //pubsub.pubComment("Borussia Dortmund", 12, "Test Comment");
-        pubsub.getMessagesFromNode("Borussia Dortmund");
+        pubsub.getMessagesFromNode("SV Werder Bremen");
         //pubsub.deleteAllNodes();
         //pubsub.unsubscribe("FC Bayern Muenchen");
         //pubsub.getAllSubscriptions();

@@ -7,6 +7,7 @@ import org.jivesoftware.smackx.packet.DiscoverItems;
 import org.jivesoftware.smackx.pubsub.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
@@ -74,13 +75,17 @@ public class PubSubClient {
     }
 
     //Gibt die publizierten Nachrichten des ausgewaehlten Knoten zurueck
-    public void getMessagesFromNode(String team) throws XMPPException {
+    public Collection getMessagesFromNode(String team) throws XMPPException {
         LeafNode node = mgr.getNode(team);
-        System.out.println("Alle Messages von " + team + ":");
+        Collection<? extends Item> items = node.getItems();
+
+       /* System.out.println("Alle Messages von " + team + ":");
         for (int i = 0; i < node.getItems().size(); i++) {
             System.out.println(node.getItems(node.getSubscriptions().get(0).getId()).get(i));
         }
-        System.out.println("");
+        System.out.println("");*/
+
+        return  items;
     }
 
     //TODO Pub-Methoden ueberschreiben vorherige Nodes, ueberarbeiten!

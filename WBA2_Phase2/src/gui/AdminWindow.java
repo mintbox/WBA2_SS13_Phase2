@@ -13,7 +13,6 @@ import javax.xml.bind.JAXBException;
 import java.io.IOException;
 
 /**
- *
  * @author denjae
  */
 public class AdminWindow extends javax.swing.JFrame {
@@ -155,7 +154,7 @@ public class AdminWindow extends javax.swing.JFrame {
         String comment = jTextFieldComment.getText();
         try {
             pubSub.pubComment(team, min, comment);
-            liveticker.postComment(mannid,min,comment);
+            liveticker.postComment(mannid, min, comment);
             JOptionPane.showMessageDialog(null, "Kommentar gesendet");
         } catch (XMPPException e) {
             e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
@@ -164,9 +163,9 @@ public class AdminWindow extends javax.swing.JFrame {
 
     private void jToggleButtonTorActionPerformed(java.awt.event.ActionEvent evt) throws XMPPException, JAXBException, IOException {
         Integer min = Integer.parseInt(jTextFieldMinTor.getText());
-        String schuetze= jTextFieldSchuetze.getText();
+        String schuetze = jTextFieldSchuetze.getText();
         String ergebnis = jTextFieldErgebnis.getText();
-        pubSub.pubGoal(team,schuetze,min,ergebnis);
+        pubSub.pubGoal(team, schuetze, min, ergebnis);
         liveticker.postErgebnis(mannid, ergebnis, schuetze, team, min);
         JOptionPane.showMessageDialog(null, "Tor gesendet");
 
@@ -206,7 +205,8 @@ public class AdminWindow extends javax.swing.JFrame {
             }
         });
     }
-    // Variables declaration - do not modify                     
+
+    // Variables declaration - do not modify
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -219,7 +219,7 @@ public class AdminWindow extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButtonTor;
     private String team;
     private LivetickerService liveticker;
-    private  int mannid;
+    private int mannid;
 
     public void setPubSub(PubSubClient pubSub) {
         this.pubSub = pubSub;
@@ -229,15 +229,12 @@ public class AdminWindow extends javax.swing.JFrame {
     public void setTeam(String team) {
         this.team = team;
     }
+
     public void setMannid(int mannid) {
         this.mannid = mannid;
     }
 
-    public void setLiveticker(LivetickerService liveticker){
-        this.liveticker=liveticker;
+    public void setLiveticker(LivetickerService liveticker) {
+        this.liveticker = liveticker;
     }
-
-
-
-    // End of variables declaration                   
 }
